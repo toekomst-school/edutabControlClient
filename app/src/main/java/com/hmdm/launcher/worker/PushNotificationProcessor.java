@@ -38,6 +38,7 @@ import com.hmdm.launcher.db.DatabaseHelper;
 import com.hmdm.launcher.db.DownloadTable;
 import com.hmdm.launcher.helper.ConfigUpdater;
 import com.hmdm.launcher.helper.SettingsHelper;
+import com.hmdm.launcher.service.EmergencyService;
 import com.hmdm.launcher.json.Application;
 import com.hmdm.launcher.json.Download;
 import com.hmdm.launcher.json.PushMessage;
@@ -127,6 +128,65 @@ public class PushNotificationProcessor {
         } else if (message.getMessageType().equals(PushMessage.TYPE_CLEAR_APP_DATA)) {
             // Clear application data
             AsyncTask.execute(() -> clearAppData(context, message.getPayloadJSON()));
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_OPEN_URL)) {
+            // Payload is just the URL string
+            String url = message.getPayload();
+            if (url != null && !url.isEmpty()) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(browserIntent);
+            }
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_SET_VOLUME)) {
+            // Payload is volume level 0-15, convert to 0-100%
+            try {
+                int volumeLevel = Integer.parseInt(message.getPayload());
+                int volumePercent = (volumeLevel * 100) / 15;
+                Utils.setVolume(volumePercent, context);
+            } catch (NumberFormatException e) {
+                RemoteLogger.log(context, Const.LOG_WARN, "Invalid volume value: " + message.getPayload());
+            }
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_SET_BRIGHTNESS)) {
+            // Payload is brightness level 0-255
+            try {
+                int brightness = Integer.parseInt(message.getPayload());
+                Utils.setBrightnessPolicy(false, brightness, context);
+            } catch (NumberFormatException e) {
+                RemoteLogger.log(context, Const.LOG_WARN, "Invalid brightness value: " + message.getPayload());
+            }
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_PING_LOCATION)) {
+            // Request immediate location ping
+            AsyncTask.execute(() -> EmergencyService.sendSingleLocationPing(context));
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_EMERGENCY_MODE)) {
+            // Payload: "on" or "off", optionally with interval like "on:30000"
+            String payload = message.getPayload();
+            if (payload != null) {
+                Intent serviceIntent = new Intent(context, EmergencyService.class);
+                if (payload.startsWith("on")) {
+                    serviceIntent.setAction(EmergencyService.ACTION_START);
+                    // Parse optional interval (e.g., "on:30000" for 30 second intervals)
+                    if (payload.contains(":")) {
+                        try {
+                            int interval = Integer.parseInt(payload.split(":")[1]);
+                            serviceIntent.putExtra(EmergencyService.EXTRA_INTERVAL, interval);
+                        } catch (Exception e) {
+                            // Use default interval
+                        }
+                    }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                        context.startForegroundService(serviceIntent);
+                    } else {
+                        context.startService(serviceIntent);
+                    }
+                } else if (payload.equals("off")) {
+                    serviceIntent.setAction(EmergencyService.ACTION_STOP);
+                    context.startService(serviceIntent);
+                }
+            }
             return;
         }
 

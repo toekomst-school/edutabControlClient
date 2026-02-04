@@ -1,1 +1,1 @@
-Mobile Device Management (MDM) System for Android (mobile agent - launcher)
+EduTab Control - Device management for educational tablets

@@ -45,6 +45,11 @@ public class PushMessage {
     public static final String TYPE_GRANT_PERMISSIONS = "grantPermissions";
     public static final String TYPE_ADMIN_PANEL = "adminPanel";
     public static final String TYPE_CLEAR_APP_DATA = "clearAppData";
+    public static final String TYPE_OPEN_URL = "openUrl";
+    public static final String TYPE_SET_VOLUME = "setVolume";
+    public static final String TYPE_SET_BRIGHTNESS = "setBrightness";
+    public static final String TYPE_PING_LOCATION = "pingLocation";
+    public static final String TYPE_EMERGENCY_MODE = "emergencyMode";
 
     public String getMessageType() {
         return messageType;

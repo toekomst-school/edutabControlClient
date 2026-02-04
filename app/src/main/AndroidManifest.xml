@@ -21,7 +21,7 @@
 <!-- -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:sharedUserId="com.hmdm">
+    android:sharedUserId="eu.edutab">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
@@ -259,6 +259,10 @@
         </service>
 
         <service android:name=".service.LocationService"
+            android:foregroundServiceType="location"
+            android:exported="false"/>
+
+        <service android:name=".service.EmergencyService"
             android:foregroundServiceType="location"
             android:exported="false"/>
 
