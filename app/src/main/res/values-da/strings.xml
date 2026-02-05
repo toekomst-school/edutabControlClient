@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administrator</string>
+    <string name="install_error">Installationsfejl</string>
+    <string name="file_create_error">Fejl ved oprettelse af fil</string>
+    <string name="dialog_enter_device_id_error">Dette ID er ikke registreret på %s. Hent ID fra fanen \"Enheder\" i kontrolpanelet.</string>
+    <string name="dialog_enter_device_id_qrcode">QR-kode</string>
+    <string name="dialog_enter_device_id_variants">Varianter</string>
+    <string name="dialog_enter_device_id_save">Gem</string>
+    <string name="dialog_enter_device_id_exit">Afslut</string>
+    <string name="dialog_enter_device_id_title">Indtast enheds-ID på %s</string>
+    <string name="main_start_preparations">Forbereder start</string>
+    <string name="main_downloading_configuration">Opdaterer konfigurationsfil</string>
+    <string name="main_downloading_content">Opdaterer data</string>
+    <string name="main_update_applications">Installerer og opdaterer applikationer</string>
+    <string name="dialog_root_message">Du har brug for ROOT-adgang</string>
+    <string name="main_application_start">Starter applikation</string>
+    <string name="main_app_installing">Installerer applikation</string>
+    <string name="main_app_downloading">Downloader applikation</string>
+    <string name="main_app_downloading_error">Kunne ikke downloade pakken</string>
+    <string name="main_app_removing">Afinstallerer applikation</string>
+    <string name="main_file_downloading">Downloader fil</string>
+    <string name="main_file_downloading_error">Kunne ikke downloade filen</string>
+    <string name="main_activity_repeat">Prøv igen</string>
+    <string name="main_activity_reset">Nulstil</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Annuller</string>
+    <string name="main_activity_details">Detaljer</string>
+    <string name="select_system_launcher">Vælg %s som standardstarter og vælg \'Altid\':</string>
+    <string name="dialog_network_error_title">Fejl ved forbindelse til %s. Kontroller internetforbindelsen og prøv igen.</string>
+    <string name="main_activity_update_config">Anmoder om konfigurationsfil fra server</string>
+    <string name="main_activity_applications_update">Opdaterer applikationer</string>
+    <string name="dialog_overlay_settings_title">Tillad appen at tegne over andre vinduer.\n\nDenne mulighed hjælper med at blokere uønskede apps og muliggør nødoplåsning af kiosktilstand.\n\nTryk på \"Fortsæt\" for at åbne indstillinger. Find elementet \"%s\", giv tilladelse og tryk på \"Tilbage\".</string>
+    <string name="dialog_manage_storage_title">Tillad appen at administrere lager.\n\nDette lader EduTab administrere læringsmaterialer på din tablet.</string>
+    <string name="dialog_history_settings_title">Tillad appen at få adgang til brugsdata.\n\nDenne mulighed muliggør kontrol af apps og indstillinger.\n\nDenne mulighed kan forårsage hurtigere batteridræning. For at spare batteri, spring denne mulighed over (brug tilgængelighedstjenester eller kiosktilstand i stedet).\n\nTryk på \"Fortsæt\" for at åbne indstillinger. Find elementet \"%s\", giv tilladelse og tryk på \"Tilbage\".</string>
+    <string name="dialog_history_settings_continue">Fortsæt</string>
+    <string name="dialog_history_settings_skip">Spring over</string>
+    <string name="dialog_unknown_sources_title">Tillad installation fra ukendte kilder. Et indstillingsark åbnes nu. Find \"Ukendte kilder\", tillad installation og klik på \"Tilbage\".</string>
+    <string name="dialog_unknown_sources_continue">Fortsæt</string>
+    <string name="dialog_miui_permissions_title">MIUI kræver manuel opsætning af brugerdefinerede tilladelser. App-tilladelsesvinduet åbnes nu. Tryk på \"Andre tilladelser\", tillad \"Vis pop op-vinduer, mens der køres i baggrunden\" og klik på \"Tilbage\".</string>
+    <string name="dialog_miui_developer_title">MIUI kræver manuel opsætning af din enhed. På infoskærmen, TRYK 7 GANGE PÅ \"BYGGENUMMER\". Dette aktiverer udviklerindstillinger.</string>
+    <string name="dialog_miui_optimization_title">MIUI kræver manuel opsætning af din enhed. Udviklerindstillingsvinduet åbnes nu. Rul ned og fjern markeringen ved \"MIUI-optimering\".</string>
+    <string name="dialog_administrator_mode_message">Tillad appen at arbejde i enhedsadministratortilstand. Et indstillingsark åbnes nu. Vælg \"Enhedsadministratorer\", find elementet \"%s\", aktiver administratoren og tryk på \"Tilbage\".</string>
+    <string name="dialog_administrator_mode_continue">Fortsæt</string>
+    <string name="dialog_administrator_mode_skip">Spring over</string>
+    <string name="accessibility_service_description">EduTab læringsmiljø</string>
+    <string name="dialog_accessibility_service_message">Tillad appen at bruge tilgængelighedstjenester. Et indstillingsark åbnes nu. Find elementet \"%s\", tillad brug af tilgængelighedstjenester og tryk på \"Tilbage\".</string>
+    <string name="dialog_accessibility_service_continue">Fortsæt</string>
+    <string name="dialog_accessibility_service_skip">Spring over</string>
+    <string name="access_to_app_denied">Pakken er ikke tilladt:</string>
+    <string name="access_to_app_denied_2">Bed din administrator om at aktivere denne pakke i konfigurationen.\n\nKlik på \'Luk\' eller Hjem-knappen for at fortsætte.</string>
+    <string name="package_id_copied">Pakke-ID er kopieret til udklipsholder</string>
+    <string name="dialog_app_not_allowed_close">Luk</string>
+    <string name="dialog_app_not_allowed_admin">Administrator</string>
+    <string name="device_id">Enheds-ID</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Serienummer</string>
+    <string name="phone_number">Telefonnummer</string>
+    <string name="launcher_version">Starterversion</string>
+    <string name="close">Luk</string>
+    <string name="admin_change_device_id">Skift enheds-ID</string>
+    <string name="admin_change_server_url">Skift server-URL</string>
+    <string name="admin_allow_settings">Åbn indstillinger</string>
+    <string name="settings_allowed">Du må ændre indstillinger i 3 minutter.</string>
+    <string name="admin_clear_restrictions">Fjern begrænsninger</string>
+    <string name="permissive_mode_enabled">Du må køre alle apps i 3 minutter.</string>
+    <string name="admin_refresh">Opdater konfiguration</string>
+    <string name="admin_exit">Afslut til systemstarter</string>
+    <string name="admin_reset_permissions">Kontroller tilladelser</string>
+    <string name="admin_reset_network">Nulstil netværkspolitik</string>
+    <string name="admin_reset_network_hint">Netværkspolitikker er ryddet. Du kan nu aktivere netværket og genindlæse konfigurationen.</string>
+    <string name="reboot">Genstart enhed</string>
+    <string name="reboot_failed">Utilstrækkelige rettigheder til at genstarte enheden.</string>
+    <string name="message_turn_on_gps">Indstillingsskærmen åbnes. Tænd GPS-lokation på denne skærm og klik på Tilbage.</string>
+    <string name="message_turn_off_gps">Indstillingsskærmen åbnes. SLUK GPS-lokation på denne skærm og klik på Tilbage.</string>
+    <string name="message_turn_on_mobile_data">Mobildata er deaktiveret! Åbn statuslinjen og tænd mobildata.</string>
+    <string name="message_turn_off_mobile_data">Mobildata er aktiveret. Åbn statuslinjen og SLUK mobildata.</string>
+    <string name="message_set_password">Din adgangskodekvalitet er ikke god nok. Indstillingsskærmen åbnes. Skift adgangskoden og klik på Tilbage.</string>
+    <string name="switch_off_blockings">Slukker begrænsninger...</string>
+    <string name="kiosk_mode_requires_overlays">Kiosktilstand deaktiveret: ingen tilladelse til at tegne over andre vinduer. Tillad %s at tegne over andre vinduer.</string>
+    <string name="enter_admin_password">Indtast administratoradgangskode</string>
+    <string name="wrong_password">Forkert adgangskode</string>
+    <string name="dialog_enter_password_login">Log ind</string>
+    <string name="dialog_enter_password_cancel">Annuller</string>
+    <string name="internal_error">Appen stødte på en intern fejl. Genstart enheden og prøv handlingen igen.</string>
+    <string name="empty_configuration">Konfigurationen er ikke indstillet, prøver at hente fra serveren igen!</string>
+    <string name="permissions_reset_hint">Luk administrationspanelet for at kontrollere og anmode om tilladelser.</string>
+    <string name="dialog_enter_server_error">Indtast venligst en gyldig server-URL.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Indtast server-URL</string>
+    <string name="critical_server_failure">Forbindelsesproblem! Genstart %s eller kontakt din skole.</string>
+    <string name="dialog_permission_title">Appen kræver tilladelser for at køre. Giv de anmodede tilladelser.</string>
+    <string name="main_activity_exit">Afslut</string>
+    <string name="browser_not_found">Kan ikke åbne websiden, fordi browseren ikke blev fundet. Tilføj en browser-app til enhedskonfigurationen.</string>
+    <string name="invalid_web_link">Kan ikke åbne weblinket, fordi det er forkert formateret. Kontakt din administrator for detaljer.</string>
+    <string name="activity_not_found">Kan ikke udføre handlingen %s, fordi aktiviteten ikke blev fundet.</string>
+    <string name="location_service_text">Enhedens placering overvåges</string>
+    <string name="qrcode_contents_error">Ugyldigt QR-kodeindhold. Generer QR-koden til klargøring i %s-webpanelet.</string>
+    <string name="device_locked">Denne tablet (%s) er blevet låst af din skole.</string>
+    <string name="fault_loop_detected">Ups, noget gik galt! Genstart tabletten eller bed din lærer om hjælp.</string>
+    <string name="mqtt_service_text">Push-notifikationer er aktive</string>
+    <string name="background_location">%s kræver baggrundslokationstilladelse. Klik på \'Fortsæt\' for at åbne tilladelser, klik på \'Lokation\' og tillad altid at bestemme lokation.</string>
+    <string name="location_disable">Deaktiver lokation</string>
+    <string name="background_location_continue">Fortsæt</string>
+    <string name="initializing_mdm">Opsætter din læringstablet...</string>
+    <string name="dialog_server_error_title">MDM-serveren %s returnerede et ugyldigt svar. Kontakt din administrator.</string>
+    <string name="mdm_choice_message">Denne tablet vil blive sat op og gjort klar af din skole.</string>
+    <string name="work_profile_message">Denne tablet får en skoleprofil til læringsapps. Du kan skifte mellem skole- og personlige profiler når som helst.</string>
+    <string name="overlays_not_supported">Desværre understøttes overlays ikke af din enhed.</string>
+    <string name="admin_not_supported">Din enhed har ingen enhedsadministratorindstilling. Klik på Spring over for at fortsætte.</string>
+    <string name="manage_storage_not_supported">Din enhed har ingen mulighed for at administrere ekstern lagring.</string>
+    <string name="certificate_install_failed">Kunne ikke installere certifikat %1$s: %2$s</string>
+</resources>

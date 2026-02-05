@@ -117,6 +117,8 @@ public class ServerConfig {
 
     private List<Action> actions = new LinkedList();
 
+    private List<WifiConfig> wifiNetworks = new LinkedList();
+
     public static final String TITLE_NONE = "none";
     public static final String TITLE_DEVICE_ID = "deviceId";
     public static final String TITLE_DESCRIPTION = "description";
@@ -713,5 +715,13 @@ public class ServerConfig {
 
     public void setActions(List<Action> actions) {
         this.actions = actions;
+    }
+
+    public List<WifiConfig> getWifiNetworks() {
+        return wifiNetworks;
+    }
+
+    public void setWifiNetworks(List<WifiConfig> wifiNetworks) {
+        this.wifiNetworks = wifiNetworks;
     }
 }

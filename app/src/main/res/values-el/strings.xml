@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Διαχειριστής</string>
+    <string name="install_error">Σφάλμα εγκατάστασης</string>
+    <string name="file_create_error">Σφάλμα δημιουργίας αρχείου</string>
+    <string name="dialog_enter_device_id_error">Αυτό το αναγνωριστικό δεν είναι καταχωρημένο στο %s. Λάβετε το αναγνωριστικό από την καρτέλα \"Συσκευές\" στον πίνακα ελέγχου.</string>
+    <string name="dialog_enter_device_id_qrcode">Κωδικός QR</string>
+    <string name="dialog_enter_device_id_variants">Παραλλαγές</string>
+    <string name="dialog_enter_device_id_save">Αποθήκευση</string>
+    <string name="dialog_enter_device_id_exit">Έξοδος</string>
+    <string name="dialog_enter_device_id_title">Εισαγάγετε το αναγνωριστικό συσκευής στο %s</string>
+    <string name="main_start_preparations">Προετοιμασία εκκίνησης</string>
+    <string name="main_downloading_configuration">Ενημέρωση αρχείου διαμόρφωσης</string>
+    <string name="main_downloading_content">Ενημέρωση δεδομένων</string>
+    <string name="main_update_applications">Εγκατάσταση και ενημέρωση εφαρμογών</string>
+    <string name="dialog_root_message">Απαιτείται πρόσβαση ROOT</string>
+    <string name="main_application_start">Εκκίνηση εφαρμογής</string>
+    <string name="main_app_installing">Εγκατάσταση εφαρμογής</string>
+    <string name="main_app_downloading">Λήψη εφαρμογής</string>
+    <string name="main_app_downloading_error">Αποτυχία λήψης πακέτου</string>
+    <string name="main_app_removing">Απεγκατάσταση εφαρμογής</string>
+    <string name="main_file_downloading">Λήψη αρχείου</string>
+    <string name="main_file_downloading_error">Αποτυχία λήψης αρχείου</string>
+    <string name="main_activity_repeat">Επανάληψη</string>
+    <string name="main_activity_reset">Επαναφορά</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Ακύρωση</string>
+    <string name="main_activity_details">Λεπτομέρειες</string>
+    <string name="select_system_launcher">Επιλέξτε το %s ως προεπιλεγμένο εκκινητή και επιλέξτε \'Πάντα\':</string>
+    <string name="dialog_network_error_title">Σφάλμα σύνδεσης στο %s. Ελέγξτε τη σύνδεση στο διαδίκτυο και δοκιμάστε ξανά.</string>
+    <string name="main_activity_update_config">Αίτημα αρχείου διαμόρφωσης από τον διακομιστή</string>
+    <string name="main_activity_applications_update">Ενημέρωση εφαρμογών</string>
+    <string name="dialog_overlay_settings_title">Επιτρέψτε στην εφαρμογή να σχεδιάζει πάνω από άλλα παράθυρα.\n\nΑυτή η επιλογή βοηθά στον αποκλεισμό ανεπιθύμητων εφαρμογών και επιτρέπει το έκτακτο ξεκλείδωμα της λειτουργίας περιπτέρου.\n\nΠατήστε \"Συνέχεια\" για να ανοίξετε τις ρυθμίσεις. Βρείτε το στοιχείο \"%s\", δώστε άδεια και πατήστε \"Πίσω\".</string>
+    <string name="dialog_manage_storage_title">Επιτρέψτε στην εφαρμογή να διαχειρίζεται τον αποθηκευτικό χώρο.\n\nΑυτό επιτρέπει στο EduTab να διαχειρίζεται εκπαιδευτικό υλικό στο tablet σας.</string>
+    <string name="dialog_history_settings_title">Επιτρέψτε στην εφαρμογή πρόσβαση σε δεδομένα χρήσης.\n\nΑυτή η επιλογή επιτρέπει τον έλεγχο εφαρμογών και ρυθμίσεων.\n\nΑυτή η επιλογή μπορεί να προκαλέσει ταχύτερη εξάντληση της μπαταρίας. Για εξοικονόμηση μπαταρίας, παραλείψτε αυτήν την επιλογή (χρησιμοποιήστε υπηρεσίες προσβασιμότητας ή λειτουργία περιπτέρου).\n\nΠατήστε \"Συνέχεια\" για να ανοίξετε τις ρυθμίσεις. Βρείτε το στοιχείο \"%s\", δώστε άδεια και πατήστε \"Πίσω\".</string>
+    <string name="dialog_history_settings_continue">Συνέχεια</string>
+    <string name="dialog_history_settings_skip">Παράλειψη</string>
+    <string name="dialog_unknown_sources_title">Επιτρέψτε την εγκατάσταση από άγνωστες πηγές. Θα ανοίξει ένα φύλλο ρυθμίσεων. Βρείτε \"Άγνωστες πηγές\", επιτρέψτε την εγκατάσταση και κάντε κλικ στο \"Πίσω\".</string>
+    <string name="dialog_unknown_sources_continue">Συνέχεια</string>
+    <string name="dialog_miui_permissions_title">Το MIUI απαιτεί χειροκίνητη ρύθμιση προσαρμοσμένων αδειών. Θα ανοίξει τώρα το παράθυρο αδειών εφαρμογής. Πατήστε \"Άλλες άδειες\", επιτρέψτε \"Εμφάνιση αναδυόμενων παραθύρων κατά την εκτέλεση στο παρασκήνιο\" και κάντε κλικ στο \"Πίσω\".</string>
+    <string name="dialog_miui_developer_title">Το MIUI απαιτεί χειροκίνητη ρύθμιση της συσκευής σας. Στην οθόνη πληροφοριών, ΠΑΤΗΣΤΕ 7 ΦΟΡΕΣ ΣΤΟ \"ΑΡΙΘΜΟΣ ΕΚΔΟΣΗΣ\". Αυτό θα ενεργοποιήσει τις ρυθμίσεις προγραμματιστή.</string>
+    <string name="dialog_miui_optimization_title">Το MIUI απαιτεί χειροκίνητη ρύθμιση της συσκευής σας. Θα ανοίξει τώρα το παράθυρο ρυθμίσεων προγραμματιστή. Κάντε κύλιση προς τα κάτω και αποεπιλέξτε \"Βελτιστοποίηση MIUI\".</string>
+    <string name="dialog_administrator_mode_message">Επιτρέψτε στην εφαρμογή να λειτουργεί σε λειτουργία διαχειριστή συσκευής. Θα ανοίξει ένα φύλλο ρυθμίσεων. Επιλέξτε \"Διαχειριστές συσκευής\", βρείτε το στοιχείο \"%s\", ενεργοποιήστε τον διαχειριστή και πατήστε \"Πίσω\".</string>
+    <string name="dialog_administrator_mode_continue">Συνέχεια</string>
+    <string name="dialog_administrator_mode_skip">Παράλειψη</string>
+    <string name="accessibility_service_description">Περιβάλλον μάθησης EduTab</string>
+    <string name="dialog_accessibility_service_message">Επιτρέψτε στην εφαρμογή να χρησιμοποιεί υπηρεσίες προσβασιμότητας. Θα ανοίξει ένα φύλλο ρυθμίσεων. Βρείτε το στοιχείο \"%s\", επιτρέψτε τη χρήση υπηρεσιών προσβασιμότητας και πατήστε \"Πίσω\".</string>
+    <string name="dialog_accessibility_service_continue">Συνέχεια</string>
+    <string name="dialog_accessibility_service_skip">Παράλειψη</string>
+    <string name="access_to_app_denied">Το πακέτο δεν επιτρέπεται:</string>
+    <string name="access_to_app_denied_2">Ζητήστε από τον διαχειριστή σας να ενεργοποιήσει αυτό το πακέτο στη διαμόρφωση.\n\nΚάντε κλικ στο \'Κλείσιμο\' ή στο κουμπί Αρχική για να συνεχίσετε.</string>
+    <string name="package_id_copied">Το αναγνωριστικό πακέτου αντιγράφηκε στο πρόχειρο</string>
+    <string name="dialog_app_not_allowed_close">Κλείσιμο</string>
+    <string name="dialog_app_not_allowed_admin">Διαχειριστής</string>
+    <string name="device_id">Αναγνωριστικό συσκευής</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Σειριακός αριθμός</string>
+    <string name="phone_number">Αριθμός τηλεφώνου</string>
+    <string name="launcher_version">Έκδοση εκκινητή</string>
+    <string name="close">Κλείσιμο</string>
+    <string name="admin_change_device_id">Αλλαγή αναγνωριστικού συσκευής</string>
+    <string name="admin_change_server_url">Αλλαγή URL διακομιστή</string>
+    <string name="admin_allow_settings">Άνοιγμα ρυθμίσεων</string>
+    <string name="settings_allowed">Μπορείτε να αλλάξετε τις ρυθμίσεις για 3 λεπτά.</string>
+    <string name="admin_clear_restrictions">Κατάργηση περιορισμών</string>
+    <string name="permissive_mode_enabled">Μπορείτε να εκτελείτε όλες τις εφαρμογές για 3 λεπτά.</string>
+    <string name="admin_refresh">Ενημέρωση διαμόρφωσης</string>
+    <string name="admin_exit">Έξοδος στον εκκινητή συστήματος</string>
+    <string name="admin_reset_permissions">Έλεγχος αδειών</string>
+    <string name="admin_reset_network">Επαναφορά πολιτικής δικτύου</string>
+    <string name="admin_reset_network_hint">Οι πολιτικές δικτύου διαγράφηκαν. Τώρα μπορείτε να ενεργοποιήσετε το δίκτυο και να επαναφορτώσετε τη διαμόρφωση.</string>
+    <string name="reboot">Επανεκκίνηση συσκευής</string>
+    <string name="reboot_failed">Ανεπαρκή δικαιώματα για επανεκκίνηση της συσκευής.</string>
+    <string name="message_turn_on_gps">Θα ανοίξει η οθόνη ρυθμίσεων. Ενεργοποιήστε την τοποθεσία GPS σε αυτήν την οθόνη και κάντε κλικ στο Πίσω.</string>
+    <string name="message_turn_off_gps">Θα ανοίξει η οθόνη ρυθμίσεων. ΑΠΕΝΕΡΓΟΠΟΙΗΣΤΕ την τοποθεσία GPS σε αυτήν την οθόνη και κάντε κλικ στο Πίσω.</string>
+    <string name="message_turn_on_mobile_data">Τα δεδομένα κινητής τηλεφωνίας είναι απενεργοποιημένα! Ανοίξτε τη γραμμή κατάστασης και ενεργοποιήστε τα δεδομένα κινητής τηλεφωνίας.</string>
+    <string name="message_turn_off_mobile_data">Τα δεδομένα κινητής τηλεφωνίας είναι ενεργοποιημένα. Ανοίξτε τη γραμμή κατάστασης και ΑΠΕΝΕΡΓΟΠΟΙΗΣΤΕ τα δεδομένα κινητής τηλεφωνίας.</string>
+    <string name="message_set_password">Η ποιότητα του κωδικού πρόσβασής σας δεν είναι αρκετά καλή. Θα ανοίξει η οθόνη ρυθμίσεων. Αλλάξτε τον κωδικό πρόσβασης και κάντε κλικ στο Πίσω.</string>
+    <string name="switch_off_blockings">Απενεργοποίηση περιορισμών...</string>
+    <string name="kiosk_mode_requires_overlays">Η λειτουργία περιπτέρου απενεργοποιήθηκε: δεν υπάρχει άδεια σχεδίασης πάνω από άλλα παράθυρα. Επιτρέψτε στο %s να σχεδιάζει πάνω από άλλα παράθυρα.</string>
+    <string name="enter_admin_password">Εισαγάγετε κωδικό διαχειριστή</string>
+    <string name="wrong_password">Λάθος κωδικός</string>
+    <string name="dialog_enter_password_login">Σύνδεση</string>
+    <string name="dialog_enter_password_cancel">Ακύρωση</string>
+    <string name="internal_error">Η εφαρμογή αντιμετώπισε εσωτερικό σφάλμα. Επανεκκινήστε τη συσκευή και δοκιμάστε ξανά την ενέργεια.</string>
+    <string name="empty_configuration">Η διαμόρφωση δεν έχει οριστεί, επανάληψη λήψης από τον διακομιστή!</string>
+    <string name="permissions_reset_hint">Κλείστε τον πίνακα διαχείρισης για να ελέγξετε και να ζητήσετε άδειες.</string>
+    <string name="dialog_enter_server_error">Εισαγάγετε μια έγκυρη διεύθυνση URL διακομιστή.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Εισαγάγετε τη διεύθυνση URL του διακομιστή</string>
+    <string name="critical_server_failure">Πρόβλημα σύνδεσης! Επανεκκινήστε το %s ή επικοινωνήστε με το σχολείο σας.</string>
+    <string name="dialog_permission_title">Η εφαρμογή απαιτεί άδειες για εκτέλεση. Χορηγήστε τις απαιτούμενες άδειες.</string>
+    <string name="main_activity_exit">Έξοδος</string>
+    <string name="browser_not_found">Δεν είναι δυνατό το άνοιγμα της ιστοσελίδας επειδή δεν βρέθηκε πρόγραμμα περιήγησης. Προσθέστε μια εφαρμογή προγράμματος περιήγησης στη διαμόρφωση της συσκευής.</string>
+    <string name="invalid_web_link">Δεν είναι δυνατό το άνοιγμα του συνδέσμου web επειδή δεν είναι σωστά διαμορφωμένος. Επικοινωνήστε με τον διαχειριστή σας για λεπτομέρειες.</string>
+    <string name="activity_not_found">Δεν είναι δυνατή η εκτέλεση της ενέργειας %s επειδή η δραστηριότητα δεν βρέθηκε.</string>
+    <string name="location_service_text">Η τοποθεσία της συσκευής παρακολουθείται</string>
+    <string name="qrcode_contents_error">Μη έγκυρα περιεχόμενα κωδικού QR. Δημιουργήστε τον κωδικό QR παροχής στον πίνακα web %s.</string>
+    <string name="device_locked">Αυτό το tablet (%s) έχει κλειδωθεί από το σχολείο σας.</string>
+    <string name="fault_loop_detected">Ωχ, κάτι πήγε στραβά! Επανεκκινήστε το tablet ή ζητήστε βοήθεια από τον δάσκαλό σας.</string>
+    <string name="mqtt_service_text">Οι ειδοποιήσεις push είναι ενεργές</string>
+    <string name="background_location">Το %s απαιτεί άδεια τοποθεσίας στο παρασκήνιο. Κάντε κλικ στο \'Συνέχεια\' για να ανοίξετε τις άδειες, κάντε κλικ στο \'Τοποθεσία\' και επιτρέψτε τον προσδιορισμό τοποθεσίας πάντα.</string>
+    <string name="location_disable">Απενεργοποίηση τοποθεσίας</string>
+    <string name="background_location_continue">Συνέχεια</string>
+    <string name="initializing_mdm">Ρύθμιση του εκπαιδευτικού tablet σας...</string>
+    <string name="dialog_server_error_title">Ο διακομιστής MDM %s επέστρεψε μη έγκυρη απόκριση. Επικοινωνήστε με τον διαχειριστή σας.</string>
+    <string name="mdm_choice_message">Αυτό το tablet θα ρυθμιστεί και θα ετοιμαστεί από το σχολείο σας.</string>
+    <string name="work_profile_message">Αυτό το tablet θα λάβει ένα σχολικό προφίλ για εκπαιδευτικές εφαρμογές. Μπορείτε να εναλλάσσεστε μεταξύ σχολικού και προσωπικού προφίλ ανά πάσα στιγμή.</string>
+    <string name="overlays_not_supported">Δυστυχώς οι επικαλύψεις δεν υποστηρίζονται από τη συσκευή σας.</string>
+    <string name="admin_not_supported">Η συσκευή σας δεν διαθέτει επιλογή διαχειριστή συσκευής. Κάντε κλικ στο Παράλειψη για να συνεχίσετε.</string>
+    <string name="manage_storage_not_supported">Η συσκευή σας δεν διαθέτει επιλογή για διαχείριση εξωτερικού αποθηκευτικού χώρου.</string>
+    <string name="certificate_install_failed">Αποτυχία εγκατάστασης πιστοποιητικού %1$s: %2$s</string>
+</resources>

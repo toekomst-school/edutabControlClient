@@ -17,6 +17,7 @@ import com.hmdm.launcher.json.Application;
 import com.hmdm.launcher.json.DeviceInfo;
 import com.hmdm.launcher.json.RemoteFile;
 import com.hmdm.launcher.json.ServerConfig;
+import com.hmdm.launcher.json.WifiConfig;
 import com.hmdm.launcher.pro.ProUtils;
 import com.hmdm.launcher.pro.service.CheckForegroundAppAccessibilityService;
 import com.hmdm.launcher.pro.service.CheckForegroundApplicationService;
@@ -288,6 +289,114 @@ public class Initializer {
         }
 
         Utils.disableScreenshots(config.isDisableScreenshots(), context);
+
+        // Apply WiFi network configurations
+        applyWifiNetworks(context, config);
+    }
+
+    /**
+     * Apply WiFi networks from multiple sources:
+     * 1. Direct wifiNetworks list in ServerConfig (from HMDM server)
+     * 2. Application settings with name "wifiNetworks" (from EduTab portal)
+     */
+    private static void applyWifiNetworks(Context context, ServerConfig config) {
+        if (config == null) {
+            return;
+        }
+
+        java.util.List<WifiConfig> allNetworks = new java.util.ArrayList<>();
+
+        // Source 1: Direct wifiNetworks from ServerConfig
+        if (config.getWifiNetworks() != null && !config.getWifiNetworks().isEmpty()) {
+            Log.d(Const.LOG_TAG, "Found " + config.getWifiNetworks().size() + " WiFi networks in ServerConfig.wifiNetworks");
+            allNetworks.addAll(config.getWifiNetworks());
+        }
+
+        // Source 2: WiFi networks from application settings
+        java.util.List<WifiConfig> settingsNetworks = getWifiNetworksFromSettings(config);
+        if (settingsNetworks != null && !settingsNetworks.isEmpty()) {
+            Log.d(Const.LOG_TAG, "Found " + settingsNetworks.size() + " WiFi networks in applicationSettings");
+            allNetworks.addAll(settingsNetworks);
+        }
+
+        if (allNetworks.isEmpty()) {
+            Log.d(Const.LOG_TAG, "No WiFi networks to configure");
+            return;
+        }
+
+        // Remove duplicates by SSID (keep first occurrence)
+        java.util.Map<String, WifiConfig> uniqueNetworks = new java.util.LinkedHashMap<>();
+        for (WifiConfig network : allNetworks) {
+            if (network.getSsid() != null && !uniqueNetworks.containsKey(network.getSsid())) {
+                uniqueNetworks.put(network.getSsid(), network);
+            }
+        }
+
+        java.util.List<WifiConfig> finalNetworks = new java.util.ArrayList<>(uniqueNetworks.values());
+        Log.d(Const.LOG_TAG, "Applying " + finalNetworks.size() + " unique WiFi networks");
+
+        // Log each network being configured (without revealing password)
+        for (WifiConfig network : finalNetworks) {
+            Log.d(Const.LOG_TAG, "WiFi network: SSID=" + network.getSsid() +
+                    ", security=" + network.getSecurityType() +
+                    ", hidden=" + network.isHidden() +
+                    ", hasPassword=" + (network.getPassword() != null && !network.getPassword().isEmpty()) +
+                    (network.getLocation() != null ? ", location=" + network.getLocation() : ""));
+        }
+
+        try {
+            WifiSettingsManager wifiManager = new WifiSettingsManager(context);
+            wifiManager.applyWifiNetworks(finalNetworks);
+        } catch (Exception e) {
+            Log.e(Const.LOG_TAG, "Failed to apply WiFi settings: " + e.getMessage());
+            RemoteLogger.log(context, Const.LOG_WARN, "Failed to apply WiFi settings: " + e.getMessage());
+        }
+    }
+
+    /**
+     * Read WiFi networks from application settings.
+     * WiFi networks are stored as a JSON array in an application setting
+     * with packageId "eu.edutab.control" or "com.hmdm.launcher" and name "wifiNetworks".
+     */
+    private static java.util.List<WifiConfig> getWifiNetworksFromSettings(ServerConfig config) {
+        if (config.getApplicationSettings() == null) {
+            return null;
+        }
+
+        // Find the wifiNetworks setting (check for different launcher package variations)
+        String wifiNetworksJson = null;
+        for (com.hmdm.launcher.json.ApplicationSetting setting : config.getApplicationSettings()) {
+            String pkg = setting.getPackageId();
+            if (pkg != null &&
+                (pkg.equals("eu.edutab.control") || pkg.startsWith("com.hmdm.launcher")) &&
+                "wifiNetworks".equals(setting.getName())) {
+                wifiNetworksJson = setting.getValue();
+                Log.d(Const.LOG_TAG, "Found wifiNetworks in applicationSettings for package: " + pkg);
+                break;
+            }
+        }
+
+        if (wifiNetworksJson == null || wifiNetworksJson.isEmpty()) {
+            Log.d(Const.LOG_TAG, "No wifiNetworks JSON found in applicationSettings");
+            return null;
+        }
+
+        // Log the raw JSON for debugging (truncate password values for security)
+        Log.d(Const.LOG_TAG, "Raw wifiNetworks JSON (length=" + wifiNetworksJson.length() + "): " +
+              wifiNetworksJson.replaceAll("\"password\"\\s*:\\s*\"[^\"]*\"", "\"password\":\"***\""));
+
+        try {
+            // Parse the JSON array of WiFi networks
+            com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+            java.util.List<WifiConfig> networks = mapper.readValue(wifiNetworksJson,
+                mapper.getTypeFactory().constructCollectionType(java.util.List.class, WifiConfig.class));
+            Log.d(Const.LOG_TAG, "Successfully parsed " + (networks != null ? networks.size() : 0) + " WiFi networks from JSON");
+            return networks;
+        } catch (Exception e) {
+            Log.e(Const.LOG_TAG, "Failed to parse WiFi settings JSON: " + e.getMessage());
+            e.printStackTrace();
+            return null;
+        }
     }
 
 }

@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administrator</string>
+    <string name="install_error">Eroare la instalare</string>
+    <string name="file_create_error">Eroare la crearea fișierului</string>
+    <string name="dialog_enter_device_id_error">Acest ID nu este înregistrat la %s. Obțineți ID-ul din fila \"Dispozitive\" din panoul de control.</string>
+    <string name="dialog_enter_device_id_qrcode">Cod QR</string>
+    <string name="dialog_enter_device_id_variants">Variante</string>
+    <string name="dialog_enter_device_id_save">Salvare</string>
+    <string name="dialog_enter_device_id_exit">Ieșire</string>
+    <string name="dialog_enter_device_id_title">Introduceți ID-ul dispozitivului la %s</string>
+    <string name="main_start_preparations">Pregătire pentru pornire</string>
+    <string name="main_downloading_configuration">Actualizare fișier de configurare</string>
+    <string name="main_downloading_content">Actualizare date</string>
+    <string name="main_update_applications">Instalare și actualizare aplicații</string>
+    <string name="dialog_root_message">Aveți nevoie de acces ROOT</string>
+    <string name="main_application_start">Pornire aplicație</string>
+    <string name="main_app_installing">Instalare aplicație</string>
+    <string name="main_app_downloading">Descărcare aplicație</string>
+    <string name="main_app_downloading_error">Descărcarea pachetului a eșuat</string>
+    <string name="main_app_removing">Dezinstalare aplicație</string>
+    <string name="main_file_downloading">Descărcare fișier</string>
+    <string name="main_file_downloading_error">Descărcarea fișierului a eșuat</string>
+    <string name="main_activity_repeat">Reîncercați</string>
+    <string name="main_activity_reset">Resetare</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Anulare</string>
+    <string name="main_activity_details">Detalii</string>
+    <string name="select_system_launcher">Selectați %s ca lansator implicit și bifați \'Întotdeauna\':</string>
+    <string name="dialog_network_error_title">Eroare la conectarea la %s. Verificați conexiunea la internet și încercați din nou.</string>
+    <string name="main_activity_update_config">Solicitare fișier de configurare de la server</string>
+    <string name="main_activity_applications_update">Actualizare aplicații</string>
+    <string name="dialog_overlay_settings_title">Permiteți aplicației să deseneze peste alte ferestre.\n\nAceastă opțiune ajută la blocarea aplicațiilor nedorite și permite deblocarea de urgență a modului chioșc.\n\nApăsați \"Continuare\" pentru a deschide setările. Găsiți elementul \"%s\", acordați permisiunea, apoi apăsați \"Înapoi\".</string>
+    <string name="dialog_manage_storage_title">Permiteți aplicației să gestioneze stocarea.\n\nAceasta permite EduTab să gestioneze materialele de învățare pe tableta dumneavoastră.</string>
+    <string name="dialog_history_settings_title">Permiteți aplicației să acceseze datele de utilizare.\n\nAceastă opțiune permite controlul aplicațiilor și setărilor.\n\nAceastă opțiune poate cauza descărcarea mai rapidă a bateriei. Pentru a economisi bateria, săriți peste această opțiune (utilizați în schimb serviciile de accesibilitate sau modul chioșc).\n\nApăsați \"Continuare\" pentru a deschide setările. Găsiți elementul \"%s\", acordați permisiunea, apoi apăsați \"Înapoi\".</string>
+    <string name="dialog_history_settings_continue">Continuare</string>
+    <string name="dialog_history_settings_skip">Omitere</string>
+    <string name="dialog_unknown_sources_title">Permiteți instalarea din surse necunoscute. Se va deschide o foaie de setări. Găsiți \"Surse necunoscute\", permiteți instalarea și faceți clic pe \"Înapoi\".</string>
+    <string name="dialog_unknown_sources_continue">Continuare</string>
+    <string name="dialog_miui_permissions_title">MIUI necesită configurarea manuală a permisiunilor personalizate. Fereastra de permisiuni a aplicației se va deschide acum. Apăsați \"Alte permisiuni\", permiteți \"Afișare ferestre pop-up în timpul rulării în fundal\" și faceți clic pe \"Înapoi\".</string>
+    <string name="dialog_miui_developer_title">MIUI necesită configurarea manuală a dispozitivului. Pe ecranul de informații, APĂSAȚI DE 7 ORI PE \"NUMĂR VERSIUNE\". Aceasta va activa setările pentru dezvoltatori.</string>
+    <string name="dialog_miui_optimization_title">MIUI necesită configurarea manuală a dispozitivului. Fereastra setărilor pentru dezvoltatori se va deschide acum. Derulați în jos și debifați \"Optimizare MIUI\".</string>
+    <string name="dialog_administrator_mode_message">Permiteți aplicației să funcționeze în modul administrator dispozitiv. Se va deschide o foaie de setări. Selectați \"Administratori dispozitiv\", găsiți elementul \"%s\", activați administratorul și apăsați \"Înapoi\".</string>
+    <string name="dialog_administrator_mode_continue">Continuare</string>
+    <string name="dialog_administrator_mode_skip">Omitere</string>
+    <string name="accessibility_service_description">Mediu de învățare EduTab</string>
+    <string name="dialog_accessibility_service_message">Permiteți aplicației să utilizeze serviciile de accesibilitate. Se va deschide o foaie de setări. Găsiți elementul \"%s\", permiteți utilizarea serviciilor de accesibilitate și apăsați \"Înapoi\".</string>
+    <string name="dialog_accessibility_service_continue">Continuare</string>
+    <string name="dialog_accessibility_service_skip">Omitere</string>
+    <string name="access_to_app_denied">Pachetul nu este permis:</string>
+    <string name="access_to_app_denied_2">Rugați administratorul să activeze acest pachet în configurație.\n\nFaceți clic pe \'Închidere\' sau butonul Acasă pentru a continua.</string>
+    <string name="package_id_copied">ID-ul pachetului a fost copiat în clipboard</string>
+    <string name="dialog_app_not_allowed_close">Închidere</string>
+    <string name="dialog_app_not_allowed_admin">Administrator</string>
+    <string name="device_id">ID dispozitiv</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Număr de serie</string>
+    <string name="phone_number">Număr de telefon</string>
+    <string name="launcher_version">Versiune lansator</string>
+    <string name="close">Închidere</string>
+    <string name="admin_change_device_id">Schimbare ID dispozitiv</string>
+    <string name="admin_change_server_url">Schimbare URL server</string>
+    <string name="admin_allow_settings">Deschidere setări</string>
+    <string name="settings_allowed">Puteți modifica setările timp de 3 minute.</string>
+    <string name="admin_clear_restrictions">Eliminare restricții</string>
+    <string name="permissive_mode_enabled">Puteți rula toate aplicațiile timp de 3 minute.</string>
+    <string name="admin_refresh">Actualizare configurație</string>
+    <string name="admin_exit">Ieșire la lansatorul de sistem</string>
+    <string name="admin_reset_permissions">Verificare permisiuni</string>
+    <string name="admin_reset_network">Resetare politică de rețea</string>
+    <string name="admin_reset_network_hint">Politicile de rețea au fost șterse. Acum puteți activa rețeaua și reîncărca configurația.</string>
+    <string name="reboot">Repornire dispozitiv</string>
+    <string name="reboot_failed">Drepturi insuficiente pentru repornirea dispozitivului.</string>
+    <string name="message_turn_on_gps">Se va deschide ecranul de setări. Activați locația GPS pe acest ecran și faceți clic pe Înapoi.</string>
+    <string name="message_turn_off_gps">Se va deschide ecranul de setări. DEZACTIVAȚI locația GPS pe acest ecran și faceți clic pe Înapoi.</string>
+    <string name="message_turn_on_mobile_data">Datele mobile sunt dezactivate! Deschideți bara de stare și activați datele mobile.</string>
+    <string name="message_turn_off_mobile_data">Datele mobile sunt activate. Deschideți bara de stare și DEZACTIVAȚI datele mobile.</string>
+    <string name="message_set_password">Calitatea parolei nu este suficient de bună. Se va deschide ecranul de setări. Schimbați parola și faceți clic pe Înapoi.</string>
+    <string name="switch_off_blockings">Dezactivare restricții...</string>
+    <string name="kiosk_mode_requires_overlays">Modul chioșc dezactivat: fără permisiune de a desena peste alte ferestre. Permiteți %s să deseneze peste alte ferestre.</string>
+    <string name="enter_admin_password">Introduceți parola de administrator</string>
+    <string name="wrong_password">Parolă greșită</string>
+    <string name="dialog_enter_password_login">Autentificare</string>
+    <string name="dialog_enter_password_cancel">Anulare</string>
+    <string name="internal_error">Aplicația a întâmpinat o eroare internă. Reporniți dispozitivul și reîncercați acțiunea.</string>
+    <string name="empty_configuration">Configurația nu este setată, se reîncearcă obținerea de la server!</string>
+    <string name="permissions_reset_hint">Închideți panoul de administrare pentru a verifica și solicita permisiuni.</string>
+    <string name="dialog_enter_server_error">Introduceți un URL de server valid.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Introduceți URL-ul serverului</string>
+    <string name="critical_server_failure">Problemă de conexiune! Reporniți %s sau contactați școala.</string>
+    <string name="dialog_permission_title">Aplicația necesită permisiuni pentru a funcționa. Acordați permisiunile solicitate.</string>
+    <string name="main_activity_exit">Ieșire</string>
+    <string name="browser_not_found">Nu se poate deschide pagina web deoarece browserul nu a fost găsit. Adăugați o aplicație de browser în configurația dispozitivului.</string>
+    <string name="invalid_web_link">Nu se poate deschide linkul web deoarece este malformat. Contactați administratorul pentru detalii.</string>
+    <string name="activity_not_found">Nu se poate efectua acțiunea %s deoarece activitatea nu a fost găsită.</string>
+    <string name="location_service_text">Locația dispozitivului este monitorizată</string>
+    <string name="qrcode_contents_error">Conținut cod QR invalid. Generați codul QR de aprovizionare în panoul web %s.</string>
+    <string name="device_locked">Această tabletă (%s) a fost blocată de școala dumneavoastră.</string>
+    <string name="fault_loop_detected">Ups, ceva nu a funcționat! Reporniți tableta sau cereți ajutor profesorului.</string>
+    <string name="mqtt_service_text">Notificările push sunt active</string>
+    <string name="background_location">%s necesită permisiune de locație în fundal. Faceți clic pe \'Continuare\' pentru a deschide permisiunile, faceți clic pe \'Locație\' și permiteți determinarea locației întotdeauna.</string>
+    <string name="location_disable">Dezactivare locație</string>
+    <string name="background_location_continue">Continuare</string>
+    <string name="initializing_mdm">Configurarea tabletei de învățare...</string>
+    <string name="dialog_server_error_title">Serverul MDM %s a returnat un răspuns invalid. Contactați administratorul.</string>
+    <string name="mdm_choice_message">Această tabletă va fi configurată și pregătită de școala dumneavoastră.</string>
+    <string name="work_profile_message">Această tabletă va primi un profil școlar pentru aplicațiile de învățare. Puteți comuta între profilul școlar și cel personal oricând.</string>
+    <string name="overlays_not_supported">Din păcate, suprapunerile nu sunt suportate de dispozitivul dumneavoastră.</string>
+    <string name="admin_not_supported">Dispozitivul dumneavoastră nu are opțiunea de administrator dispozitiv. Faceți clic pe Omitere pentru a continua.</string>
+    <string name="manage_storage_not_supported">Dispozitivul dumneavoastră nu are opțiunea de gestionare a stocării externe.</string>
+    <string name="certificate_install_failed">Instalarea certificatului %1$s a eșuat: %2$s</string>
+</resources>

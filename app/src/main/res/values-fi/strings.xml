@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Ylläpitäjä</string>
+    <string name="install_error">Asennusvirhe</string>
+    <string name="file_create_error">Virhe tiedoston luomisessa</string>
+    <string name="dialog_enter_device_id_error">Tätä tunnusta ei ole rekisteröity osoitteessa %s. Hae tunnus hallintapaneelin \"Laitteet\"-välilehdeltä.</string>
+    <string name="dialog_enter_device_id_qrcode">QR-koodi</string>
+    <string name="dialog_enter_device_id_variants">Variantit</string>
+    <string name="dialog_enter_device_id_save">Tallenna</string>
+    <string name="dialog_enter_device_id_exit">Poistu</string>
+    <string name="dialog_enter_device_id_title">Syötä laitetunnus osoitteessa %s</string>
+    <string name="main_start_preparations">Valmistellaan käynnistystä</string>
+    <string name="main_downloading_configuration">Päivitetään asetustiedostoa</string>
+    <string name="main_downloading_content">Päivitetään tietoja</string>
+    <string name="main_update_applications">Asennetaan ja päivitetään sovelluksia</string>
+    <string name="dialog_root_message">Tarvitset ROOT-oikeudet</string>
+    <string name="main_application_start">Käynnistetään sovellusta</string>
+    <string name="main_app_installing">Asennetaan sovellusta</string>
+    <string name="main_app_downloading">Ladataan sovellusta</string>
+    <string name="main_app_downloading_error">Paketin lataus epäonnistui</string>
+    <string name="main_app_removing">Poistetaan sovellusta</string>
+    <string name="main_file_downloading">Ladataan tiedostoa</string>
+    <string name="main_file_downloading_error">Tiedoston lataus epäonnistui</string>
+    <string name="main_activity_repeat">Yritä uudelleen</string>
+    <string name="main_activity_reset">Palauta</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Peruuta</string>
+    <string name="main_activity_details">Tiedot</string>
+    <string name="select_system_launcher">Valitse %s oletuskäynnistimeksi ja valitse \'Aina\':</string>
+    <string name="dialog_network_error_title">Virhe yhdistettäessä palvelimeen %s. Tarkista internetyhteys ja yritä uudelleen.</string>
+    <string name="main_activity_update_config">Pyydetään asetustiedostoa palvelimelta</string>
+    <string name="main_activity_applications_update">Päivitetään sovelluksia</string>
+    <string name="dialog_overlay_settings_title">Salli sovelluksen piirtää muiden ikkunoiden päälle.\n\nTämä vaihtoehto auttaa estämään ei-toivottuja sovelluksia ja mahdollistaa kioskitilan hätäavauksen.\n\nNapauta \"Jatka\" avataksesi asetukset. Etsi kohde \"%s\", myönnä lupa ja napauta \"Takaisin\".</string>
+    <string name="dialog_manage_storage_title">Salli sovelluksen hallita tallennustilaa.\n\nTämä mahdollistaa EduTabin oppimateriaalien hallinnan tabletillasi.</string>
+    <string name="dialog_history_settings_title">Salli sovelluksen käyttää käyttötietoja.\n\nTämä vaihtoehto mahdollistaa sovellusten ja asetusten hallinnan.\n\nTämä vaihtoehto saattaa kuluttaa akkua nopeammin. Säästääksesi akkua, ohita tämä vaihtoehto (käytä sen sijaan esteettömyyspalveluita tai kioskitilaa).\n\nNapauta \"Jatka\" avataksesi asetukset. Etsi kohde \"%s\", myönnä lupa ja napauta \"Takaisin\".</string>
+    <string name="dialog_history_settings_continue">Jatka</string>
+    <string name="dialog_history_settings_skip">Ohita</string>
+    <string name="dialog_unknown_sources_title">Salli asennus tuntemattomista lähteistä. Asetusikkuna avautuu nyt. Etsi \"Tuntemattomat lähteet\", salli asennus ja klikkaa \"Takaisin\".</string>
+    <string name="dialog_unknown_sources_continue">Jatka</string>
+    <string name="dialog_miui_permissions_title">MIUI vaatii mukautettujen oikeuksien manuaalisen määrityksen. Sovellusoikeusikkuna avautuu nyt. Napauta \"Muut oikeudet\", salli \"Näytä ponnahdusikkunat taustalla\" ja klikkaa \"Takaisin\".</string>
+    <string name="dialog_miui_developer_title">MIUI vaatii laitteesi manuaalisen määrityksen. Napauta tietoruudussa 7 KERTAA \"KOONTINUMERO\". Tämä aktivoi kehittäjäasetukset.</string>
+    <string name="dialog_miui_optimization_title">MIUI vaatii laitteesi manuaalisen määrityksen. Kehittäjäasetusikkuna avautuu nyt. Vieritä alas ja poista valinta kohdasta \"MIUI-optimointi\".</string>
+    <string name="dialog_administrator_mode_message">Salli sovelluksen toimia laitteen ylläpitäjätilassa. Asetusikkuna avautuu nyt. Valitse \"Laitteen ylläpitäjät\", etsi kohde \"%s\", aktivoi ylläpitäjä ja napauta \"Takaisin\".</string>
+    <string name="dialog_administrator_mode_continue">Jatka</string>
+    <string name="dialog_administrator_mode_skip">Ohita</string>
+    <string name="accessibility_service_description">EduTab oppimisympäristö</string>
+    <string name="dialog_accessibility_service_message">Salli sovelluksen käyttää esteettömyyspalveluita. Asetusikkuna avautuu nyt. Etsi kohde \"%s\", salli esteettömyyspalveluiden käyttö ja napauta \"Takaisin\".</string>
+    <string name="dialog_accessibility_service_continue">Jatka</string>
+    <string name="dialog_accessibility_service_skip">Ohita</string>
+    <string name="access_to_app_denied">Paketti ei ole sallittu:</string>
+    <string name="access_to_app_denied_2">Pyydä ylläpitäjääsi ottamaan tämä paketti käyttöön asetuksissa.\n\nKlikkaa \'Sulje\' tai Koti-painiketta jatkaaksesi.</string>
+    <string name="package_id_copied">Paketin tunnus kopioitu leikepöydälle</string>
+    <string name="dialog_app_not_allowed_close">Sulje</string>
+    <string name="dialog_app_not_allowed_admin">Ylläpitäjä</string>
+    <string name="device_id">Laitetunnus</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Sarjanumero</string>
+    <string name="phone_number">Puhelinnumero</string>
+    <string name="launcher_version">Käynnistimen versio</string>
+    <string name="close">Sulje</string>
+    <string name="admin_change_device_id">Vaihda laitetunnus</string>
+    <string name="admin_change_server_url">Vaihda palvelimen URL</string>
+    <string name="admin_allow_settings">Avaa asetukset</string>
+    <string name="settings_allowed">Voit muuttaa asetuksia 3 minuutin ajan.</string>
+    <string name="admin_clear_restrictions">Poista rajoitukset</string>
+    <string name="permissive_mode_enabled">Voit suorittaa kaikkia sovelluksia 3 minuutin ajan.</string>
+    <string name="admin_refresh">Päivitä asetukset</string>
+    <string name="admin_exit">Poistu järjestelmäkäynnistimeen</string>
+    <string name="admin_reset_permissions">Tarkista oikeudet</string>
+    <string name="admin_reset_network">Palauta verkkokäytäntö</string>
+    <string name="admin_reset_network_hint">Verkkokäytännöt on tyhjennetty. Voit nyt ottaa verkon käyttöön ja ladata asetukset uudelleen.</string>
+    <string name="reboot">Käynnistä laite uudelleen</string>
+    <string name="reboot_failed">Riittämättömät oikeudet laitteen uudelleenkäynnistykseen.</string>
+    <string name="message_turn_on_gps">Asetusruutu avautuu. Ota GPS-paikannus käyttöön tässä ruudussa ja klikkaa Takaisin.</string>
+    <string name="message_turn_off_gps">Asetusruutu avautuu. POISTA GPS-paikannus käytöstä tässä ruudussa ja klikkaa Takaisin.</string>
+    <string name="message_turn_on_mobile_data">Mobiilidata on pois käytöstä! Avaa tilapalkki ja ota mobiilidata käyttöön.</string>
+    <string name="message_turn_off_mobile_data">Mobiilidata on käytössä. Avaa tilapalkki ja POISTA mobiilidata käytöstä.</string>
+    <string name="message_set_password">Salasanasi laatu ei ole tarpeeksi hyvä. Asetusruutu avautuu. Vaihda salasana ja klikkaa Takaisin.</string>
+    <string name="switch_off_blockings">Poistetaan rajoituksia käytöstä...</string>
+    <string name="kiosk_mode_requires_overlays">Kioskitila poistettu käytöstä: ei oikeutta piirtää muiden ikkunoiden päälle. Salli %s piirtää muiden ikkunoiden päälle.</string>
+    <string name="enter_admin_password">Syötä ylläpitäjän salasana</string>
+    <string name="wrong_password">Väärä salasana</string>
+    <string name="dialog_enter_password_login">Kirjaudu</string>
+    <string name="dialog_enter_password_cancel">Peruuta</string>
+    <string name="internal_error">Sovelluksessa tapahtui sisäinen virhe. Käynnistä laite uudelleen ja yritä toimintoa uudelleen.</string>
+    <string name="empty_configuration">Asetuksia ei ole määritetty, yritetään hakea palvelimelta!</string>
+    <string name="permissions_reset_hint">Sulje ylläpitopaneeli tarkistaaksesi ja pyytääksesi oikeuksia.</string>
+    <string name="dialog_enter_server_error">Syötä kelvollinen palvelimen URL.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Syötä palvelimen URL</string>
+    <string name="critical_server_failure">Yhteysongelma! Käynnistä %s uudelleen tai ota yhteyttä kouluusi.</string>
+    <string name="dialog_permission_title">Sovellus vaatii oikeuksia toimiakseen. Myönnä pyydetyt oikeudet.</string>
+    <string name="main_activity_exit">Poistu</string>
+    <string name="browser_not_found">Verkkosivua ei voi avata, koska selainta ei löydy. Lisää selain laitteen asetuksiin.</string>
+    <string name="invalid_web_link">Verkkolinkkiä ei voi avata, koska se on virheellinen. Ota yhteyttä ylläpitäjääsi lisätietoja varten.</string>
+    <string name="activity_not_found">Toimintoa %s ei voi suorittaa, koska aktiviteettia ei löydy.</string>
+    <string name="location_service_text">Laitteen sijaintia seurataan</string>
+    <string name="qrcode_contents_error">Virheellinen QR-koodin sisältö. Luo valmisteluun tarkoitettu QR-koodi %s-verkkopaneelissa.</string>
+    <string name="device_locked">Tämä tabletti (%s) on lukittu koulusi toimesta.</string>
+    <string name="fault_loop_detected">Hups, jotain meni pieleen! Käynnistä tabletti uudelleen tai pyydä apua opettajaltasi.</string>
+    <string name="mqtt_service_text">Push-ilmoitukset ovat aktiivisia</string>
+    <string name="background_location">%s vaatii taustapaikannusoikeuden. Klikkaa \'Jatka\' avataksesi oikeudet, klikkaa \'Sijainti\' ja salli sijainnin määritys aina.</string>
+    <string name="location_disable">Poista sijainti käytöstä</string>
+    <string name="background_location_continue">Jatka</string>
+    <string name="initializing_mdm">Asetetaan oppimistablettiasi...</string>
+    <string name="dialog_server_error_title">MDM-palvelin %s palautti virheellisen vastauksen. Ota yhteyttä ylläpitäjääsi.</string>
+    <string name="mdm_choice_message">Tämä tabletti asetetaan ja valmistellaan koulusi toimesta.</string>
+    <string name="work_profile_message">Tämä tabletti saa kouluprofiiilin oppimissovelluksille. Voit vaihtaa koulu- ja henkilökohtaisten profiilien välillä milloin tahansa.</string>
+    <string name="overlays_not_supported">Valitettavasti laitteesi ei tue päällyskerroksia.</string>
+    <string name="admin_not_supported">Laitteessasi ei ole laitteen ylläpitäjä -vaihtoehtoa. Klikkaa Ohita jatkaaksesi.</string>
+    <string name="manage_storage_not_supported">Laitteessasi ei ole vaihtoehtoa ulkoisen tallennustilan hallintaan.</string>
+    <string name="certificate_install_failed">Varmenteen %1$s asennus epäonnistui: %2$s</string>
+</resources>

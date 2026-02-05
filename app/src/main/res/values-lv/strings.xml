@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administrators</string>
+    <string name="install_error">Instalēšanas kļūda</string>
+    <string name="file_create_error">Faila izveides kļūda</string>
+    <string name="dialog_enter_device_id_error">Šis ID nav reģistrēts %s. Iegūstiet ID no vadības paneļa cilnes \"Ierīces\".</string>
+    <string name="dialog_enter_device_id_qrcode">QR kods</string>
+    <string name="dialog_enter_device_id_variants">Varianti</string>
+    <string name="dialog_enter_device_id_save">Saglabāt</string>
+    <string name="dialog_enter_device_id_exit">Iziet</string>
+    <string name="dialog_enter_device_id_title">Ievadiet ierīces ID adresē %s</string>
+    <string name="main_start_preparations">Gatavošanās palaišanai</string>
+    <string name="main_downloading_configuration">Konfigurācijas faila atjaunināšana</string>
+    <string name="main_downloading_content">Datu atjaunināšana</string>
+    <string name="main_update_applications">Lietotņu instalēšana un atjaunināšana</string>
+    <string name="dialog_root_message">Jums nepieciešama ROOT piekļuve</string>
+    <string name="main_application_start">Lietotnes palaišana</string>
+    <string name="main_app_installing">Lietotnes instalēšana</string>
+    <string name="main_app_downloading">Lietotnes lejupielāde</string>
+    <string name="main_app_downloading_error">Neizdevās lejupielādēt pakotni</string>
+    <string name="main_app_removing">Lietotnes atinstalēšana</string>
+    <string name="main_file_downloading">Faila lejupielāde</string>
+    <string name="main_file_downloading_error">Neizdevās lejupielādēt failu</string>
+    <string name="main_activity_repeat">Mēģināt vēlreiz</string>
+    <string name="main_activity_reset">Atiestatīt</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Atcelt</string>
+    <string name="main_activity_details">Detaļas</string>
+    <string name="select_system_launcher">Izvēlieties %s kā noklusējuma palaidēju un atzīmējiet \'Vienmēr\':</string>
+    <string name="dialog_network_error_title">Kļūda savienojot ar %s. Lūdzu, pārbaudiet interneta savienojumu un mēģiniet vēlreiz.</string>
+    <string name="main_activity_update_config">Konfigurācijas faila pieprasīšana no servera</string>
+    <string name="main_activity_applications_update">Lietotņu atjaunināšana</string>
+    <string name="dialog_overlay_settings_title">Atļaujiet lietotnei zīmēt virs citiem logiem.\n\nŠī opcija palīdz bloķēt nevēlamas lietotnes un iespējo kioska režīma ārkārtas atbloķēšanu.\n\nPieskarieties \"Turpināt\", lai atvērtu iestatījumus. Atrodiet vienumu \"%s\", piešķiriet atļauju un pieskarieties \"Atpakaļ\".</string>
+    <string name="dialog_manage_storage_title">Atļaujiet lietotnei pārvaldīt krātuvi.\n\nTas ļauj EduTab pārvaldīt mācību materiālus jūsu planšetdatorā.</string>
+    <string name="dialog_history_settings_title">Atļaujiet lietotnei piekļūt lietošanas datiem.\n\nŠī opcija iespējo lietotņu un iestatījumu kontroli.\n\nŠī opcija var izraisīt ātrāku akumulatora iztukšošanos. Lai taupītu akumulatoru, izlaidiet šo opciju (tā vietā izmantojiet pieejamības pakalpojumus vai kioska režīmu).\n\nPieskarieties \"Turpināt\", lai atvērtu iestatījumus. Atrodiet vienumu \"%s\", piešķiriet atļauju un pieskarieties \"Atpakaļ\".</string>
+    <string name="dialog_history_settings_continue">Turpināt</string>
+    <string name="dialog_history_settings_skip">Izlaist</string>
+    <string name="dialog_unknown_sources_title">Atļaujiet instalēšanu no nezināmiem avotiem. Tagad atvērsies iestatījumu lapa. Atrodiet \"Nezināmi avoti\", atļaujiet instalēšanu un noklikšķiniet \"Atpakaļ\".</string>
+    <string name="dialog_unknown_sources_continue">Turpināt</string>
+    <string name="dialog_miui_permissions_title">MIUI pieprasa pielāgotu atļauju manuālu iestatīšanu. Tagad atvērsies lietotnes atļauju logs. Pieskarieties \"Citas atļaujas\", atļaujiet \"Rādīt uznirstošos logus, darbojoties fonā\" un noklikšķiniet \"Atpakaļ\".</string>
+    <string name="dialog_miui_developer_title">MIUI pieprasa jūsu ierīces manuālu iestatīšanu. Informācijas ekrānā 7 REIZES PIESKARIETIES \"VERSIJAS NUMURAM\". Tas iespējos izstrādātāja iestatījumus.</string>
+    <string name="dialog_miui_optimization_title">MIUI pieprasa jūsu ierīces manuālu iestatīšanu. Tagad atvērsies izstrādātāja iestatījumu logs. Ritiniet uz leju un noņemiet atzīmi \"MIUI optimizācija\".</string>
+    <string name="dialog_administrator_mode_message">Atļaujiet lietotnei darboties ierīces administratora režīmā. Tagad atvērsies iestatījumu lapa. Izvēlieties \"Ierīces administratori\", atrodiet vienumu \"%s\", aktivizējiet administratoru un pieskarieties \"Atpakaļ\".</string>
+    <string name="dialog_administrator_mode_continue">Turpināt</string>
+    <string name="dialog_administrator_mode_skip">Izlaist</string>
+    <string name="accessibility_service_description">EduTab mācību vide</string>
+    <string name="dialog_accessibility_service_message">Atļaujiet lietotnei izmantot pieejamības pakalpojumus. Tagad atvērsies iestatījumu lapa. Atrodiet vienumu \"%s\", atļaujiet pieejamības pakalpojumu izmantošanu un pieskarieties \"Atpakaļ\".</string>
+    <string name="dialog_accessibility_service_continue">Turpināt</string>
+    <string name="dialog_accessibility_service_skip">Izlaist</string>
+    <string name="access_to_app_denied">Pakotne nav atļauta:</string>
+    <string name="access_to_app_denied_2">Lūdziet administratoram iespējot šo pakotni konfigurācijā.\n\nNoklikšķiniet \'Aizvērt\' vai pogu Sākums, lai turpinātu.</string>
+    <string name="package_id_copied">Pakotnes ID ir kopēts starpliktuvē</string>
+    <string name="dialog_app_not_allowed_close">Aizvērt</string>
+    <string name="dialog_app_not_allowed_admin">Administrators</string>
+    <string name="device_id">Ierīces ID</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Sērijas numurs</string>
+    <string name="phone_number">Tālruņa numurs</string>
+    <string name="launcher_version">Palaidēja versija</string>
+    <string name="close">Aizvērt</string>
+    <string name="admin_change_device_id">Mainīt ierīces ID</string>
+    <string name="admin_change_server_url">Mainīt servera URL</string>
+    <string name="admin_allow_settings">Atvērt iestatījumus</string>
+    <string name="settings_allowed">Jūs varat mainīt iestatījumus 3 minūtes.</string>
+    <string name="admin_clear_restrictions">Noņemt ierobežojumus</string>
+    <string name="permissive_mode_enabled">Jūs varat palaist visas lietotnes 3 minūtes.</string>
+    <string name="admin_refresh">Atjaunināt konfigurāciju</string>
+    <string name="admin_exit">Iziet uz sistēmas palaidēju</string>
+    <string name="admin_reset_permissions">Pārbaudīt atļaujas</string>
+    <string name="admin_reset_network">Atiestatīt tīkla politiku</string>
+    <string name="admin_reset_network_hint">Tīkla politikas ir notīrītas. Tagad varat iespējot tīklu un atkārtoti ielādēt konfigurāciju.</string>
+    <string name="reboot">Restartēt ierīci</string>
+    <string name="reboot_failed">Nepietiek tiesību, lai restartētu ierīci.</string>
+    <string name="message_turn_on_gps">Atvērsies iestatījumu ekrāns. Lūdzu, ieslēdziet GPS atrašanās vietu šajā ekrānā un noklikšķiniet Atpakaļ.</string>
+    <string name="message_turn_off_gps">Atvērsies iestatījumu ekrāns. Lūdzu, IZSLĒDZIET GPS atrašanās vietu šajā ekrānā un noklikšķiniet Atpakaļ.</string>
+    <string name="message_turn_on_mobile_data">Mobilie dati ir atspējoti! Atveriet statusa joslu un ieslēdziet mobilos datus.</string>
+    <string name="message_turn_off_mobile_data">Mobilie dati ir iespējoti. Atveriet statusa joslu un IZSLĒDZIET mobilos datus.</string>
+    <string name="message_set_password">Jūsu paroles kvalitāte nav pietiekami laba. Atvērsies iestatījumu ekrāns. Mainiet paroli un noklikšķiniet Atpakaļ.</string>
+    <string name="switch_off_blockings">Ierobežojumu izslēgšana...</string>
+    <string name="kiosk_mode_requires_overlays">Kioska režīms atspējots: nav atļaujas zīmēt virs citiem logiem. Atļaujiet %s zīmēt virs citiem logiem.</string>
+    <string name="enter_admin_password">Ievadiet administratora paroli</string>
+    <string name="wrong_password">Nepareiza parole</string>
+    <string name="dialog_enter_password_login">Pieteikties</string>
+    <string name="dialog_enter_password_cancel">Atcelt</string>
+    <string name="internal_error">Lietotnē radās iekšēja kļūda. Lūdzu, restartējiet ierīci un mēģiniet darbību vēlreiz.</string>
+    <string name="empty_configuration">Konfigurācija nav iestatīta, mēģinu iegūt no servera!</string>
+    <string name="permissions_reset_hint">Aizveriet administrēšanas paneli, lai pārbaudītu un pieprasītu atļaujas.</string>
+    <string name="dialog_enter_server_error">Lūdzu, ievadiet derīgu servera URL.</string>
+    <string name="dialog_enter_server_ok">Labi</string>
+    <string name="dialog_enter_server_title">Ievadiet servera URL</string>
+    <string name="critical_server_failure">Savienojuma problēma! Restartējiet %s vai sazinieties ar savu skolu.</string>
+    <string name="dialog_permission_title">Lietotnei nepieciešamas atļaujas darbībai. Lūdzu, piešķiriet pieprasītās atļaujas.</string>
+    <string name="main_activity_exit">Iziet</string>
+    <string name="browser_not_found">Nevar atvērt tīmekļa lapu, jo pārlūks nav atrasts. Lūdzu, pievienojiet pārlūka lietotni ierīces konfigurācijai.</string>
+    <string name="invalid_web_link">Nevar atvērt tīmekļa saiti, jo tā nav pareizi formatēta. Sazinieties ar administratoru, lai iegūtu detaļas.</string>
+    <string name="activity_not_found">Nevar izpildīt darbību %s, jo aktivitāte nav atrasta.</string>
+    <string name="location_service_text">Ierīces atrašanās vieta tiek uzraudzīta</string>
+    <string name="qrcode_contents_error">Nederīgs QR koda saturs. Lūdzu, ģenerējiet nodrošināšanas QR kodu %s tīmekļa panelī.</string>
+    <string name="device_locked">Šo planšetdatoru (%s) ir bloķējusi jūsu skola.</string>
+    <string name="fault_loop_detected">Ups, kaut kas nogāja greizi! Restartējiet planšetdatoru vai lūdziet skolotāja palīdzību.</string>
+    <string name="mqtt_service_text">Push paziņojumi ir aktīvi</string>
+    <string name="background_location">%s pieprasa fona atrašanās vietas atļauju. Noklikšķiniet \'Turpināt\', lai atvērtu atļaujas, noklikšķiniet \'Atrašanās vieta\' un atļaujiet vienmēr noteikt atrašanās vietu.</string>
+    <string name="location_disable">Atspējot atrašanās vietu</string>
+    <string name="background_location_continue">Turpināt</string>
+    <string name="initializing_mdm">Jūsu mācību planšetdatora iestatīšana...</string>
+    <string name="dialog_server_error_title">MDM serveris %s atgrieza nederīgu atbildi. Sazinieties ar administratoru.</string>
+    <string name="mdm_choice_message">Šo planšetdatoru iestatīs un sagatavos jūsu skola.</string>
+    <string name="work_profile_message">Šis planšetdators saņems skolas profilu mācību lietotnēm. Jūs varat jebkurā laikā pārslēgties starp skolas un personīgo profilu.</string>
+    <string name="overlays_not_supported">Diemžēl jūsu ierīce neatbalsta pārklājumus.</string>
+    <string name="admin_not_supported">Jūsu ierīcei nav ierīces administratora opcijas. Noklikšķiniet Izlaist, lai turpinātu.</string>
+    <string name="manage_storage_not_supported">Jūsu ierīcei nav opcijas ārējās krātuves pārvaldībai.</string>
+    <string name="certificate_install_failed">Neizdevās instalēt sertifikātu %1$s: %2$s</string>
+</resources>

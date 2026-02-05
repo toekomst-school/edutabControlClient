@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administrator</string>
+    <string name="install_error">Greška pri instalaciji</string>
+    <string name="file_create_error">Greška pri stvaranju datoteke</string>
+    <string name="dialog_enter_device_id_error">Ovaj ID nije registriran na %s. Dohvatite ID iz kartice \"Uređaji\" na upravljačkoj ploči.</string>
+    <string name="dialog_enter_device_id_qrcode">QR kod</string>
+    <string name="dialog_enter_device_id_variants">Varijante</string>
+    <string name="dialog_enter_device_id_save">Spremi</string>
+    <string name="dialog_enter_device_id_exit">Izlaz</string>
+    <string name="dialog_enter_device_id_title">Unesite ID uređaja na %s</string>
+    <string name="main_start_preparations">Priprema za pokretanje</string>
+    <string name="main_downloading_configuration">Ažuriranje konfiguracijske datoteke</string>
+    <string name="main_downloading_content">Ažuriranje podataka</string>
+    <string name="main_update_applications">Instaliranje i ažuriranje aplikacija</string>
+    <string name="dialog_root_message">Potreban je ROOT pristup</string>
+    <string name="main_application_start">Pokretanje aplikacije</string>
+    <string name="main_app_installing">Instaliranje aplikacije</string>
+    <string name="main_app_downloading">Preuzimanje aplikacije</string>
+    <string name="main_app_downloading_error">Preuzimanje paketa nije uspjelo</string>
+    <string name="main_app_removing">Deinstaliranje aplikacije</string>
+    <string name="main_file_downloading">Preuzimanje datoteke</string>
+    <string name="main_file_downloading_error">Preuzimanje datoteke nije uspjelo</string>
+    <string name="main_activity_repeat">Pokušaj ponovo</string>
+    <string name="main_activity_reset">Resetiraj</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Odustani</string>
+    <string name="main_activity_details">Detalji</string>
+    <string name="select_system_launcher">Odaberite %s kao zadani pokretač i označite \'Uvijek\':</string>
+    <string name="dialog_network_error_title">Greška pri povezivanju s %s. Provjerite internetsku vezu i pokušajte ponovo.</string>
+    <string name="main_activity_update_config">Zahtjev za konfiguracijsku datoteku s poslužitelja</string>
+    <string name="main_activity_applications_update">Ažuriranje aplikacija</string>
+    <string name="dialog_overlay_settings_title">Dopustite aplikaciji crtanje preko drugih prozora.\n\nOva opcija pomaže blokirati neželjene aplikacije i omogućuje hitno otključavanje kiosk načina.\n\nDodirnite \"Nastavi\" za otvaranje postavki. Pronađite stavku \"%s\", odobrite dozvolu i dodirnite \"Natrag\".</string>
+    <string name="dialog_manage_storage_title">Dopustite aplikaciji upravljanje pohranom.\n\nOvo omogućuje EduTab upravljanje nastavnim materijalima na vašem tabletu.</string>
+    <string name="dialog_history_settings_title">Dopustite aplikaciji pristup podacima o korištenju.\n\nOva opcija omogućuje kontrolu aplikacija i postavki.\n\nOva opcija može uzrokovati brže pražnjenje baterije. Za uštedu baterije, preskočite ovu opciju (umjesto toga koristite usluge pristupačnosti ili kiosk način).\n\nDodirnite \"Nastavi\" za otvaranje postavki. Pronađite stavku \"%s\", odobrite dozvolu i dodirnite \"Natrag\".</string>
+    <string name="dialog_history_settings_continue">Nastavi</string>
+    <string name="dialog_history_settings_skip">Preskoči</string>
+    <string name="dialog_unknown_sources_title">Dopustite instalaciju iz nepoznatih izvora. Sada će se otvoriti stranica postavki. Pronađite \"Nepoznati izvori\", dopustite instalaciju i kliknite \"Natrag\".</string>
+    <string name="dialog_unknown_sources_continue">Nastavi</string>
+    <string name="dialog_miui_permissions_title">MIUI zahtijeva ručno postavljanje prilagođenih dozvola. Sada će se otvoriti prozor dozvola aplikacije. Dodirnite \"Ostale dozvole\", dopustite \"Prikaži skočne prozore dok radi u pozadini\" i kliknite \"Natrag\".</string>
+    <string name="dialog_miui_developer_title">MIUI zahtijeva ručno postavljanje vašeg uređaja. Na informacijskom zaslonu, DODIRNITE 7 PUTA \"BROJ VERZIJE\". To će omogućiti razvojne postavke.</string>
+    <string name="dialog_miui_optimization_title">MIUI zahtijeva ručno postavljanje vašeg uređaja. Sada će se otvoriti prozor razvojnih postavki. Pomaknite se prema dolje i odznačite \"MIUI optimizacija\".</string>
+    <string name="dialog_administrator_mode_message">Dopustite aplikaciji rad u načinu administratora uređaja. Sada će se otvoriti stranica postavki. Odaberite \"Administratori uređaja\", pronađite stavku \"%s\", aktivirajte administratora i dodirnite \"Natrag\".</string>
+    <string name="dialog_administrator_mode_continue">Nastavi</string>
+    <string name="dialog_administrator_mode_skip">Preskoči</string>
+    <string name="accessibility_service_description">EduTab okruženje za učenje</string>
+    <string name="dialog_accessibility_service_message">Dopustite aplikaciji korištenje usluga pristupačnosti. Sada će se otvoriti stranica postavki. Pronađite stavku \"%s\", dopustite korištenje usluga pristupačnosti i dodirnite \"Natrag\".</string>
+    <string name="dialog_accessibility_service_continue">Nastavi</string>
+    <string name="dialog_accessibility_service_skip">Preskoči</string>
+    <string name="access_to_app_denied">Paket nije dopušten:</string>
+    <string name="access_to_app_denied_2">Zatražite od administratora da omogući ovaj paket u konfiguraciji.\n\nKliknite \'Zatvori\' ili tipku Početna za nastavak.</string>
+    <string name="package_id_copied">ID paketa je kopiran u međuspremnik</string>
+    <string name="dialog_app_not_allowed_close">Zatvori</string>
+    <string name="dialog_app_not_allowed_admin">Administrator</string>
+    <string name="device_id">ID uređaja</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Serijski broj</string>
+    <string name="phone_number">Telefonski broj</string>
+    <string name="launcher_version">Verzija pokretača</string>
+    <string name="close">Zatvori</string>
+    <string name="admin_change_device_id">Promijeni ID uređaja</string>
+    <string name="admin_change_server_url">Promijeni URL poslužitelja</string>
+    <string name="admin_allow_settings">Otvori postavke</string>
+    <string name="settings_allowed">Možete mijenjati postavke 3 minute.</string>
+    <string name="admin_clear_restrictions">Ukloni ograničenja</string>
+    <string name="permissive_mode_enabled">Možete pokretati sve aplikacije 3 minute.</string>
+    <string name="admin_refresh">Ažuriraj konfiguraciju</string>
+    <string name="admin_exit">Izađi u sistemski pokretač</string>
+    <string name="admin_reset_permissions">Provjeri dozvole</string>
+    <string name="admin_reset_network">Resetiraj mrežnu politiku</string>
+    <string name="admin_reset_network_hint">Mrežne politike su obrisane. Sada možete omogućiti mrežu i ponovno učitati konfiguraciju.</string>
+    <string name="reboot">Ponovno pokreni uređaj</string>
+    <string name="reboot_failed">Nedovoljna prava za ponovno pokretanje uređaja.</string>
+    <string name="message_turn_on_gps">Otvorit će se zaslon postavki. Uključite GPS lokaciju na ovom zaslonu i kliknite Natrag.</string>
+    <string name="message_turn_off_gps">Otvorit će se zaslon postavki. ISKLJUČITE GPS lokaciju na ovom zaslonu i kliknite Natrag.</string>
+    <string name="message_turn_on_mobile_data">Mobilni podaci su onemogućeni! Otvorite statusnu traku i uključite mobilne podatke.</string>
+    <string name="message_turn_off_mobile_data">Mobilni podaci su omogućeni. Otvorite statusnu traku i ISKLJUČITE mobilne podatke.</string>
+    <string name="message_set_password">Kvaliteta vaše lozinke nije dovoljno dobra. Otvorit će se zaslon postavki. Promijenite lozinku i kliknite Natrag.</string>
+    <string name="switch_off_blockings">Isključivanje ograničenja...</string>
+    <string name="kiosk_mode_requires_overlays">Kiosk način onemogućen: nema dozvole za crtanje preko drugih prozora. Dopustite %s crtanje preko drugih prozora.</string>
+    <string name="enter_admin_password">Unesite administratorsku lozinku</string>
+    <string name="wrong_password">Pogrešna lozinka</string>
+    <string name="dialog_enter_password_login">Prijava</string>
+    <string name="dialog_enter_password_cancel">Odustani</string>
+    <string name="internal_error">Aplikacija je naišla na internu grešku. Ponovno pokrenite uređaj i pokušajte ponovo.</string>
+    <string name="empty_configuration">Konfiguracija nije postavljena, pokušavam dohvatiti s poslužitelja!</string>
+    <string name="permissions_reset_hint">Zatvorite administratorsku ploču za provjeru i zahtjev dozvola.</string>
+    <string name="dialog_enter_server_error">Unesite valjani URL poslužitelja.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Unesite URL poslužitelja</string>
+    <string name="critical_server_failure">Problem s povezivanjem! Ponovno pokrenite %s ili kontaktirajte svoju školu.</string>
+    <string name="dialog_permission_title">Aplikacija zahtijeva dozvole za rad. Odobrite tražene dozvole.</string>
+    <string name="main_activity_exit">Izlaz</string>
+    <string name="browser_not_found">Ne mogu otvoriti web stranicu jer preglednik nije pronađen. Dodajte aplikaciju preglednika u konfiguraciju uređaja.</string>
+    <string name="invalid_web_link">Ne mogu otvoriti web poveznicu jer nije ispravno oblikovana. Kontaktirajte administratora za detalje.</string>
+    <string name="activity_not_found">Ne mogu izvesti radnju %s jer aktivnost nije pronađena.</string>
+    <string name="location_service_text">Lokacija uređaja se nadzire</string>
+    <string name="qrcode_contents_error">Nevaljani sadržaj QR koda. Generirajte QR kod za opskrbu u web ploči %s.</string>
+    <string name="device_locked">Ovaj tablet (%s) je zaključan od strane vaše škole.</string>
+    <string name="fault_loop_detected">Ups, nešto je pošlo po zlu! Ponovno pokrenite tablet ili zatražite pomoć od učitelja.</string>
+    <string name="mqtt_service_text">Push obavijesti su aktivne</string>
+    <string name="background_location">%s zahtijeva dozvolu za lokaciju u pozadini. Kliknite \'Nastavi\' za otvaranje dozvola, kliknite \'Lokacija\' i dopustite uvijek određivanje lokacije.</string>
+    <string name="location_disable">Onemogući lokaciju</string>
+    <string name="background_location_continue">Nastavi</string>
+    <string name="initializing_mdm">Postavljanje vašeg tableta za učenje...</string>
+    <string name="dialog_server_error_title">MDM poslužitelj %s vratio je nevaljani odgovor. Kontaktirajte administratora.</string>
+    <string name="mdm_choice_message">Ovaj tablet će biti postavljen i pripremljen od strane vaše škole.</string>
+    <string name="work_profile_message">Ovaj tablet će dobiti školski profil za obrazovne aplikacije. Možete se prebacivati između školskog i osobnog profila bilo kada.</string>
+    <string name="overlays_not_supported">Nažalost, vaš uređaj ne podržava preklapanja.</string>
+    <string name="admin_not_supported">Vaš uređaj nema opciju administratora uređaja. Kliknite Preskoči za nastavak.</string>
+    <string name="manage_storage_not_supported">Vaš uređaj nema opciju za upravljanje vanjskom pohranom.</string>
+    <string name="certificate_install_failed">Instalacija certifikata %1$s nije uspjela: %2$s</string>
+</resources>

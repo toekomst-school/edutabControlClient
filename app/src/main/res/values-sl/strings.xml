@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Skrbnik</string>
+    <string name="install_error">Napaka pri namestitvi</string>
+    <string name="file_create_error">Napaka pri ustvarjanju datoteke</string>
+    <string name="dialog_enter_device_id_error">Ta ID ni registriran na %s. Pridobite ID iz zavihka \"Naprave\" na nadzorni plošči.</string>
+    <string name="dialog_enter_device_id_qrcode">QR koda</string>
+    <string name="dialog_enter_device_id_variants">Različice</string>
+    <string name="dialog_enter_device_id_save">Shrani</string>
+    <string name="dialog_enter_device_id_exit">Izhod</string>
+    <string name="dialog_enter_device_id_title">Vnesite ID naprave na %s</string>
+    <string name="main_start_preparations">Priprava na zagon</string>
+    <string name="main_downloading_configuration">Posodabljanje konfiguracijske datoteke</string>
+    <string name="main_downloading_content">Posodabljanje podatkov</string>
+    <string name="main_update_applications">Nameščanje in posodabljanje aplikacij</string>
+    <string name="dialog_root_message">Potrebujete ROOT dostop</string>
+    <string name="main_application_start">Zagon aplikacije</string>
+    <string name="main_app_installing">Nameščanje aplikacije</string>
+    <string name="main_app_downloading">Prenašanje aplikacije</string>
+    <string name="main_app_downloading_error">Prenos paketa ni uspel</string>
+    <string name="main_app_removing">Odstranjevanje aplikacije</string>
+    <string name="main_file_downloading">Prenašanje datoteke</string>
+    <string name="main_file_downloading_error">Prenos datoteke ni uspel</string>
+    <string name="main_activity_repeat">Ponovi</string>
+    <string name="main_activity_reset">Ponastavi</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Prekliči</string>
+    <string name="main_activity_details">Podrobnosti</string>
+    <string name="select_system_launcher">Izberite %s kot privzeti zaganjalnik in označite \'Vedno\':</string>
+    <string name="dialog_network_error_title">Napaka pri povezovanju z %s. Preverite internetno povezavo in poskusite znova.</string>
+    <string name="main_activity_update_config">Zahtevanje konfiguracijske datoteke iz strežnika</string>
+    <string name="main_activity_applications_update">Posodabljanje aplikacij</string>
+    <string name="dialog_overlay_settings_title">Dovolite aplikaciji risanje čez druga okna.\n\nTa možnost pomaga blokirati neželene aplikacije in omogoča zasilno odklepanje načina kioska.\n\nTapnite \"Nadaljuj\" za odpiranje nastavitev. Poiščite element \"%s\", odobrite dovoljenje in tapnite \"Nazaj\".</string>
+    <string name="dialog_manage_storage_title">Dovolite aplikaciji upravljanje shrambe.\n\nTo omogoča EduTab upravljanje učnih gradiv na vaši tablici.</string>
+    <string name="dialog_history_settings_title">Dovolite aplikaciji dostop do podatkov o uporabi.\n\nTa možnost omogoča nadzor nad aplikacijami in nastavitvami.\n\nTa možnost lahko povzroči hitrejše praznjenje baterije. Za varčevanje z baterijo to možnost preskočite (namesto tega uporabite storitve dostopnosti ali način kioska).\n\nTapnite \"Nadaljuj\" za odpiranje nastavitev. Poiščite element \"%s\", odobrite dovoljenje in tapnite \"Nazaj\".</string>
+    <string name="dialog_history_settings_continue">Nadaljuj</string>
+    <string name="dialog_history_settings_skip">Preskoči</string>
+    <string name="dialog_unknown_sources_title">Dovolite namestitev iz neznanih virov. Zdaj se bo odprla stran z nastavitvami. Poiščite \"Neznani viri\", dovolite namestitev in kliknite \"Nazaj\".</string>
+    <string name="dialog_unknown_sources_continue">Nadaljuj</string>
+    <string name="dialog_miui_permissions_title">MIUI zahteva ročno nastavitev dovoljenj po meri. Zdaj se bo odprlo okno z dovoljenji aplikacije. Tapnite \"Druga dovoljenja\", dovolite \"Prikaz pojavnih oken med izvajanjem v ozadju\" in kliknite \"Nazaj\".</string>
+    <string name="dialog_miui_developer_title">MIUI zahteva ročno nastavitev vaše naprave. Na informacijskem zaslonu 7-KRAT TAPNITE \"ŠTEVILKO GRADNJE\". To bo omogočilo razvojne nastavitve.</string>
+    <string name="dialog_miui_optimization_title">MIUI zahteva ročno nastavitev vaše naprave. Zdaj se bo odprlo okno z razvojnimi nastavitvami. Pomaknite se navzdol in počistite \"Optimizacija MIUI\".</string>
+    <string name="dialog_administrator_mode_message">Dovolite aplikaciji delovanje v načinu skrbnika naprave. Zdaj se bo odprla stran z nastavitvami. Izberite \"Skrbniki naprave\", poiščite element \"%s\", aktivirajte skrbnika in tapnite \"Nazaj\".</string>
+    <string name="dialog_administrator_mode_continue">Nadaljuj</string>
+    <string name="dialog_administrator_mode_skip">Preskoči</string>
+    <string name="accessibility_service_description">Učno okolje EduTab</string>
+    <string name="dialog_accessibility_service_message">Dovolite aplikaciji uporabo storitev dostopnosti. Zdaj se bo odprla stran z nastavitvami. Poiščite element \"%s\", dovolite uporabo storitev dostopnosti in tapnite \"Nazaj\".</string>
+    <string name="dialog_accessibility_service_continue">Nadaljuj</string>
+    <string name="dialog_accessibility_service_skip">Preskoči</string>
+    <string name="access_to_app_denied">Paket ni dovoljen:</string>
+    <string name="access_to_app_denied_2">Prosite skrbnika, da omogoči ta paket v konfiguraciji.\n\nKliknite \'Zapri\' ali gumb Domov za nadaljevanje.</string>
+    <string name="package_id_copied">ID paketa je kopiran v odložišče</string>
+    <string name="dialog_app_not_allowed_close">Zapri</string>
+    <string name="dialog_app_not_allowed_admin">Skrbnik</string>
+    <string name="device_id">ID naprave</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Serijska številka</string>
+    <string name="phone_number">Telefonska številka</string>
+    <string name="launcher_version">Različica zaganjalnika</string>
+    <string name="close">Zapri</string>
+    <string name="admin_change_device_id">Spremeni ID naprave</string>
+    <string name="admin_change_server_url">Spremeni URL strežnika</string>
+    <string name="admin_allow_settings">Odpri nastavitve</string>
+    <string name="settings_allowed">Nastavitve lahko spreminjate 3 minute.</string>
+    <string name="admin_clear_restrictions">Odstrani omejitve</string>
+    <string name="permissive_mode_enabled">Vse aplikacije lahko poganjate 3 minute.</string>
+    <string name="admin_refresh">Posodobi konfiguracijo</string>
+    <string name="admin_exit">Izhod v sistemski zaganjalnik</string>
+    <string name="admin_reset_permissions">Preveri dovoljenja</string>
+    <string name="admin_reset_network">Ponastavi omrežno politiko</string>
+    <string name="admin_reset_network_hint">Omrežne politike so izbrisane. Zdaj lahko omogočite omrežje in znova naložite konfiguracijo.</string>
+    <string name="reboot">Znova zaženi napravo</string>
+    <string name="reboot_failed">Nezadostne pravice za ponovni zagon naprave.</string>
+    <string name="message_turn_on_gps">Odprl se bo zaslon z nastavitvami. Vklopite GPS lokacijo na tem zaslonu in kliknite Nazaj.</string>
+    <string name="message_turn_off_gps">Odprl se bo zaslon z nastavitvami. IZKLOPITE GPS lokacijo na tem zaslonu in kliknite Nazaj.</string>
+    <string name="message_turn_on_mobile_data">Mobilni podatki so onemogočeni! Odprite statusno vrstico in vklopite mobilne podatke.</string>
+    <string name="message_turn_off_mobile_data">Mobilni podatki so omogočeni. Odprite statusno vrstico in IZKLOPITE mobilne podatke.</string>
+    <string name="message_set_password">Kakovost vašega gesla ni dovolj dobra. Odprl se bo zaslon z nastavitvami. Spremenite geslo in kliknite Nazaj.</string>
+    <string name="switch_off_blockings">Izklop omejitev...</string>
+    <string name="kiosk_mode_requires_overlays">Način kioska onemogočen: ni dovoljenja za risanje čez druga okna. Dovolite %s risanje čez druga okna.</string>
+    <string name="enter_admin_password">Vnesite skrbniško geslo</string>
+    <string name="wrong_password">Napačno geslo</string>
+    <string name="dialog_enter_password_login">Prijava</string>
+    <string name="dialog_enter_password_cancel">Prekliči</string>
+    <string name="internal_error">Aplikacija je naletela na notranjo napako. Znova zaženite napravo in poskusite znova.</string>
+    <string name="empty_configuration">Konfiguracija ni nastavljena, poskušam pridobiti iz strežnika!</string>
+    <string name="permissions_reset_hint">Zaprite skrbniško ploščo za preverjanje in zahtevo dovoljenj.</string>
+    <string name="dialog_enter_server_error">Vnesite veljaven URL strežnika.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Vnesite URL strežnika</string>
+    <string name="critical_server_failure">Težava s povezavo! Znova zaženite %s ali se obrnite na vašo šolo.</string>
+    <string name="dialog_permission_title">Aplikacija potrebuje dovoljenja za delovanje. Odobrite zahtevana dovoljenja.</string>
+    <string name="main_activity_exit">Izhod</string>
+    <string name="browser_not_found">Spletne strani ni mogoče odpreti, ker brskalnik ni bil najden. Dodajte aplikacijo brskalnika v konfiguracijo naprave.</string>
+    <string name="invalid_web_link">Spletne povezave ni mogoče odpreti, ker ni pravilno oblikovana. Za podrobnosti se obrnite na skrbnika.</string>
+    <string name="activity_not_found">Dejanja %s ni mogoče izvesti, ker aktivnost ni bila najdena.</string>
+    <string name="location_service_text">Lokacija naprave je nadzorovana</string>
+    <string name="qrcode_contents_error">Neveljavna vsebina QR kode. Ustvarite QR kodo za zagotavljanje v spletni plošči %s.</string>
+    <string name="device_locked">Ta tablica (%s) je bila zaklenjena s strani vaše šole.</string>
+    <string name="fault_loop_detected">Ups, nekaj je šlo narobe! Znova zaženite tablico ali prosite učitelja za pomoč.</string>
+    <string name="mqtt_service_text">Potisna obvestila so aktivna</string>
+    <string name="background_location">%s zahteva dovoljenje za lokacijo v ozadju. Kliknite \'Nadaljuj\' za odpiranje dovoljenj, kliknite \'Lokacija\' in dovolite vedno določanje lokacije.</string>
+    <string name="location_disable">Onemogoči lokacijo</string>
+    <string name="background_location_continue">Nadaljuj</string>
+    <string name="initializing_mdm">Nastavljanje vaše učne tablice...</string>
+    <string name="dialog_server_error_title">MDM strežnik %s je vrnil neveljaven odgovor. Obrnite se na skrbnika.</string>
+    <string name="mdm_choice_message">Ta tablica bo nastavljena in pripravljena s strani vaše šole.</string>
+    <string name="work_profile_message">Ta tablica bo dobila šolski profil za učne aplikacije. Med šolskim in osebnim profilom lahko kadarkoli preklapljate.</string>
+    <string name="overlays_not_supported">Žal vaša naprava ne podpira prekrivanj.</string>
+    <string name="admin_not_supported">Vaša naprava nima možnosti skrbnika naprave. Kliknite Preskoči za nadaljevanje.</string>
+    <string name="manage_storage_not_supported">Vaša naprava nima možnosti za upravljanje zunanje shrambe.</string>
+    <string name="certificate_install_failed">Namestitev certifikata %1$s ni uspela: %2$s</string>
+</resources>

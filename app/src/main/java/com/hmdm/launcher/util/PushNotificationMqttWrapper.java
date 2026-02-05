@@ -230,6 +230,16 @@ public class PushNotificationMqttWrapper {
                         JSONObject obj = new JSONObject(new String(message.getPayload()));
                         String messageType = obj.getString("messageType");
                         PushMessageJson msg = new PushMessageJson(messageType, obj.optJSONObject("payload"));
+                        // Also set the string payload for commands that use getPayload() (like setVolume, setBrightness)
+                        if (obj.has("payload") && !obj.isNull("payload")) {
+                            Object payloadObj = obj.get("payload");
+                            if (payloadObj instanceof String) {
+                                msg.setPayload((String) payloadObj);
+                            } else if (!(payloadObj instanceof JSONObject)) {
+                                // For numbers or other primitives, convert to string
+                                msg.setPayload(String.valueOf(payloadObj));
+                            }
+                        }
                         PushNotificationProcessor.process(msg, context);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -335,6 +345,61 @@ public class PushNotificationMqttWrapper {
     public boolean checkPingDeath(Context context) {
         // If not connected, ping is not working so we return false
         return client != null && client.isConnected() && PingDeathDetector.getInstance().detectPingDeath(context);
+    }
+
+    /**
+     * Check if MQTT client is connected and ready to publish
+     */
+    public boolean isConnected() {
+        return client != null && client.isConnected();
+    }
+
+    /**
+     * Publish a message to a topic via MQTT
+     * @param topic The topic to publish to (e.g., "server" for messages to server)
+     * @param payload The JSON payload to send
+     * @param callback Optional callback for success/failure
+     */
+    public void publish(String topic, String payload, PublishCallback callback) {
+        if (client == null || !client.isConnected()) {
+            if (callback != null) {
+                callback.onFailure("MQTT client not connected");
+            }
+            return;
+        }
+
+        try {
+            MqttMessage message = new MqttMessage(payload.getBytes());
+            message.setQos(1); // At least once delivery
+            client.publish(topic, message, null, new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    if (callback != null) {
+                        handler.post(() -> callback.onSuccess());
+                    }
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    if (callback != null) {
+                        handler.post(() -> callback.onFailure(exception.getMessage()));
+                    }
+                }
+            });
+        } catch (MqttException e) {
+            Log.e(Const.LOG_TAG, "Failed to publish MQTT message", e);
+            if (callback != null) {
+                callback.onFailure(e.getMessage());
+            }
+        }
+    }
+
+    /**
+     * Callback interface for publish operations
+     */
+    public interface PublishCallback {
+        void onSuccess();
+        void onFailure(String error);
     }
 
 }

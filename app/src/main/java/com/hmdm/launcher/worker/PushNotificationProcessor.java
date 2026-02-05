@@ -23,6 +23,8 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -133,17 +135,39 @@ public class PushNotificationProcessor {
             // Payload is just the URL string
             String url = message.getPayload();
             if (url != null && !url.isEmpty()) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(browserIntent);
+                openUrlInBrowser(context, url);
             }
             return;
         } else if (message.getMessageType().equals(PushMessage.TYPE_SET_VOLUME)) {
             // Payload is volume level 0-15, convert to 0-100%
             try {
                 int volumeLevel = Integer.parseInt(message.getPayload());
+                // Clamp to valid range
+                volumeLevel = Math.max(0, Math.min(15, volumeLevel));
                 int volumePercent = (volumeLevel * 100) / 15;
-                Utils.setVolume(volumePercent, context);
+
+                // Temporarily unlock volume if locked (device owner required)
+                ServerConfig config = SettingsHelper.getInstance(context).getConfig();
+                boolean wasLocked = config != null && Boolean.TRUE.equals(config.getLockVolume());
+                if (wasLocked) {
+                    Utils.lockVolume(false, context);
+                }
+
+                boolean success = Utils.setVolume(volumePercent, context);
+
+                // Re-lock volume if it was locked
+                if (wasLocked) {
+                    Utils.lockVolume(true, context);
+                }
+
+                if (!success) {
+                    // AudioManager method failed, try shell command for media volume
+                    String command = "media volume --stream 3 --set " + volumeLevel;
+                    String result = SystemUtils.executeShellCommand(command, true);
+                    RemoteLogger.log(context, Const.LOG_DEBUG, "Set volume via shell: " + volumeLevel + " Result: " + result);
+                } else {
+                    RemoteLogger.log(context, Const.LOG_DEBUG, "Set volume to " + volumePercent + "%");
+                }
             } catch (NumberFormatException e) {
                 RemoteLogger.log(context, Const.LOG_WARN, "Invalid volume value: " + message.getPayload());
             }
@@ -152,7 +176,22 @@ public class PushNotificationProcessor {
             // Payload is brightness level 0-255
             try {
                 int brightness = Integer.parseInt(message.getPayload());
-                Utils.setBrightnessPolicy(false, brightness, context);
+                // Clamp brightness to valid range
+                brightness = Math.max(0, Math.min(255, brightness));
+
+                // Try device owner method first (sets auto=false for manual brightness)
+                boolean success = Utils.setBrightnessPolicy(false, brightness, context);
+
+                if (!success) {
+                    // Device owner method failed, try shell command
+                    // First disable auto-brightness, then set manual brightness
+                    SystemUtils.executeShellCommand("settings put system screen_brightness_mode 0", true);
+                    String command = "settings put system screen_brightness " + brightness;
+                    String result = SystemUtils.executeShellCommand(command, true);
+                    RemoteLogger.log(context, Const.LOG_DEBUG, "Set brightness via shell: " + brightness + " Result: " + result);
+                } else {
+                    RemoteLogger.log(context, Const.LOG_DEBUG, "Set brightness to " + brightness);
+                }
             } catch (NumberFormatException e) {
                 RemoteLogger.log(context, Const.LOG_WARN, "Invalid brightness value: " + message.getPayload());
             }
@@ -558,6 +597,78 @@ public class PushNotificationProcessor {
         } catch (Exception e) {
             RemoteLogger.log(context, Const.LOG_ERROR, "Failed to clear app data: " + e.getMessage());
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Open a URL in a web browser app.
+     * Tries to find a proper browser app instead of showing all apps that can handle URLs.
+     */
+    private static void openUrlInBrowser(Context context, String url) {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        browserIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        browserIntent.addCategory(Intent.CATEGORY_BROWSABLE);
+
+        // Common browser package names to try
+        String[] browserPackages = {
+            "org.mozilla.firefox",           // Firefox
+            "com.android.chrome",            // Chrome
+            "com.brave.browser",             // Brave
+            "org.chromium.chrome",           // Chromium
+            "com.opera.browser",             // Opera
+            "com.microsoft.emmx",            // Edge
+            "com.duckduckgo.mobile.android", // DuckDuckGo
+            "org.mozilla.focus",             // Firefox Focus
+            "com.sec.android.app.sbrowser",  // Samsung Internet
+        };
+
+        // Try to find an installed browser from our list
+        PackageManager pm = context.getPackageManager();
+        for (String pkg : browserPackages) {
+            try {
+                pm.getPackageInfo(pkg, 0);
+                // Package exists, use it
+                browserIntent.setPackage(pkg);
+                context.startActivity(browserIntent);
+                RemoteLogger.log(context, Const.LOG_DEBUG, "Opened URL in browser: " + pkg);
+                return;
+            } catch (PackageManager.NameNotFoundException e) {
+                // Browser not installed, try next
+            }
+        }
+
+        // No preferred browser found, try to find any browser
+        browserIntent.setPackage(null);
+        List<ResolveInfo> activities = pm.queryIntentActivities(browserIntent, PackageManager.MATCH_DEFAULT_ONLY);
+
+        // Look for an app that is actually a browser (not just handles URLs)
+        for (ResolveInfo info : activities) {
+            String pkgName = info.activityInfo.packageName;
+            // Skip apps that are typically not browsers but handle URLs
+            if (pkgName.contains("youtube") || pkgName.contains("facebook") ||
+                pkgName.contains("twitter") || pkgName.contains("instagram") ||
+                pkgName.contains("whatsapp") || pkgName.contains("telegram") ||
+                pkgName.contains("tiktok") || pkgName.contains("reddit")) {
+                continue;
+            }
+            // Found a potential browser, use it
+            browserIntent.setPackage(pkgName);
+            try {
+                context.startActivity(browserIntent);
+                RemoteLogger.log(context, Const.LOG_DEBUG, "Opened URL in: " + pkgName);
+                return;
+            } catch (Exception e) {
+                // Try next
+            }
+        }
+
+        // Last resort: just open with any app that can handle it
+        browserIntent.setPackage(null);
+        try {
+            context.startActivity(browserIntent);
+            RemoteLogger.log(context, Const.LOG_DEBUG, "Opened URL with default handler");
+        } catch (Exception e) {
+            RemoteLogger.log(context, Const.LOG_WARN, "Failed to open URL: " + url + " - " + e.getMessage());
         }
     }
 

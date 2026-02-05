@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administratorius</string>
+    <string name="install_error">Diegimo klaida</string>
+    <string name="file_create_error">Failo kūrimo klaida</string>
+    <string name="dialog_enter_device_id_error">Šis ID neregistruotas %s. Gaukite ID iš valdymo pulto skirtuko \"Įrenginiai\".</string>
+    <string name="dialog_enter_device_id_qrcode">QR kodas</string>
+    <string name="dialog_enter_device_id_variants">Variantai</string>
+    <string name="dialog_enter_device_id_save">Išsaugoti</string>
+    <string name="dialog_enter_device_id_exit">Išeiti</string>
+    <string name="dialog_enter_device_id_title">Įveskite įrenginio ID adresu %s</string>
+    <string name="main_start_preparations">Ruošiamasi paleisti</string>
+    <string name="main_downloading_configuration">Atnaujinamas konfigūracijos failas</string>
+    <string name="main_downloading_content">Atnaujinami duomenys</string>
+    <string name="main_update_applications">Diegiamos ir atnaujinamos programos</string>
+    <string name="dialog_root_message">Jums reikia ROOT prieigos</string>
+    <string name="main_application_start">Paleidžiama programa</string>
+    <string name="main_app_installing">Diegiama programa</string>
+    <string name="main_app_downloading">Atsisiunčiama programa</string>
+    <string name="main_app_downloading_error">Nepavyko atsisiųsti paketo</string>
+    <string name="main_app_removing">Šalinama programa</string>
+    <string name="main_file_downloading">Atsisiunčiamas failas</string>
+    <string name="main_file_downloading_error">Nepavyko atsisiųsti failo</string>
+    <string name="main_activity_repeat">Bandyti dar kartą</string>
+    <string name="main_activity_reset">Atstatyti</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Atšaukti</string>
+    <string name="main_activity_details">Išsami informacija</string>
+    <string name="select_system_launcher">Pasirinkite %s kaip numatytąjį paleidiklį ir pažymėkite \'Visada\':</string>
+    <string name="dialog_network_error_title">Klaida jungiantis prie %s. Patikrinkite interneto ryšį ir bandykite dar kartą.</string>
+    <string name="main_activity_update_config">Prašoma konfigūracijos failo iš serverio</string>
+    <string name="main_activity_applications_update">Atnaujinamos programos</string>
+    <string name="dialog_overlay_settings_title">Leiskite programai piešti ant kitų langų.\n\nŠi parinktis padeda blokuoti nepageidaujamas programas ir įgalina kiosko režimo avarinį atrakinimą.\n\nPalieskite \"Tęsti\", kad atidarytumėte nustatymus. Raskite elementą \"%s\", suteikite leidimą ir palieskite \"Atgal\".</string>
+    <string name="dialog_manage_storage_title">Leiskite programai valdyti saugyklą.\n\nTai leidžia EduTab valdyti mokymosi medžiagą jūsų planšetėje.</string>
+    <string name="dialog_history_settings_title">Leiskite programai pasiekti naudojimo duomenis.\n\nŠi parinktis įgalina programų ir nustatymų valdymą.\n\nŠi parinktis gali greičiau išsekinti bateriją. Norėdami taupyti bateriją, praleiskite šią parinktį (vietoj to naudokite prieinamumo paslaugas arba kiosko režimą).\n\nPalieskite \"Tęsti\", kad atidarytumėte nustatymus. Raskite elementą \"%s\", suteikite leidimą ir palieskite \"Atgal\".</string>
+    <string name="dialog_history_settings_continue">Tęsti</string>
+    <string name="dialog_history_settings_skip">Praleisti</string>
+    <string name="dialog_unknown_sources_title">Leiskite diegti iš nežinomų šaltinių. Dabar atsidarys nustatymų langas. Raskite \"Nežinomi šaltiniai\", leiskite diegti ir spustelėkite \"Atgal\".</string>
+    <string name="dialog_unknown_sources_continue">Tęsti</string>
+    <string name="dialog_miui_permissions_title">MIUI reikalauja rankinio pasirinktinių leidimų nustatymo. Dabar atsidarys programos leidimų langas. Palieskite \"Kiti leidimai\", leiskite \"Rodyti iššokančius langus veikiant fone\" ir spustelėkite \"Atgal\".</string>
+    <string name="dialog_miui_developer_title">MIUI reikalauja rankinio jūsų įrenginio nustatymo. Informacijos ekrane 7 KARTUS PALIESKITE \"VERSIJOS NUMERĮ\". Tai įjungs kūrėjo nustatymus.</string>
+    <string name="dialog_miui_optimization_title">MIUI reikalauja rankinio jūsų įrenginio nustatymo. Dabar atsidarys kūrėjo nustatymų langas. Slinkite žemyn ir atžymėkite \"MIUI optimizacija\".</string>
+    <string name="dialog_administrator_mode_message">Leiskite programai veikti įrenginio administratoriaus režimu. Dabar atsidarys nustatymų langas. Pasirinkite \"Įrenginių administratoriai\", raskite elementą \"%s\", aktyvuokite administratorių ir palieskite \"Atgal\".</string>
+    <string name="dialog_administrator_mode_continue">Tęsti</string>
+    <string name="dialog_administrator_mode_skip">Praleisti</string>
+    <string name="accessibility_service_description">EduTab mokymosi aplinka</string>
+    <string name="dialog_accessibility_service_message">Leiskite programai naudoti prieinamumo paslaugas. Dabar atsidarys nustatymų langas. Raskite elementą \"%s\", leiskite naudoti prieinamumo paslaugas ir palieskite \"Atgal\".</string>
+    <string name="dialog_accessibility_service_continue">Tęsti</string>
+    <string name="dialog_accessibility_service_skip">Praleisti</string>
+    <string name="access_to_app_denied">Paketas neleidžiamas:</string>
+    <string name="access_to_app_denied_2">Paprašykite administratoriaus įjungti šį paketą konfigūracijoje.\n\nNorėdami tęsti, spustelėkite \'Uždaryti\' arba pradžios mygtuką.</string>
+    <string name="package_id_copied">Paketo ID nukopijuotas į iškarpinę</string>
+    <string name="dialog_app_not_allowed_close">Uždaryti</string>
+    <string name="dialog_app_not_allowed_admin">Administratorius</string>
+    <string name="device_id">Įrenginio ID</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Serijinis numeris</string>
+    <string name="phone_number">Telefono numeris</string>
+    <string name="launcher_version">Paleidiklio versija</string>
+    <string name="close">Uždaryti</string>
+    <string name="admin_change_device_id">Keisti įrenginio ID</string>
+    <string name="admin_change_server_url">Keisti serverio URL</string>
+    <string name="admin_allow_settings">Atidaryti nustatymus</string>
+    <string name="settings_allowed">Galite keisti nustatymus 3 minutes.</string>
+    <string name="admin_clear_restrictions">Pašalinti apribojimus</string>
+    <string name="permissive_mode_enabled">Galite paleisti visas programas 3 minutes.</string>
+    <string name="admin_refresh">Atnaujinti konfigūraciją</string>
+    <string name="admin_exit">Išeiti į sistemos paleidiklį</string>
+    <string name="admin_reset_permissions">Tikrinti leidimus</string>
+    <string name="admin_reset_network">Atstatyti tinklo politiką</string>
+    <string name="admin_reset_network_hint">Tinklo politikos išvalytos. Dabar galite įjungti tinklą ir iš naujo įkelti konfigūraciją.</string>
+    <string name="reboot">Paleisti įrenginį iš naujo</string>
+    <string name="reboot_failed">Nepakanka teisių paleisti įrenginį iš naujo.</string>
+    <string name="message_turn_on_gps">Atsidarys nustatymų ekranas. Įjunkite GPS vietą šiame ekrane ir spustelėkite Atgal.</string>
+    <string name="message_turn_off_gps">Atsidarys nustatymų ekranas. IŠJUNKITE GPS vietą šiame ekrane ir spustelėkite Atgal.</string>
+    <string name="message_turn_on_mobile_data">Mobilieji duomenys išjungti! Atidarykite būsenos juostą ir įjunkite mobiliuosius duomenis.</string>
+    <string name="message_turn_off_mobile_data">Mobilieji duomenys įjungti. Atidarykite būsenos juostą ir IŠJUNKITE mobiliuosius duomenis.</string>
+    <string name="message_set_password">Jūsų slaptažodžio kokybė nepakankama. Atsidarys nustatymų ekranas. Pakeiskite slaptažodį ir spustelėkite Atgal.</string>
+    <string name="switch_off_blockings">Išjungiami apribojimai...</string>
+    <string name="kiosk_mode_requires_overlays">Kiosko režimas išjungtas: nėra leidimo piešti ant kitų langų. Leiskite %s piešti ant kitų langų.</string>
+    <string name="enter_admin_password">Įveskite administratoriaus slaptažodį</string>
+    <string name="wrong_password">Neteisingas slaptažodis</string>
+    <string name="dialog_enter_password_login">Prisijungti</string>
+    <string name="dialog_enter_password_cancel">Atšaukti</string>
+    <string name="internal_error">Programoje įvyko vidinė klaida. Paleiskite įrenginį iš naujo ir bandykite dar kartą.</string>
+    <string name="empty_configuration">Konfigūracija nenustatyta, bandoma gauti iš serverio!</string>
+    <string name="permissions_reset_hint">Uždarykite administravimo skydelį, kad patikrintumėte ir prašytumėte leidimų.</string>
+    <string name="dialog_enter_server_error">Įveskite galiojantį serverio URL.</string>
+    <string name="dialog_enter_server_ok">Gerai</string>
+    <string name="dialog_enter_server_title">Įveskite serverio URL</string>
+    <string name="critical_server_failure">Ryšio problema! Paleiskite %s iš naujo arba susisiekite su savo mokykla.</string>
+    <string name="dialog_permission_title">Programai reikia leidimų veikti. Suteikite prašomus leidimus.</string>
+    <string name="main_activity_exit">Išeiti</string>
+    <string name="browser_not_found">Nepavyksta atidaryti tinklalapio, nes naršyklė nerasta. Pridėkite naršyklės programą prie įrenginio konfigūracijos.</string>
+    <string name="invalid_web_link">Nepavyksta atidaryti žiniatinklio nuorodos, nes ji netinkamai suformuota. Dėl išsamios informacijos susisiekite su administratoriumi.</string>
+    <string name="activity_not_found">Nepavyksta atlikti veiksmo %s, nes veikla nerasta.</string>
+    <string name="location_service_text">Įrenginio vieta stebima</string>
+    <string name="qrcode_contents_error">Neteisingas QR kodo turinys. Sugeneruokite parengimo QR kodą %s žiniatinklio skydelyje.</string>
+    <string name="device_locked">Šią planšetę (%s) užrakino jūsų mokykla.</string>
+    <string name="fault_loop_detected">Ups, kažkas nutiko! Paleiskite planšetę iš naujo arba paprašykite mokytojo pagalbos.</string>
+    <string name="mqtt_service_text">Tiesioginiai pranešimai aktyvūs</string>
+    <string name="background_location">%s reikia fono vietos leidimo. Spustelėkite \'Tęsti\', kad atidarytumėte leidimus, spustelėkite \'Vieta\' ir leiskite visada nustatyti vietą.</string>
+    <string name="location_disable">Išjungti vietą</string>
+    <string name="background_location_continue">Tęsti</string>
+    <string name="initializing_mdm">Nustatoma jūsų mokymosi planšetė...</string>
+    <string name="dialog_server_error_title">MDM serveris %s grąžino netinkamą atsakymą. Susisiekite su administratoriumi.</string>
+    <string name="mdm_choice_message">Šią planšetę nustatys ir paruoš jūsų mokykla.</string>
+    <string name="work_profile_message">Ši planšetė gaus mokyklos profilį mokymosi programoms. Bet kada galite perjungti tarp mokyklos ir asmeninio profilio.</string>
+    <string name="overlays_not_supported">Deja, jūsų įrenginys nepalaiko perdangų.</string>
+    <string name="admin_not_supported">Jūsų įrenginys neturi įrenginio administratoriaus parinkties. Norėdami tęsti, spustelėkite Praleisti.</string>
+    <string name="manage_storage_not_supported">Jūsų įrenginys neturi parinkties valdyti išorinę saugyklą.</string>
+    <string name="certificate_install_failed">Nepavyko įdiegti sertifikato %1$s: %2$s</string>
+</resources>

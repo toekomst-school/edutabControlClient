@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Beheerder</string>
+    <string name="install_error">Installatiefout</string>
+    <string name="file_create_error">Fout bij aanmaken bestand</string>
+    <string name="dialog_enter_device_id_error">Dit ID is niet geregistreerd op %s. Haal het ID op via het tabblad \"Apparaten\" in het configuratiescherm.</string>
+    <string name="dialog_enter_device_id_qrcode">QR-code</string>
+    <string name="dialog_enter_device_id_variants">Varianten</string>
+    <string name="dialog_enter_device_id_save">Opslaan</string>
+    <string name="dialog_enter_device_id_exit">Afsluiten</string>
+    <string name="dialog_enter_device_id_title">Voer het apparaat-ID in op %s</string>
+    <string name="main_start_preparations">Voorbereiden om te starten</string>
+    <string name="main_downloading_configuration">Configuratiebestand bijwerken</string>
+    <string name="main_downloading_content">Gegevens bijwerken</string>
+    <string name="main_update_applications">Applicaties installeren en bijwerken</string>
+    <string name="dialog_root_message">U hebt ROOT-toegang nodig</string>
+    <string name="main_application_start">Applicatie starten</string>
+    <string name="main_app_installing">Applicatie installeren</string>
+    <string name="main_app_downloading">Applicatie downloaden</string>
+    <string name="main_app_downloading_error">Kan pakket niet downloaden</string>
+    <string name="main_app_removing">Applicatie verwijderen</string>
+    <string name="main_file_downloading">Bestand downloaden</string>
+    <string name="main_file_downloading_error">Kan bestand niet downloaden</string>
+    <string name="main_activity_repeat">Opnieuw proberen</string>
+    <string name="main_activity_reset">Resetten</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Annuleren</string>
+    <string name="main_activity_details">Details</string>
+    <string name="select_system_launcher">Selecteer %s als standaard launcher en kies \'Altijd\':</string>
+    <string name="dialog_network_error_title">Fout bij verbinden met %s. Controleer de internetverbinding en probeer opnieuw.</string>
+    <string name="main_activity_update_config">Configuratiebestand ophalen van server</string>
+    <string name="main_activity_applications_update">Applicaties bijwerken</string>
+    <string name="dialog_overlay_settings_title">Sta de app toe om over andere vensters te tekenen.\n\nDeze optie helpt bij het blokkeren van ongewenste apps en maakt noodontgrendeling van de kioskmodus mogelijk.\n\nTik op \"Doorgaan\" om de instellingen te openen. Zoek het item \"%s\", verleen toestemming en tik op \"Terug\".</string>
+    <string name="dialog_manage_storage_title">Sta de app toe om opslag te beheren.\n\nHiermee kan EduTab leermateriaal op uw tablet beheren.</string>
+    <string name="dialog_history_settings_title">Sta de app toe om gebruiksgegevens te openen.\n\nDeze optie maakt controle van apps en instellingen mogelijk.\n\nDeze optie kan snellere batterijverbruik veroorzaken. Om batterij te sparen, sla deze optie over (gebruik in plaats daarvan toegankelijkheidsservices of kioskmodus).\n\nTik op \"Doorgaan\" om de instellingen te openen. Zoek het item \"%s\", verleen toestemming en tik op \"Terug\".</string>
+    <string name="dialog_history_settings_continue">Doorgaan</string>
+    <string name="dialog_history_settings_skip">Overslaan</string>
+    <string name="dialog_unknown_sources_title">Sta installatie van onbekende bronnen toe. Er wordt nu een instellingenscherm geopend. Zoek \"Onbekende bronnen\", sta installatie toe en klik op \"Terug\".</string>
+    <string name="dialog_unknown_sources_continue">Doorgaan</string>
+    <string name="dialog_miui_permissions_title">MIUI vereist handmatige instelling van aangepaste machtigingen. Het app-machtigingsvenster wordt nu geopend. Tik op \"Overige machtigingen\", sta \"Pop-upvensters weergeven tijdens uitvoering op achtergrond\" toe en klik op \"Terug\".</string>
+    <string name="dialog_miui_developer_title">MIUI vereist handmatige configuratie van uw apparaat. Tik op het informatiescherm 7 KEER OP \"BUILDNUMMER\". Dit activeert ontwikkelaarsinstellingen.</string>
+    <string name="dialog_miui_optimization_title">MIUI vereist handmatige configuratie van uw apparaat. Het venster ontwikkelaarsinstellingen wordt nu geopend. Scroll naar beneden en schakel \"MIUI-optimalisatie\" uit.</string>
+    <string name="dialog_administrator_mode_message">Sta de app toe om in apparaatbeheerdersmodus te werken. Er wordt nu een instellingenscherm geopend. Selecteer \"Apparaatbeheerders\", zoek het item \"%s\", activeer de beheerder en tik op \"Terug\".</string>
+    <string name="dialog_administrator_mode_continue">Doorgaan</string>
+    <string name="dialog_administrator_mode_skip">Overslaan</string>
+    <string name="accessibility_service_description">EduTab leeromgeving</string>
+    <string name="dialog_accessibility_service_message">Sta de app toe om toegankelijkheidsservices te gebruiken. Er wordt nu een instellingenscherm geopend. Zoek het item \"%s\", sta gebruik van toegankelijkheidsservices toe en tik op \"Terug\".</string>
+    <string name="dialog_accessibility_service_continue">Doorgaan</string>
+    <string name="dialog_accessibility_service_skip">Overslaan</string>
+    <string name="access_to_app_denied">Dit pakket is niet toegestaan:</string>
+    <string name="access_to_app_denied_2">Vraag uw beheerder om dit pakket in de configuratie in te schakelen.\n\nKlik op \'Sluiten\' of de Home-knop om door te gaan.</string>
+    <string name="package_id_copied">Pakket-ID is gekopieerd naar klembord</string>
+    <string name="dialog_app_not_allowed_close">Sluiten</string>
+    <string name="dialog_app_not_allowed_admin">Beheerder</string>
+    <string name="device_id">Apparaat-ID</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Serienummer</string>
+    <string name="phone_number">Telefoonnummer</string>
+    <string name="launcher_version">Launcherversie</string>
+    <string name="close">Sluiten</string>
+    <string name="admin_change_device_id">Apparaat-ID wijzigen</string>
+    <string name="admin_change_server_url">Server-URL wijzigen</string>
+    <string name="admin_allow_settings">Instellingen openen</string>
+    <string name="settings_allowed">U mag 3 minuten lang instellingen wijzigen.</string>
+    <string name="admin_clear_restrictions">Beperkingen opheffen</string>
+    <string name="permissive_mode_enabled">U mag 3 minuten lang alle apps uitvoeren.</string>
+    <string name="admin_refresh">Configuratie bijwerken</string>
+    <string name="admin_exit">Afsluiten naar systeemstarter</string>
+    <string name="admin_reset_permissions">Machtigingen controleren</string>
+    <string name="admin_reset_network">Netwerkbeleid resetten</string>
+    <string name="admin_reset_network_hint">Netwerkbeleid is gewist. U kunt nu het netwerk inschakelen en de configuratie herladen.</string>
+    <string name="reboot">Apparaat herstarten</string>
+    <string name="reboot_failed">Onvoldoende rechten om het apparaat te herstarten.</string>
+    <string name="message_turn_on_gps">Het instellingenscherm wordt geopend. Schakel GPS-locatie in op dit scherm en klik op Terug.</string>
+    <string name="message_turn_off_gps">Het instellingenscherm wordt geopend. Schakel GPS-locatie UIT op dit scherm en klik op Terug.</string>
+    <string name="message_turn_on_mobile_data">Mobiele data is uitgeschakeld! Open de statusbalk en schakel mobiele data in.</string>
+    <string name="message_turn_off_mobile_data">Mobiele data is ingeschakeld. Open de statusbalk en schakel mobiele data UIT.</string>
+    <string name="message_set_password">Uw wachtwoordkwaliteit is onvoldoende. Het instellingenscherm wordt geopend. Wijzig het wachtwoord en klik op Terug.</string>
+    <string name="switch_off_blockings">Beperkingen uitschakelen...</string>
+    <string name="kiosk_mode_requires_overlays">Kioskmodus uitgeschakeld: geen toestemming om over andere vensters te tekenen. Sta %s toe om over andere vensters te tekenen.</string>
+    <string name="enter_admin_password">Voer beheerderswachtwoord in</string>
+    <string name="wrong_password">Verkeerd wachtwoord</string>
+    <string name="dialog_enter_password_login">Inloggen</string>
+    <string name="dialog_enter_password_cancel">Annuleren</string>
+    <string name="internal_error">De app heeft een interne fout ondervonden. Start het apparaat opnieuw op en probeer de actie opnieuw.</string>
+    <string name="empty_configuration">Configuratie is niet ingesteld, opnieuw ophalen van server!</string>
+    <string name="permissions_reset_hint">Sluit het beheerderspaneel om machtigingen te controleren en aan te vragen.</string>
+    <string name="dialog_enter_server_error">Voer een geldige server-URL in.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Voer de server-URL in</string>
+    <string name="critical_server_failure">Verbindingsprobleem! Start %s opnieuw op of neem contact op met uw school.</string>
+    <string name="dialog_permission_title">De app heeft machtigingen nodig om te werken. Verleen de gevraagde machtigingen.</string>
+    <string name="main_activity_exit">Afsluiten</string>
+    <string name="browser_not_found">Kan de webpagina niet openen omdat de browser niet is gevonden. Voeg een browser-app toe aan de apparaatconfiguratie.</string>
+    <string name="invalid_web_link">Kan de weblink niet openen omdat deze niet goed geformeerd is. Neem contact op met uw beheerder voor details.</string>
+    <string name="activity_not_found">Kan de actie %s niet uitvoeren omdat de activiteit niet is gevonden.</string>
+    <string name="location_service_text">Apparaatlocatie wordt bewaakt</string>
+    <string name="qrcode_contents_error">Ongeldige QR-code-inhoud. Genereer de inrichtings-QR-code in het %s webpaneel.</string>
+    <string name="device_locked">Deze tablet (%s) is vergrendeld door uw school.</string>
+    <string name="fault_loop_detected">Oeps, er is iets misgegaan! Start de tablet opnieuw op of vraag uw leraar om hulp.</string>
+    <string name="mqtt_service_text">Pushmeldingen zijn actief</string>
+    <string name="background_location">%s vereist achtergrondlocatietoestemming. Klik op \'Doorgaan\' om machtigingen te openen, klik op \'Locatie\' en sta toe om locatie altijd te bepalen.</string>
+    <string name="location_disable">Locatie uitschakelen</string>
+    <string name="background_location_continue">Doorgaan</string>
+    <string name="initializing_mdm">Uw leertablet instellen...</string>
+    <string name="dialog_server_error_title">MDM-server %s gaf een ongeldige reactie. Neem contact op met uw beheerder.</string>
+    <string name="mdm_choice_message">Deze tablet wordt ingesteld en klaargemaakt door uw school.</string>
+    <string name="work_profile_message">Deze tablet krijgt een schoolprofiel voor leer-apps. U kunt op elk moment wisselen tussen school- en persoonlijke profielen.</string>
+    <string name="overlays_not_supported">Helaas worden overlays niet ondersteund door uw apparaat.</string>
+    <string name="admin_not_supported">Uw apparaat heeft geen apparaatbeheerderoptie. Klik op Overslaan om door te gaan.</string>
+    <string name="manage_storage_not_supported">Uw apparaat heeft geen optie om externe opslag te beheren.</string>
+    <string name="certificate_install_failed">Installatie van certificaat %1$s mislukt: %2$s</string>
+</resources>

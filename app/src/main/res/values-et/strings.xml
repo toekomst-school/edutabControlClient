@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administraator</string>
+    <string name="install_error">Paigaldusviga</string>
+    <string name="file_create_error">Faili loomise viga</string>
+    <string name="dialog_enter_device_id_error">See ID pole registreeritud aadressil %s. Hankige ID juhtpaneeli vahekaardilt \"Seadmed\".</string>
+    <string name="dialog_enter_device_id_qrcode">QR-kood</string>
+    <string name="dialog_enter_device_id_variants">Variandid</string>
+    <string name="dialog_enter_device_id_save">Salvesta</string>
+    <string name="dialog_enter_device_id_exit">Välju</string>
+    <string name="dialog_enter_device_id_title">Sisestage seadme ID aadressil %s</string>
+    <string name="main_start_preparations">Käivitamiseks valmistumine</string>
+    <string name="main_downloading_configuration">Konfiguratsioonifaili uuendamine</string>
+    <string name="main_downloading_content">Andmete uuendamine</string>
+    <string name="main_update_applications">Rakenduste paigaldamine ja uuendamine</string>
+    <string name="dialog_root_message">Vajate ROOT-juurdepääsu</string>
+    <string name="main_application_start">Rakenduse käivitamine</string>
+    <string name="main_app_installing">Rakenduse paigaldamine</string>
+    <string name="main_app_downloading">Rakenduse allalaadimine</string>
+    <string name="main_app_downloading_error">Paketi allalaadimine ebaõnnestus</string>
+    <string name="main_app_removing">Rakenduse eemaldamine</string>
+    <string name="main_file_downloading">Faili allalaadimine</string>
+    <string name="main_file_downloading_error">Faili allalaadimine ebaõnnestus</string>
+    <string name="main_activity_repeat">Proovi uuesti</string>
+    <string name="main_activity_reset">Lähtesta</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Tühista</string>
+    <string name="main_activity_details">Üksikasjad</string>
+    <string name="select_system_launcher">Valige %s vaikekäivitajaks ja märkige \'Alati\':</string>
+    <string name="dialog_network_error_title">Viga ühendamisel serveriga %s. Kontrollige internetiühendust ja proovige uuesti.</string>
+    <string name="main_activity_update_config">Konfiguratsioonifaili pärimine serverilt</string>
+    <string name="main_activity_applications_update">Rakenduste uuendamine</string>
+    <string name="dialog_overlay_settings_title">Lubage rakendusel joonistada teiste akende peale.\n\nSee valik aitab blokeerida soovimatuid rakendusi ja võimaldab kioski režiimi hädaavamist.\n\nPuudutage \"Jätka\" seadete avamiseks. Leidke element \"%s\", andke luba ja puudutage \"Tagasi\".</string>
+    <string name="dialog_manage_storage_title">Lubage rakendusel salvestusruumi hallata.\n\nSee võimaldab EduTabil hallata õppematerjale teie tahvelarvutis.</string>
+    <string name="dialog_history_settings_title">Lubage rakendusel kasutusandmetele juurde pääseda.\n\nSee valik võimaldab rakenduste ja seadete juhtimist.\n\nSee valik võib põhjustada kiiremat aku tühjenemist. Aku säästmiseks jätke see valik vahele (kasutage selle asemel juurdepääsetavuse teenuseid või kioski režiimi).\n\nPuudutage \"Jätka\" seadete avamiseks. Leidke element \"%s\", andke luba ja puudutage \"Tagasi\".</string>
+    <string name="dialog_history_settings_continue">Jätka</string>
+    <string name="dialog_history_settings_skip">Jäta vahele</string>
+    <string name="dialog_unknown_sources_title">Lubage paigaldamine tundmatutest allikatest. Nüüd avaneb seadete leht. Leidke \"Tundmatud allikad\", lubage paigaldamine ja klõpsake \"Tagasi\".</string>
+    <string name="dialog_unknown_sources_continue">Jätka</string>
+    <string name="dialog_miui_permissions_title">MIUI nõuab kohandatud lubade käsitsi seadistamist. Nüüd avaneb rakenduse lubade aken. Puudutage \"Muud load\", lubage \"Kuva hüpikaknaid taustal töötamise ajal\" ja klõpsake \"Tagasi\".</string>
+    <string name="dialog_miui_developer_title">MIUI nõuab teie seadme käsitsi seadistamist. Teabekuval PUUDUTAGE 7 KORDA \"JÄRGUNUMBER\". See lubab arendaja seaded.</string>
+    <string name="dialog_miui_optimization_title">MIUI nõuab teie seadme käsitsi seadistamist. Nüüd avaneb arendaja seadete aken. Kerige alla ja tühjendage märkeruut \"MIUI optimeerimine\".</string>
+    <string name="dialog_administrator_mode_message">Lubage rakendusel töötada seadme administraatori režiimis. Nüüd avaneb seadete leht. Valige \"Seadme administraatorid\", leidke element \"%s\", aktiveerige administraator ja puudutage \"Tagasi\".</string>
+    <string name="dialog_administrator_mode_continue">Jätka</string>
+    <string name="dialog_administrator_mode_skip">Jäta vahele</string>
+    <string name="accessibility_service_description">EduTab õppekeskkond</string>
+    <string name="dialog_accessibility_service_message">Lubage rakendusel kasutada juurdepääsetavuse teenuseid. Nüüd avaneb seadete leht. Leidke element \"%s\", lubage juurdepääsetavuse teenuste kasutamine ja puudutage \"Tagasi\".</string>
+    <string name="dialog_accessibility_service_continue">Jätka</string>
+    <string name="dialog_accessibility_service_skip">Jäta vahele</string>
+    <string name="access_to_app_denied">Pakett pole lubatud:</string>
+    <string name="access_to_app_denied_2">Paluge administraatoril see pakett konfiguratsioonis lubada.\n\nJätkamiseks klõpsake \'Sulge\' või kodunuppu.</string>
+    <string name="package_id_copied">Paketi ID on kopeeritud lõikelauale</string>
+    <string name="dialog_app_not_allowed_close">Sulge</string>
+    <string name="dialog_app_not_allowed_admin">Administraator</string>
+    <string name="device_id">Seadme ID</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Seerianumber</string>
+    <string name="phone_number">Telefoninumber</string>
+    <string name="launcher_version">Käivitaja versioon</string>
+    <string name="close">Sulge</string>
+    <string name="admin_change_device_id">Muuda seadme ID-d</string>
+    <string name="admin_change_server_url">Muuda serveri URL-i</string>
+    <string name="admin_allow_settings">Ava seaded</string>
+    <string name="settings_allowed">Saate seadeid muuta 3 minutit.</string>
+    <string name="admin_clear_restrictions">Eemalda piirangud</string>
+    <string name="permissive_mode_enabled">Saate kõiki rakendusi käivitada 3 minutit.</string>
+    <string name="admin_refresh">Uuenda konfiguratsiooni</string>
+    <string name="admin_exit">Välju süsteemi käivitajasse</string>
+    <string name="admin_reset_permissions">Kontrolli lube</string>
+    <string name="admin_reset_network">Lähtesta võrgupoliitika</string>
+    <string name="admin_reset_network_hint">Võrgupoliitikad on kustutatud. Nüüd saate võrgu lubada ja konfiguratsiooni uuesti laadida.</string>
+    <string name="reboot">Taaskäivita seade</string>
+    <string name="reboot_failed">Pole piisavalt õigusi seadme taaskäivitamiseks.</string>
+    <string name="message_turn_on_gps">Avaneb seadete kuva. Lülitage sellel kuval GPS-asukoht sisse ja klõpsake Tagasi.</string>
+    <string name="message_turn_off_gps">Avaneb seadete kuva. LÜLITAGE sellel kuval GPS-asukoht VÄLJA ja klõpsake Tagasi.</string>
+    <string name="message_turn_on_mobile_data">Mobiilne andmeside on keelatud! Avage olekuriba ja lülitage mobiilne andmeside sisse.</string>
+    <string name="message_turn_off_mobile_data">Mobiilne andmeside on lubatud. Avage olekuriba ja LÜLITAGE mobiilne andmeside VÄLJA.</string>
+    <string name="message_set_password">Teie parooli kvaliteet pole piisavalt hea. Avaneb seadete kuva. Muutke parooli ja klõpsake Tagasi.</string>
+    <string name="switch_off_blockings">Piirangute väljalülitamine...</string>
+    <string name="kiosk_mode_requires_overlays">Kioski režiim keelatud: pole luba teiste akende peale joonistamiseks. Lubage %s-l teiste akende peale joonistada.</string>
+    <string name="enter_admin_password">Sisestage administraatori parool</string>
+    <string name="wrong_password">Vale parool</string>
+    <string name="dialog_enter_password_login">Logi sisse</string>
+    <string name="dialog_enter_password_cancel">Tühista</string>
+    <string name="internal_error">Rakenduses ilmnes sisemine viga. Taaskäivitage seade ja proovige toimingut uuesti.</string>
+    <string name="empty_configuration">Konfiguratsioon pole seadistatud, proovin serverist uuesti hankida!</string>
+    <string name="permissions_reset_hint">Sulgege administraatori paneel lubade kontrollimiseks ja taotlemiseks.</string>
+    <string name="dialog_enter_server_error">Sisestage kehtiv serveri URL.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Sisestage serveri URL</string>
+    <string name="critical_server_failure">Ühenduse probleem! Taaskäivitage %s või võtke ühendust oma kooliga.</string>
+    <string name="dialog_permission_title">Rakendus vajab töötamiseks lube. Andke nõutud load.</string>
+    <string name="main_activity_exit">Välju</string>
+    <string name="browser_not_found">Veebilehte ei saa avada, kuna brauserit ei leitud. Lisage seadme konfiguratsiooni brauser.</string>
+    <string name="invalid_web_link">Veebilinki ei saa avada, kuna see on valesti vormindatud. Üksikasjade saamiseks võtke ühendust administraatoriga.</string>
+    <string name="activity_not_found">Toimingut %s ei saa teostada, kuna tegevust ei leitud.</string>
+    <string name="location_service_text">Seadme asukohta jälgitakse</string>
+    <string name="qrcode_contents_error">Kehtetu QR-koodi sisu. Genereerige ettevalmistamise QR-kood veebipaneelil %s.</string>
+    <string name="device_locked">See tahvelarvuti (%s) on teie kooli poolt lukustatud.</string>
+    <string name="fault_loop_detected">Oih, midagi läks valesti! Taaskäivitage tahvelarvuti või paluge õpetajalt abi.</string>
+    <string name="mqtt_service_text">Tõuketeatised on aktiivsed</string>
+    <string name="background_location">%s vajab taustaasukohta luba. Klõpsake \'Jätka\' lubade avamiseks, klõpsake \'Asukoht\' ja lubage alati asukohta määrata.</string>
+    <string name="location_disable">Keela asukoht</string>
+    <string name="background_location_continue">Jätka</string>
+    <string name="initializing_mdm">Teie õppetahvelarvuti seadistamine...</string>
+    <string name="dialog_server_error_title">MDM-server %s tagastas kehtetu vastuse. Võtke ühendust administraatoriga.</string>
+    <string name="mdm_choice_message">See tahvelarvuti seadistatakse ja valmistatakse ette teie kooli poolt.</string>
+    <string name="work_profile_message">See tahvelarvuti saab kooli profiili õpperakenduste jaoks. Saate igal ajal kooli- ja isikliku profiili vahel vahetada.</string>
+    <string name="overlays_not_supported">Kahjuks ei toeta teie seade ülekatteid.</string>
+    <string name="admin_not_supported">Teie seadmel pole seadme administraatori valikut. Jätkamiseks klõpsake Jäta vahele.</string>
+    <string name="manage_storage_not_supported">Teie seadmel pole võimalust välist salvestusruumi hallata.</string>
+    <string name="certificate_install_failed">Sertifikaadi %1$s paigaldamine ebaõnnestus: %2$s</string>
+</resources>

@@ -19,16 +19,24 @@
   -->
 
 <resources>
-    <color name="colorPrimary">#607D8B</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#87d3e1</color>
+    <!-- EduTab Green Theme -->
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#66BB6A</color>
     <color name="white">#ffffff</color>
     <color name="defaultBackground">#303030</color>
 
-    <color name="wizardPrimaryDark">#ff254FAE</color>
-    <color name="wizardPrimary">#ff3367d6</color>
-    <color name="wizardAccent">#ff3367d6</color>
+    <!-- Setup Wizard Colors -->
+    <color name="wizardPrimaryDark">#388E3C</color>
+    <color name="wizardPrimary">#4CAF50</color>
+    <color name="wizardAccent">#66BB6A</color>
 
     <color name="statusBarLight">#aaffffff</color>
     <color name="statusBarDark">#aa000000</color>
+
+    <!-- Additional EduTab Brand Colors -->
+    <color name="edutabGreen1">#4CAF50</color>
+    <color name="edutabGreen2">#66BB6A</color>
+    <color name="edutabGreen3">#81C784</color>
+    <color name="edutabGreen4">#A5D6A7</color>
 </resources>

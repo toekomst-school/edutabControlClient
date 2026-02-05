@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Администратор</string>
+    <string name="install_error">Грешка при инсталиране</string>
+    <string name="file_create_error">Грешка при създаване на файл</string>
+    <string name="dialog_enter_device_id_error">Този идентификатор не е регистриран в %s. Вземете идентификатора от раздел \"Устройства\" в контролния панел.</string>
+    <string name="dialog_enter_device_id_qrcode">QR код</string>
+    <string name="dialog_enter_device_id_variants">Варианти</string>
+    <string name="dialog_enter_device_id_save">Запазване</string>
+    <string name="dialog_enter_device_id_exit">Изход</string>
+    <string name="dialog_enter_device_id_title">Въведете идентификатор на устройство в %s</string>
+    <string name="main_start_preparations">Подготовка за стартиране</string>
+    <string name="main_downloading_configuration">Актуализиране на конфигурационен файл</string>
+    <string name="main_downloading_content">Актуализиране на данни</string>
+    <string name="main_update_applications">Инсталиране и актуализиране на приложения</string>
+    <string name="dialog_root_message">Необходим е ROOT достъп</string>
+    <string name="main_application_start">Стартиране на приложение</string>
+    <string name="main_app_installing">Инсталиране на приложение</string>
+    <string name="main_app_downloading">Изтегляне на приложение</string>
+    <string name="main_app_downloading_error">Неуспешно изтегляне на пакета</string>
+    <string name="main_app_removing">Деинсталиране на приложение</string>
+    <string name="main_file_downloading">Изтегляне на файл</string>
+    <string name="main_file_downloading_error">Неуспешно изтегляне на файл</string>
+    <string name="main_activity_repeat">Повторен опит</string>
+    <string name="main_activity_reset">Нулиране</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Отказ</string>
+    <string name="main_activity_details">Подробности</string>
+    <string name="select_system_launcher">Изберете %s като стартер по подразбиране и маркирайте \'Винаги\':</string>
+    <string name="dialog_network_error_title">Грешка при свързване към %s. Проверете интернет връзката и опитайте отново.</string>
+    <string name="main_activity_update_config">Заявка за конфигурационен файл от сървъра</string>
+    <string name="main_activity_applications_update">Актуализиране на приложения</string>
+    <string name="dialog_overlay_settings_title">Разрешете на приложението да рисува върху други прозорци.\n\nТази опция помага за блокиране на нежелани приложения и позволява аварийно отключване на режим киоск.\n\nДокоснете \"Продължи\" за отваряне на настройките. Намерете елемент \"%s\", дайте разрешение и докоснете \"Назад\".</string>
+    <string name="dialog_manage_storage_title">Разрешете на приложението да управлява хранилището.\n\nТова позволява на EduTab да управлява учебни материали на вашия таблет.</string>
+    <string name="dialog_history_settings_title">Разрешете на приложението достъп до данни за използване.\n\nТази опция позволява контрол на приложения и настройки.\n\nТази опция може да причини по-бързо изтощаване на батерията. За пестене на батерия, пропуснете тази опция (използвайте вместо това услуги за достъпност или режим киоск).\n\nДокоснете \"Продължи\" за отваряне на настройките. Намерете елемент \"%s\", дайте разрешение и докоснете \"Назад\".</string>
+    <string name="dialog_history_settings_continue">Продължи</string>
+    <string name="dialog_history_settings_skip">Пропусни</string>
+    <string name="dialog_unknown_sources_title">Разрешете инсталиране от неизвестни източници. Ще се отвори страница с настройки. Намерете \"Неизвестни източници\", разрешете инсталирането и натиснете \"Назад\".</string>
+    <string name="dialog_unknown_sources_continue">Продължи</string>
+    <string name="dialog_miui_permissions_title">MIUI изисква ръчна настройка на персонализирани разрешения. Прозорецът за разрешения на приложението ще се отвори сега. Докоснете \"Други разрешения\", разрешете \"Показване на изскачащи прозорци при работа на заден план\" и натиснете \"Назад\".</string>
+    <string name="dialog_miui_developer_title">MIUI изисква ръчна настройка на вашето устройство. На информационния екран ДОКОСНЕТЕ 7 ПЪТИ \"НОМЕР НА ВЕРСИЯ\". Това ще активира настройките за разработчици.</string>
+    <string name="dialog_miui_optimization_title">MIUI изисква ръчна настройка на вашето устройство. Прозорецът за настройки за разработчици ще се отвори сега. Превъртете надолу и премахнете отметката от \"MIUI оптимизация\".</string>
+    <string name="dialog_administrator_mode_message">Разрешете на приложението да работи в режим на администратор на устройство. Ще се отвори страница с настройки. Изберете \"Администратори на устройства\", намерете елемента \"%s\", активирайте администратора и докоснете \"Назад\".</string>
+    <string name="dialog_administrator_mode_continue">Продължи</string>
+    <string name="dialog_administrator_mode_skip">Пропусни</string>
+    <string name="accessibility_service_description">EduTab среда за обучение</string>
+    <string name="dialog_accessibility_service_message">Разрешете на приложението да използва услуги за достъпност. Ще се отвори страница с настройки. Намерете елемента \"%s\", разрешете използването на услуги за достъпност и докоснете \"Назад\".</string>
+    <string name="dialog_accessibility_service_continue">Продължи</string>
+    <string name="dialog_accessibility_service_skip">Пропусни</string>
+    <string name="access_to_app_denied">Пакетът не е разрешен:</string>
+    <string name="access_to_app_denied_2">Помолете администратора да активира този пакет в конфигурацията.\n\nНатиснете \'Затвори\' или бутона Начало за продължаване.</string>
+    <string name="package_id_copied">Идентификаторът на пакета е копиран в клипборда</string>
+    <string name="dialog_app_not_allowed_close">Затвори</string>
+    <string name="dialog_app_not_allowed_admin">Администратор</string>
+    <string name="device_id">Идентификатор на устройство</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Сериен номер</string>
+    <string name="phone_number">Телефонен номер</string>
+    <string name="launcher_version">Версия на стартера</string>
+    <string name="close">Затвори</string>
+    <string name="admin_change_device_id">Промяна на идентификатор на устройство</string>
+    <string name="admin_change_server_url">Промяна на URL на сървъра</string>
+    <string name="admin_allow_settings">Отвори настройки</string>
+    <string name="settings_allowed">Можете да променяте настройки за 3 минути.</string>
+    <string name="admin_clear_restrictions">Премахване на ограничения</string>
+    <string name="permissive_mode_enabled">Можете да стартирате всички приложения за 3 минути.</string>
+    <string name="admin_refresh">Актуализиране на конфигурация</string>
+    <string name="admin_exit">Изход към системния стартер</string>
+    <string name="admin_reset_permissions">Проверка на разрешения</string>
+    <string name="admin_reset_network">Нулиране на мрежова политика</string>
+    <string name="admin_reset_network_hint">Мрежовите политики са изчистени. Сега можете да активирате мрежата и да презаредите конфигурацията.</string>
+    <string name="reboot">Рестартиране на устройство</string>
+    <string name="reboot_failed">Недостатъчни права за рестартиране на устройството.</string>
+    <string name="message_turn_on_gps">Ще се отвори екранът с настройки. Включете GPS местоположение на този екран и натиснете Назад.</string>
+    <string name="message_turn_off_gps">Ще се отвори екранът с настройки. ИЗКЛЮЧЕТЕ GPS местоположение на този екран и натиснете Назад.</string>
+    <string name="message_turn_on_mobile_data">Мобилните данни са изключени! Отворете лентата на състоянието и включете мобилните данни.</string>
+    <string name="message_turn_off_mobile_data">Мобилните данни са включени. Отворете лентата на състоянието и ИЗКЛЮЧЕТЕ мобилните данни.</string>
+    <string name="message_set_password">Качеството на паролата ви не е достатъчно добро. Ще се отвори екранът с настройки. Променете паролата и натиснете Назад.</string>
+    <string name="switch_off_blockings">Изключване на ограничения...</string>
+    <string name="kiosk_mode_requires_overlays">Режим киоск е деактивиран: няма разрешение за рисуване върху други прозорци. Разрешете на %s да рисува върху други прозорци.</string>
+    <string name="enter_admin_password">Въведете администраторска парола</string>
+    <string name="wrong_password">Грешна парола</string>
+    <string name="dialog_enter_password_login">Вход</string>
+    <string name="dialog_enter_password_cancel">Отказ</string>
+    <string name="internal_error">Приложението срещна вътрешна грешка. Рестартирайте устройството и опитайте действието отново.</string>
+    <string name="empty_configuration">Конфигурацията не е зададена, опит за получаване от сървъра!</string>
+    <string name="permissions_reset_hint">Затворете административния панел за проверка и заявка на разрешения.</string>
+    <string name="dialog_enter_server_error">Въведете валиден URL на сървъра.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Въведете URL на сървъра</string>
+    <string name="critical_server_failure">Проблем с връзката! Рестартирайте %s или се свържете с вашето училище.</string>
+    <string name="dialog_permission_title">Приложението изисква разрешения за работа. Дайте исканите разрешения.</string>
+    <string name="main_activity_exit">Изход</string>
+    <string name="browser_not_found">Не може да се отвори уеб страницата, защото браузърът не е намерен. Добавете браузър приложение към конфигурацията на устройството.</string>
+    <string name="invalid_web_link">Не може да се отвори уеб връзката, защото е неправилно форматирана. Свържете се с администратора за подробности.</string>
+    <string name="activity_not_found">Не може да се изпълни действие %s, защото активността не е намерена.</string>
+    <string name="location_service_text">Местоположението на устройството се следи</string>
+    <string name="qrcode_contents_error">Невалидно съдържание на QR код. Генерирайте QR кода за осигуряване в уеб панела %s.</string>
+    <string name="device_locked">Този таблет (%s) е заключен от вашето училище.</string>
+    <string name="fault_loop_detected">Опа, нещо се обърка! Рестартирайте таблета или помолете учителя си за помощ.</string>
+    <string name="mqtt_service_text">Push известията са активни</string>
+    <string name="background_location">%s изисква разрешение за местоположение на заден план. Натиснете \'Продължи\' за отваряне на разрешения, натиснете \'Местоположение\' и разрешете винаги определяне на местоположение.</string>
+    <string name="location_disable">Деактивиране на местоположение</string>
+    <string name="background_location_continue">Продължи</string>
+    <string name="initializing_mdm">Настройване на вашия таблет за обучение...</string>
+    <string name="dialog_server_error_title">MDM сървърът %s върна невалиден отговор. Свържете се с администратора.</string>
+    <string name="mdm_choice_message">Този таблет ще бъде настроен и подготвен от вашето училище.</string>
+    <string name="work_profile_message">Този таблет ще получи училищен профил за образователни приложения. Можете да превключвате между училищен и личен профил по всяко време.</string>
+    <string name="overlays_not_supported">За съжаление наслагванията не се поддържат от вашето устройство.</string>
+    <string name="admin_not_supported">Вашето устройство няма опция за администратор на устройство. Натиснете Пропусни за продължаване.</string>
+    <string name="manage_storage_not_supported">Вашето устройство няма опция за управление на външно хранилище.</string>
+    <string name="certificate_install_failed">Неуспешно инсталиране на сертификат %1$s: %2$s</string>
+</resources>

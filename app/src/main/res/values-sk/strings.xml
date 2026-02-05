@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Administrátor</string>
+    <string name="install_error">Chyba inštalácie</string>
+    <string name="file_create_error">Chyba pri vytváraní súboru</string>
+    <string name="dialog_enter_device_id_error">Toto ID nie je registrované na %s. Získajte ID zo záložky \"Zariadenia\" v ovládacom paneli.</string>
+    <string name="dialog_enter_device_id_qrcode">QR kód</string>
+    <string name="dialog_enter_device_id_variants">Varianty</string>
+    <string name="dialog_enter_device_id_save">Uložiť</string>
+    <string name="dialog_enter_device_id_exit">Ukončiť</string>
+    <string name="dialog_enter_device_id_title">Zadajte ID zariadenia na %s</string>
+    <string name="main_start_preparations">Príprava na spustenie</string>
+    <string name="main_downloading_configuration">Aktualizácia konfiguračného súboru</string>
+    <string name="main_downloading_content">Aktualizácia údajov</string>
+    <string name="main_update_applications">Inštalácia a aktualizácia aplikácií</string>
+    <string name="dialog_root_message">Potrebujete ROOT prístup</string>
+    <string name="main_application_start">Spúšťanie aplikácie</string>
+    <string name="main_app_installing">Inštalácia aplikácie</string>
+    <string name="main_app_downloading">Sťahovanie aplikácie</string>
+    <string name="main_app_downloading_error">Nepodarilo sa stiahnuť balík</string>
+    <string name="main_app_removing">Odinštalovanie aplikácie</string>
+    <string name="main_file_downloading">Sťahovanie súboru</string>
+    <string name="main_file_downloading_error">Nepodarilo sa stiahnuť súbor</string>
+    <string name="main_activity_repeat">Skúsiť znova</string>
+    <string name="main_activity_reset">Obnoviť</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Zrušiť</string>
+    <string name="main_activity_details">Podrobnosti</string>
+    <string name="select_system_launcher">Vyberte %s ako predvolený spúšťač a zaškrtnite \'Vždy\':</string>
+    <string name="dialog_network_error_title">Chyba pripojenia k %s. Skontrolujte internetové pripojenie a skúste znova.</string>
+    <string name="main_activity_update_config">Žiadosť o konfiguračný súbor zo servera</string>
+    <string name="main_activity_applications_update">Aktualizácia aplikácií</string>
+    <string name="dialog_overlay_settings_title">Povoľte aplikácii kresliť cez iné okná.\n\nTáto možnosť pomáha lepšie blokovať nechcené aplikácie a umožňuje núdzové odblokovanie režimu kiosku.\n\nŤuknite na \"Pokračovať\" pre otvorenie nastavení. Nájdite položku \"%s\", udeľte povolenie a ťuknite na \"Späť\".</string>
+    <string name="dialog_manage_storage_title">Povoľte aplikácii spravovať úložisko.\n\nTo umožňuje EduTab spravovať učebné materiály na vašom tablete.</string>
+    <string name="dialog_history_settings_title">Povoľte aplikácii prístup k údajom o používaní.\n\nTáto možnosť umožňuje kontrolu aplikácií a nastavení.\n\nTáto možnosť môže spôsobiť rýchlejšie vybíjanie batérie. Pre úsporu batérie túto možnosť preskočte (namiesto toho použite služby prístupnosti alebo režim kiosku).\n\nŤuknite na \"Pokračovať\" pre otvorenie nastavení. Nájdite položku \"%s\", udeľte povolenie a ťuknite na \"Späť\".</string>
+    <string name="dialog_history_settings_continue">Pokračovať</string>
+    <string name="dialog_history_settings_skip">Preskočiť</string>
+    <string name="dialog_unknown_sources_title">Povoľte inštaláciu z neznámych zdrojov. Teraz sa otvorí stránka nastavení. Nájdite \"Neznáme zdroje\", povoľte inštaláciu a kliknite na \"Späť\".</string>
+    <string name="dialog_unknown_sources_continue">Pokračovať</string>
+    <string name="dialog_miui_permissions_title">MIUI vyžaduje manuálne nastavenie vlastných povolení. Teraz sa otvorí okno povolení aplikácie. Ťuknite na \"Iné povolenia\", povoľte \"Zobrazovať vyskakovacie okná počas behu na pozadí\" a kliknite na \"Späť\".</string>
+    <string name="dialog_miui_developer_title">MIUI vyžaduje manuálne nastavenie vášho zariadenia. Na obrazovke s informáciami ŤUKNITE 7-KRÁT NA \"ČÍSLO ZOSTAVY\". Tým sa povolia nastavenia pre vývojárov.</string>
+    <string name="dialog_miui_optimization_title">MIUI vyžaduje manuálne nastavenie vášho zariadenia. Teraz sa otvorí okno nastavení pre vývojárov. Posuňte obrazovku nadol a zrušte zaškrtnutie \"Optimalizácia MIUI\".</string>
+    <string name="dialog_administrator_mode_message">Povoľte aplikácii pracovať v režime správcu zariadenia. Teraz sa otvorí stránka nastavení. Vyberte \"Správcovia zariadení\", nájdite položku \"%s\", aktivujte správcu a ťuknite na \"Späť\".</string>
+    <string name="dialog_administrator_mode_continue">Pokračovať</string>
+    <string name="dialog_administrator_mode_skip">Preskočiť</string>
+    <string name="accessibility_service_description">Vzdelávacie prostredie EduTab</string>
+    <string name="dialog_accessibility_service_message">Povoľte aplikácii používať služby prístupnosti. Teraz sa otvorí stránka nastavení. Nájdite položku \"%s\", povoľte používanie služieb prístupnosti a ťuknite na \"Späť\".</string>
+    <string name="dialog_accessibility_service_continue">Pokračovať</string>
+    <string name="dialog_accessibility_service_skip">Preskočiť</string>
+    <string name="access_to_app_denied">Balík nie je povolený:</string>
+    <string name="access_to_app_denied_2">Požiadajte správcu, aby povolil tento balík v konfigurácii.\n\nKliknite na \'Zavrieť\' alebo tlačidlo Domov pre pokračovanie.</string>
+    <string name="package_id_copied">ID balíka bolo skopírované do schránky</string>
+    <string name="dialog_app_not_allowed_close">Zavrieť</string>
+    <string name="dialog_app_not_allowed_admin">Administrátor</string>
+    <string name="device_id">ID zariadenia</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Sériové číslo</string>
+    <string name="phone_number">Telefónne číslo</string>
+    <string name="launcher_version">Verzia spúšťača</string>
+    <string name="close">Zavrieť</string>
+    <string name="admin_change_device_id">Zmeniť ID zariadenia</string>
+    <string name="admin_change_server_url">Zmeniť URL servera</string>
+    <string name="admin_allow_settings">Otvoriť nastavenia</string>
+    <string name="settings_allowed">Môžete meniť nastavenia po dobu 3 minút.</string>
+    <string name="admin_clear_restrictions">Odstrániť obmedzenia</string>
+    <string name="permissive_mode_enabled">Môžete spúšťať všetky aplikácie po dobu 3 minút.</string>
+    <string name="admin_refresh">Aktualizovať konfiguráciu</string>
+    <string name="admin_exit">Ukončiť do systémového spúšťača</string>
+    <string name="admin_reset_permissions">Skontrolovať povolenia</string>
+    <string name="admin_reset_network">Obnoviť sieťovú politiku</string>
+    <string name="admin_reset_network_hint">Sieťové politiky boli vymazané. Teraz môžete povoliť sieť a znova načítať konfiguráciu.</string>
+    <string name="reboot">Reštartovať zariadenie</string>
+    <string name="reboot_failed">Nedostatočné práva na reštartovanie zariadenia.</string>
+    <string name="message_turn_on_gps">Otvorí sa obrazovka nastavení. Zapnite GPS polohu na tejto obrazovke a kliknite na Späť.</string>
+    <string name="message_turn_off_gps">Otvorí sa obrazovka nastavení. VYPNITE GPS polohu na tejto obrazovke a kliknite na Späť.</string>
+    <string name="message_turn_on_mobile_data">Mobilné dáta sú vypnuté! Otvorte stavový riadok a zapnite mobilné dáta.</string>
+    <string name="message_turn_off_mobile_data">Mobilné dáta sú zapnuté. Otvorte stavový riadok a VYPNITE mobilné dáta.</string>
+    <string name="message_set_password">Kvalita vášho hesla nie je dostatočne dobrá. Otvorí sa obrazovka nastavení. Zmeňte heslo a kliknite na Späť.</string>
+    <string name="switch_off_blockings">Vypínanie obmedzení...</string>
+    <string name="kiosk_mode_requires_overlays">Režim kiosku vypnutý: chýba povolenie kresliť cez iné okná. Povoľte %s kresliť cez iné okná.</string>
+    <string name="enter_admin_password">Zadajte heslo správcu</string>
+    <string name="wrong_password">Nesprávne heslo</string>
+    <string name="dialog_enter_password_login">Prihlásiť sa</string>
+    <string name="dialog_enter_password_cancel">Zrušiť</string>
+    <string name="internal_error">Aplikácia narazila na internú chybu. Reštartujte zariadenie a skúste akciu znova.</string>
+    <string name="empty_configuration">Konfigurácia nie je nastavená, opakujem pokus o získanie zo servera!</string>
+    <string name="permissions_reset_hint">Zatvorte panel správcu pre kontrolu a vyžiadanie povolení.</string>
+    <string name="dialog_enter_server_error">Zadajte platnú URL servera.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Zadajte URL servera</string>
+    <string name="critical_server_failure">Problém s pripojením! Reštartujte %s alebo kontaktujte vašu školu.</string>
+    <string name="dialog_permission_title">Aplikácia vyžaduje povolenia na beh. Udeľte požadované povolenia.</string>
+    <string name="main_activity_exit">Ukončiť</string>
+    <string name="browser_not_found">Nie je možné otvoriť webovú stránku, pretože prehliadač nebol nájdený. Pridajte aplikáciu prehliadača do konfigurácie zariadenia.</string>
+    <string name="invalid_web_link">Nie je možné otvoriť webový odkaz, pretože je nesprávne formátovaný. Pre podrobnosti kontaktujte správcu.</string>
+    <string name="activity_not_found">Nie je možné vykonať akciu %s, pretože aktivita nebola nájdená.</string>
+    <string name="location_service_text">Poloha zariadenia je monitorovaná</string>
+    <string name="qrcode_contents_error">Neplatný obsah QR kódu. Vygenerujte QR kód na zabezpečenie vo webovom paneli %s.</string>
+    <string name="device_locked">Tento tablet (%s) bol uzamknutý vašou školou.</string>
+    <string name="fault_loop_detected">Ups, niečo sa pokazilo! Reštartujte tablet alebo požiadajte učiteľa o pomoc.</string>
+    <string name="mqtt_service_text">Push notifikácie sú aktívne</string>
+    <string name="background_location">%s vyžaduje povolenie na polohu na pozadí. Kliknite na \'Pokračovať\' pre otvorenie povolení, kliknite na \'Poloha\' a povoľte vždy určovať polohu.</string>
+    <string name="location_disable">Vypnúť polohu</string>
+    <string name="background_location_continue">Pokračovať</string>
+    <string name="initializing_mdm">Nastavujem váš vzdelávací tablet...</string>
+    <string name="dialog_server_error_title">MDM server %s vrátil neplatnú odpoveď. Kontaktujte správcu.</string>
+    <string name="mdm_choice_message">Tento tablet bude nastavený a pripravený vašou školou.</string>
+    <string name="work_profile_message">Tento tablet získa školský profil pre vzdelávacie aplikácie. Môžete kedykoľvek prepínať medzi školským a osobným profilom.</string>
+    <string name="overlays_not_supported">Bohužiaľ vaše zariadenie nepodporuje prekrytia.</string>
+    <string name="admin_not_supported">Vaše zariadenie nemá možnosť správcu zariadenia. Kliknite na Preskočiť pre pokračovanie.</string>
+    <string name="manage_storage_not_supported">Vaše zariadenie nemá možnosť správy externého úložiska.</string>
+    <string name="certificate_install_failed">Nepodarilo sa nainštalovať certifikát %1$s: %2$s</string>
+</resources>

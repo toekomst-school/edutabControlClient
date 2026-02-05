@@ -1,0 +1,131 @@
+<!--
+  ~ Headwind MDM: Open Source Android MDM Software
+  ~ https://h-mdm.com
+  ~
+  ~ Copyright (C) 2019 Headwind Solutions LLC (http://h-sms.com)
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <string name="admin_title">Адміністратор</string>
+    <string name="install_error">Помилка встановлення</string>
+    <string name="file_create_error">Помилка створення файлу</string>
+    <string name="dialog_enter_device_id_error">Цей ідентифікатор не зареєстрований на %s. Отримайте ідентифікатор з вкладки \"Пристрої\" панелі керування.</string>
+    <string name="dialog_enter_device_id_qrcode">QR-код</string>
+    <string name="dialog_enter_device_id_variants">Варіанти</string>
+    <string name="dialog_enter_device_id_save">Зберегти</string>
+    <string name="dialog_enter_device_id_exit">Вихід</string>
+    <string name="dialog_enter_device_id_title">Введіть ідентифікатор пристрою на %s</string>
+    <string name="main_start_preparations">Підготовка до запуску</string>
+    <string name="main_downloading_configuration">Оновлення файлу конфігурації</string>
+    <string name="main_downloading_content">Оновлення даних</string>
+    <string name="main_update_applications">Встановлення та оновлення додатків</string>
+    <string name="dialog_root_message">Потрібен ROOT-доступ</string>
+    <string name="main_application_start">Запуск додатку</string>
+    <string name="main_app_installing">Встановлення додатку</string>
+    <string name="main_app_downloading">Завантаження додатку</string>
+    <string name="main_app_downloading_error">Не вдалося завантажити пакет</string>
+    <string name="main_app_removing">Видалення додатку</string>
+    <string name="main_file_downloading">Завантаження файлу</string>
+    <string name="main_file_downloading_error">Не вдалося завантажити файл</string>
+    <string name="main_activity_repeat">Повторити</string>
+    <string name="main_activity_reset">Скинути</string>
+    <string name="main_activity_wifi">WiFi</string>
+    <string name="main_activity_cancel">Скасувати</string>
+    <string name="main_activity_details">Деталі</string>
+    <string name="select_system_launcher">Виберіть %s як стандартний лаунчер і позначте \'Завжди\':</string>
+    <string name="dialog_network_error_title">Помилка підключення до %s. Перевірте інтернет-з\'єднання і спробуйте ще раз.</string>
+    <string name="main_activity_update_config">Запит файлу конфігурації з сервера</string>
+    <string name="main_activity_applications_update">Оновлення додатків</string>
+    <string name="dialog_overlay_settings_title">Дозвольте додатку малювати поверх інших вікон.\n\nЦя опція допомагає блокувати небажані додатки та дозволяє аварійне розблокування режиму кіоску.\n\nНатисніть \"Продовжити\", щоб відкрити налаштування. Знайдіть елемент \"%s\", надайте дозвіл і натисніть \"Назад\".</string>
+    <string name="dialog_manage_storage_title">Дозвольте додатку керувати сховищем.\n\nЦе дозволяє EduTab керувати навчальними матеріалами на вашому планшеті.</string>
+    <string name="dialog_history_settings_title">Дозвольте додатку доступ до даних використання.\n\nЦя опція дозволяє контролювати додатки та налаштування.\n\nЦя опція може спричинити швидше розрядження батареї. Щоб зберегти батарею, пропустіть цю опцію (використовуйте натомість служби доступності або режим кіоску).\n\nНатисніть \"Продовжити\", щоб відкрити налаштування. Знайдіть елемент \"%s\", надайте дозвіл і натисніть \"Назад\".</string>
+    <string name="dialog_history_settings_continue">Продовжити</string>
+    <string name="dialog_history_settings_skip">Пропустити</string>
+    <string name="dialog_unknown_sources_title">Дозвольте встановлення з невідомих джерел. Зараз відкриється сторінка налаштувань. Знайдіть \"Невідомі джерела\", дозвольте встановлення та натисніть \"Назад\".</string>
+    <string name="dialog_unknown_sources_continue">Продовжити</string>
+    <string name="dialog_miui_permissions_title">MIUI вимагає ручного налаштування користувацьких дозволів. Зараз відкриється вікно дозволів додатку. Натисніть \"Інші дозволи\", дозвольте \"Показувати спливаючі вікна під час роботи у фоні\" та натисніть \"Назад\".</string>
+    <string name="dialog_miui_developer_title">MIUI вимагає ручного налаштування вашого пристрою. На екрані інформації НАТИСНІТЬ 7 РАЗІВ НА \"НОМЕР ЗБІРКИ\". Це активує налаштування розробника.</string>
+    <string name="dialog_miui_optimization_title">MIUI вимагає ручного налаштування вашого пристрою. Зараз відкриється вікно налаштувань розробника. Прокрутіть вниз та зніміть позначку \"Оптимізація MIUI\".</string>
+    <string name="dialog_administrator_mode_message">Дозвольте додатку працювати в режимі адміністратора пристрою. Зараз відкриється сторінка налаштувань. Виберіть \"Адміністратори пристрою\", знайдіть елемент \"%s\", активуйте адміністратора та натисніть \"Назад\".</string>
+    <string name="dialog_administrator_mode_continue">Продовжити</string>
+    <string name="dialog_administrator_mode_skip">Пропустити</string>
+    <string name="accessibility_service_description">Навчальне середовище EduTab</string>
+    <string name="dialog_accessibility_service_message">Дозвольте додатку використовувати служби доступності. Зараз відкриється сторінка налаштувань. Знайдіть елемент \"%s\", дозвольте використання служб доступності та натисніть \"Назад\".</string>
+    <string name="dialog_accessibility_service_continue">Продовжити</string>
+    <string name="dialog_accessibility_service_skip">Пропустити</string>
+    <string name="access_to_app_denied">Пакет не дозволений:</string>
+    <string name="access_to_app_denied_2">Попросіть адміністратора увімкнути цей пакет у конфігурації.\n\nНатисніть \'Закрити\' або кнопку Додому, щоб продовжити.</string>
+    <string name="package_id_copied">Ідентифікатор пакета скопійовано в буфер обміну</string>
+    <string name="dialog_app_not_allowed_close">Закрити</string>
+    <string name="dialog_app_not_allowed_admin">Адміністратор</string>
+    <string name="device_id">Ідентифікатор пристрою</string>
+    <string name="imei">IMEI</string>
+    <string name="serial_number">Серійний номер</string>
+    <string name="phone_number">Номер телефону</string>
+    <string name="launcher_version">Версія лаунчера</string>
+    <string name="close">Закрити</string>
+    <string name="admin_change_device_id">Змінити ідентифікатор пристрою</string>
+    <string name="admin_change_server_url">Змінити URL сервера</string>
+    <string name="admin_allow_settings">Відкрити налаштування</string>
+    <string name="settings_allowed">Ви можете змінювати налаштування протягом 3 хвилин.</string>
+    <string name="admin_clear_restrictions">Зняти обмеження</string>
+    <string name="permissive_mode_enabled">Ви можете запускати всі додатки протягом 3 хвилин.</string>
+    <string name="admin_refresh">Оновити конфігурацію</string>
+    <string name="admin_exit">Вийти до системного лаунчера</string>
+    <string name="admin_reset_permissions">Перевірити дозволи</string>
+    <string name="admin_reset_network">Скинути мережеву політику</string>
+    <string name="admin_reset_network_hint">Мережеві політики очищено. Тепер ви можете увімкнути мережу та перезавантажити конфігурацію.</string>
+    <string name="reboot">Перезавантажити пристрій</string>
+    <string name="reboot_failed">Недостатньо прав для перезавантаження пристрою.</string>
+    <string name="message_turn_on_gps">Відкриється екран налаштувань. Увімкніть GPS-локацію на цьому екрані та натисніть Назад.</string>
+    <string name="message_turn_off_gps">Відкриється екран налаштувань. ВИМКНІТЬ GPS-локацію на цьому екрані та натисніть Назад.</string>
+    <string name="message_turn_on_mobile_data">Мобільні дані вимкнено! Відкрийте панель стану та увімкніть мобільні дані.</string>
+    <string name="message_turn_off_mobile_data">Мобільні дані увімкнено. Відкрийте панель стану та ВИМКНІТЬ мобільні дані.</string>
+    <string name="message_set_password">Якість вашого пароля недостатня. Відкриється екран налаштувань. Змініть пароль та натисніть Назад.</string>
+    <string name="switch_off_blockings">Вимкнення обмежень...</string>
+    <string name="kiosk_mode_requires_overlays">Режим кіоску вимкнено: немає дозволу малювати поверх інших вікон. Дозвольте %s малювати поверх інших вікон.</string>
+    <string name="enter_admin_password">Введіть пароль адміністратора</string>
+    <string name="wrong_password">Неправильний пароль</string>
+    <string name="dialog_enter_password_login">Увійти</string>
+    <string name="dialog_enter_password_cancel">Скасувати</string>
+    <string name="internal_error">У додатку виникла внутрішня помилка. Перезавантажте пристрій та повторіть дію.</string>
+    <string name="empty_configuration">Конфігурація не налаштована, повторна спроба отримання з сервера!</string>
+    <string name="permissions_reset_hint">Закрийте панель адміністратора, щоб перевірити та запросити дозволи.</string>
+    <string name="dialog_enter_server_error">Введіть дійсну URL-адресу сервера.</string>
+    <string name="dialog_enter_server_ok">OK</string>
+    <string name="dialog_enter_server_title">Введіть URL сервера</string>
+    <string name="critical_server_failure">Проблема з підключенням! Перезапустіть %s або зверніться до школи.</string>
+    <string name="dialog_permission_title">Додатку потрібні дозволи для роботи. Надайте запитувані дозволи.</string>
+    <string name="main_activity_exit">Вихід</string>
+    <string name="browser_not_found">Неможливо відкрити веб-сторінку, оскільки браузер не знайдено. Додайте браузер до конфігурації пристрою.</string>
+    <string name="invalid_web_link">Неможливо відкрити веб-посилання, оскільки воно неправильно сформоване. Зверніться до адміністратора за деталями.</string>
+    <string name="activity_not_found">Неможливо виконати дію %s, оскільки активність не знайдено.</string>
+    <string name="location_service_text">Місцезнаходження пристрою відстежується</string>
+    <string name="qrcode_contents_error">Недійсний вміст QR-коду. Згенеруйте QR-код для налаштування у веб-панелі %s.</string>
+    <string name="device_locked">Цей планшет (%s) заблоковано вашою школою.</string>
+    <string name="fault_loop_detected">Ой, щось пішло не так! Перезавантажте планшет або попросіть допомоги у вчителя.</string>
+    <string name="mqtt_service_text">Push-сповіщення активні</string>
+    <string name="background_location">%s потребує дозволу на фонове визначення місцезнаходження. Натисніть \'Продовжити\', щоб відкрити дозволи, натисніть \'Місцезнаходження\' та дозвольте завжди визначати місцезнаходження.</string>
+    <string name="location_disable">Вимкнути місцезнаходження</string>
+    <string name="background_location_continue">Продовжити</string>
+    <string name="initializing_mdm">Налаштування вашого навчального планшета...</string>
+    <string name="dialog_server_error_title">MDM-сервер %s повернув недійсну відповідь. Зверніться до адміністратора.</string>
+    <string name="mdm_choice_message">Цей планшет буде налаштований і підготовлений вашою школою.</string>
+    <string name="work_profile_message">Цей планшет отримає шкільний профіль для навчальних додатків. Ви можете в будь-який час перемикатися між шкільним та особистим профілями.</string>
+    <string name="overlays_not_supported">На жаль, накладання не підтримуються вашим пристроєм.</string>
+    <string name="admin_not_supported">Ваш пристрій не має опції адміністратора пристрою. Натисніть Пропустити, щоб продовжити.</string>
+    <string name="manage_storage_not_supported">Ваш пристрій не має опції керування зовнішнім сховищем.</string>
+    <string name="certificate_install_failed">Не вдалося встановити сертифікат %1$s: %2$s</string>
+</resources>
