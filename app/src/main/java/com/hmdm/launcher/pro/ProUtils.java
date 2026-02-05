@@ -123,20 +123,35 @@ public class ProUtils {
     }
 
     // Rate limiting for location updates
-    private static final long MIN_LOCATION_LOG_INTERVAL_MS = 60000; // 1 minute minimum between logs
+    private static final long NORMAL_LOCATION_INTERVAL_MS = 15 * 60 * 1000; // 15 minutes for normal mode
+    private static final long EMERGENCY_LOCATION_INTERVAL_MS = 30 * 1000; // 30 seconds for emergency mode
     private static long lastLocationLogTime = 0;
     private static Location lastLoggedLocation = null;
+    private static volatile boolean emergencyMode = false;
+
+    public static void setEmergencyMode(boolean enabled) {
+        emergencyMode = enabled;
+    }
+
+    public static boolean isEmergencyMode() {
+        return emergencyMode;
+    }
 
     public static void processLocation(Context context, Location location, String provider) {
         if (location == null) {
             return;
         }
 
+        // Use different intervals for normal vs emergency mode
+        long intervalMs = emergencyMode ? EMERGENCY_LOCATION_INTERVAL_MS : NORMAL_LOCATION_INTERVAL_MS;
+
         // Rate limit: only log if enough time has passed or location changed significantly
         long now = System.currentTimeMillis();
-        if (lastLoggedLocation != null && (now - lastLocationLogTime) < MIN_LOCATION_LOG_INTERVAL_MS) {
+        if (lastLoggedLocation != null && (now - lastLocationLogTime) < intervalMs) {
+            // In emergency mode, allow if moved more than 10m; normal mode 100m
+            float minDistance = emergencyMode ? 10 : 100;
             float distance = location.distanceTo(lastLoggedLocation);
-            if (distance < 50) { // Less than 50 meters movement
+            if (distance < minDistance) {
                 return;
             }
         }

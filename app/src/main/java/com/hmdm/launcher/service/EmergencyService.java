@@ -32,21 +32,8 @@ import androidx.core.app.NotificationCompat;
 
 import com.hmdm.launcher.Const;
 import com.hmdm.launcher.R;
-import com.hmdm.launcher.db.DatabaseHelper;
-import com.hmdm.launcher.db.LocationTable;
-import com.hmdm.launcher.helper.SettingsHelper;
 import com.hmdm.launcher.pro.ProUtils;
-import com.hmdm.launcher.server.ServerService;
-import com.hmdm.launcher.server.ServerServiceKeeper;
 import com.hmdm.launcher.util.RemoteLogger;
-
-import java.util.Collections;
-import java.util.List;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class EmergencyService extends Service {
     private static final String TAG = "EmergencyService";
@@ -128,6 +115,9 @@ public class EmergencyService extends Service {
         }
         isRunning = true;
 
+        // Enable emergency mode for faster location updates via ProUtils
+        ProUtils.setEmergencyMode(true);
+
         RemoteLogger.log(this, Const.LOG_WARN, "Emergency mode activated!");
 
         // Start as foreground service
@@ -146,6 +136,9 @@ public class EmergencyService extends Service {
 
     private void stopEmergency() {
         isRunning = false;
+
+        // Disable emergency mode
+        ProUtils.setEmergencyMode(false);
 
         RemoteLogger.log(this, Const.LOG_INFO, "Emergency mode deactivated");
 
@@ -328,42 +321,9 @@ public class EmergencyService extends Service {
     }
 
     private void sendLocationToServer(Location location) {
-        try {
-            SettingsHelper settingsHelper = SettingsHelper.getInstance(this);
-            ServerService serverService = ServerServiceKeeper.getServerServiceInstance(this);
-
-            if (serverService == null) {
-                Log.e(TAG, "Server service not available");
-                return;
-            }
-
-            String project = settingsHelper.getServerProject();
-            String deviceId = settingsHelper.getDeviceId();
-
-            LocationTable.Location loc = new LocationTable.Location(location);
-            List<LocationTable.Location> locations = Collections.singletonList(loc);
-
-            Call<ResponseBody> call = serverService.sendLocations(project, deviceId, locations);
-            call.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    if (response.isSuccessful()) {
-                        Log.d(TAG, "Emergency location sent successfully");
-                        RemoteLogger.log(EmergencyService.this, Const.LOG_DEBUG,
-                            "Emergency location sent: " + location.getLatitude() + ", " + location.getLongitude());
-                    } else {
-                        Log.e(TAG, "Failed to send location: " + response.code());
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Log.e(TAG, "Failed to send location", t);
-                }
-            });
-        } catch (Exception e) {
-            Log.e(TAG, "Error sending location to server", e);
-        }
+        // Use ProUtils to send location via logging (works without devicelocations plugin)
+        ProUtils.processLocation(this, location, "emergency");
+        Log.d(TAG, "Emergency location sent: " + location.getLatitude() + ", " + location.getLongitude());
     }
 
     @Override
@@ -403,36 +363,8 @@ public class EmergencyService extends Service {
             }
 
             if (bestLocation != null) {
-                SettingsHelper settingsHelper = SettingsHelper.getInstance(context);
-                ServerService serverService = ServerServiceKeeper.getServerServiceInstance(context);
-
-                if (serverService == null) {
-                    RemoteLogger.log(context, Const.LOG_WARN, "Cannot ping location: server service not available");
-                    return;
-                }
-
-                String project = settingsHelper.getServerProject();
-                String deviceId = settingsHelper.getDeviceId();
-
-                LocationTable.Location loc = new LocationTable.Location(bestLocation);
-                List<LocationTable.Location> locations = Collections.singletonList(loc);
-
-                final Location finalLocation = bestLocation;
-                Call<ResponseBody> call = serverService.sendLocations(project, deviceId, locations);
-                call.enqueue(new Callback<ResponseBody>() {
-                    @Override
-                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                        if (response.isSuccessful()) {
-                            RemoteLogger.log(context, Const.LOG_INFO,
-                                "Location ping sent: " + finalLocation.getLatitude() + ", " + finalLocation.getLongitude());
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-                        RemoteLogger.log(context, Const.LOG_WARN, "Location ping failed: " + t.getMessage());
-                    }
-                });
+                // Use ProUtils to send location via logging
+                ProUtils.processLocation(context, bestLocation, "ping");
             } else {
                 RemoteLogger.log(context, Const.LOG_WARN, "Location ping: no location available");
             }
