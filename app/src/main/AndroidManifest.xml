@@ -264,7 +264,11 @@
         </provider>
 
         <service android:name=".pro.service.CheckForegroundApplicationService"
-            android:exported="true"/>
+            android:foregroundServiceType="specialUse"
+            android:exported="false">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="App whitelist enforcement"/>
+        </service>
 
         <service android:name=".service.PluginApiService" android:enabled="true" android:exported="true">
             <intent-filter>
@@ -306,6 +310,13 @@
             android:exported="false">
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
                 android:value="Push notification service"/>
+        </service>
+
+        <service android:name=".ui.TimerOverlayService"
+            android:foregroundServiceType="specialUse"
+            android:exported="false">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Timer countdown overlay service"/>
         </service>
 
     </application>

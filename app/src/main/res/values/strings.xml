@@ -144,4 +144,12 @@
     <!-- EduTab quick actions -->
     <string name="attention_look_at_teacher">Look at your teacher</string>
     <string name="accessibility_service_description">Allows remote control features like locking the screen</string>
+
+    <!-- App blocking permission reminders -->
+    <string name="permission_reminder_title">Permissions Required</string>
+    <string name="permission_reminder_message">App blocking is enabled but required permissions are missing.\n\nPlease grant the following permissions to enforce app restrictions:</string>
+    <string name="permission_usage_stats">Usage Access</string>
+    <string name="permission_accessibility">Accessibility Service</string>
+    <string name="permission_reminder_open_settings">Open Settings</string>
+    <string name="permission_reminder_later">Later</string>
 </resources>

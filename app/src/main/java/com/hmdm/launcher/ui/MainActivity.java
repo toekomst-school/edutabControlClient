@@ -657,7 +657,12 @@ public class MainActivity
     private void startServices() {
         // Foreground apps checks are not available in a free version: services are the stubs
         if (preferences.getInt(Const.PREFERENCES_USAGE_STATISTICS, Const.PREFERENCES_OFF) == Const.PREFERENCES_ON) {
-            startService(new Intent(MainActivity.this, CheckForegroundApplicationService.class));
+            Intent serviceIntent = new Intent(MainActivity.this, CheckForegroundApplicationService.class);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(serviceIntent);
+            } else {
+                startService(serviceIntent);
+            }
         }
         if (BuildConfig.USE_ACCESSIBILITY &&
             preferences.getInt(Const.PREFERENCES_ACCESSIBILITY_SERVICE, Const.PREFERENCES_OFF) == Const.PREFERENCES_ON) {
@@ -672,6 +677,74 @@ public class MainActivity
         // Send pending logs to server
         RemoteLogger.resetState();
         RemoteLogger.sendLogsToServer(MainActivity.this);
+
+        // Check and remind about missing permissions in non-permissive mode
+        checkAppBlockingPermissions();
+    }
+
+    /**
+     * Check if app blocking permissions are granted when in non-permissive mode.
+     * Shows a reminder dialog if permissions are missing.
+     */
+    private void checkAppBlockingPermissions() {
+        ServerConfig config = settingsHelper.getConfig();
+        if (config == null) {
+            return;
+        }
+
+        // Only check in non-permissive, non-kiosk mode
+        if (config.isPermissive() || config.isKioskMode()) {
+            return;
+        }
+
+        boolean hasUsageStats = ProUtils.checkUsageStatistics(this);
+        boolean hasAccessibility = !BuildConfig.USE_ACCESSIBILITY || ProUtils.checkAccessibilityService(this);
+
+        // If at least one permission is granted, we're OK
+        if (hasUsageStats || hasAccessibility) {
+            return;
+        }
+
+        // Both permissions are missing - show reminder
+        showAppBlockingPermissionReminder();
+    }
+
+    private void showAppBlockingPermissionReminder() {
+        // Avoid showing multiple dialogs
+        if (isFinishing()) {
+            return;
+        }
+
+        StringBuilder message = new StringBuilder();
+        message.append(getString(R.string.permission_reminder_message));
+        message.append("\n\n");
+
+        if (!ProUtils.checkUsageStatistics(this)) {
+            message.append("• ").append(getString(R.string.permission_usage_stats)).append("\n");
+        }
+        if (BuildConfig.USE_ACCESSIBILITY && !ProUtils.checkAccessibilityService(this)) {
+            message.append("• ").append(getString(R.string.permission_accessibility)).append("\n");
+        }
+
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.permission_reminder_title)
+                .setMessage(message.toString())
+                .setPositiveButton(R.string.permission_reminder_open_settings, (dialog, which) -> {
+                    // Open accessibility settings (more commonly needed)
+                    if (BuildConfig.USE_ACCESSIBILITY && !ProUtils.checkAccessibilityService(this)) {
+                        Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+                        startActivity(intent);
+                    } else {
+                        // Open usage stats settings
+                        Intent intent = new Intent(Settings.ACTION_USAGE_ACCESS_SETTINGS);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton(R.string.permission_reminder_later, null)
+                .setCancelable(true)
+                .show();
+
+        RemoteLogger.log(this, Const.LOG_WARN, "App blocking permissions missing - reminder shown");
     }
 
     @Override

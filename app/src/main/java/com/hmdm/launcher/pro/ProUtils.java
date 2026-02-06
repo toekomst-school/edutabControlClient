@@ -19,16 +19,22 @@
 
 package com.hmdm.launcher.pro;
 
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.AppOpsManager;
 import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
+import android.os.Build;
+import android.os.Process;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
 
 import com.hmdm.launcher.Const;
+import com.hmdm.launcher.pro.service.CheckForegroundAppAccessibilityService;
 import com.hmdm.launcher.R;
 import com.hmdm.launcher.helper.SettingsHelper;
 import com.hmdm.launcher.json.Application;
@@ -71,16 +77,60 @@ public class ProUtils {
         // Stub
     }
 
-    // Start the service checking if the foreground app is allowed to the user (by usage statistics)
+    // Check if our accessibility service is enabled
     public static boolean checkAccessibilityService(Context context) {
-        // Stub
-        return true;
+        try {
+            AccessibilityManager am = (AccessibilityManager) context.getSystemService(Context.ACCESSIBILITY_SERVICE);
+            if (am == null) {
+                return false;
+            }
+
+            List<AccessibilityServiceInfo> enabledServices = am.getEnabledAccessibilityServiceList(
+                    AccessibilityServiceInfo.FEEDBACK_ALL_MASK);
+
+            String ourServiceName = CheckForegroundAppAccessibilityService.class.getName();
+            String packageName = context.getPackageName();
+
+            for (AccessibilityServiceInfo service : enabledServices) {
+                ComponentName componentName = ComponentName.unflattenFromString(service.getId());
+                if (componentName != null &&
+                        packageName.equals(componentName.getPackageName()) &&
+                        ourServiceName.equals(componentName.getClassName())) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
-    // Pro-version
+    // Check if usage statistics permission is granted
     public static boolean checkUsageStatistics(Context context) {
-        // Stub
-        return true;
+        try {
+            AppOpsManager appOps = (AppOpsManager) context.getSystemService(Context.APP_OPS_SERVICE);
+            if (appOps == null) {
+                return false;
+            }
+
+            int mode;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                mode = appOps.unsafeCheckOpNoThrow(
+                        AppOpsManager.OPSTR_GET_USAGE_STATS,
+                        Process.myUid(),
+                        context.getPackageName());
+            } else {
+                mode = appOps.checkOpNoThrow(
+                        AppOpsManager.OPSTR_GET_USAGE_STATS,
+                        Process.myUid(),
+                        context.getPackageName());
+            }
+
+            return mode == AppOpsManager.MODE_ALLOWED;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     // Add a transparent view on top of the status bar which prevents user interaction with the status bar
