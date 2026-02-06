@@ -280,12 +280,23 @@ public class MainActivity
                     break;
 
                 case Const.ACTION_EXIT_KIOSK:
+                    ProUtils.unlockKiosk(MainActivity.this);
                     ServerConfig config = settingsHelper.getConfig();
                     if (config != null) {
                         config.setKioskMode(false);
-                        RemoteLogger.log(MainActivity.this, Const.LOG_INFO, "Exit kiosk by admin command");
+                        settingsHelper.updateConfig(config);
                         showContent(config);
                     }
+                    break;
+
+                case Const.ACTION_ENTER_KIOSK:
+                    ServerConfig configEnter = settingsHelper.getConfig();
+                    if (configEnter != null) {
+                        configEnter.setKioskMode(true);
+                        settingsHelper.updateConfig(configEnter);
+                        showContent(configEnter);
+                    }
+                    ProUtils.startCosuKioskMode(null, MainActivity.this, false);
                     break;
 
                 case Const.ACTION_ADMIN_PANEL:
@@ -340,6 +351,25 @@ public class MainActivity
     @Override
     protected void onCreate( Bundle savedInstanceState ) {
         super.onCreate( savedInstanceState );
+
+        // Check lock state on startup (for reboot persistence)
+        // This is critical because app starts as HOME launcher, not via BOOT_COMPLETED
+        Log.d(Const.LOG_TAG, "MainActivity.onCreate - checking lock state");
+        try {
+            boolean lockPersisted = LockScreenActivity.isLockStatePersisted(this);
+            boolean alreadyLocked = LockScreenActivity.isLocked();
+            Log.d(Const.LOG_TAG, "MainActivity.onCreate - lockPersisted=" + lockPersisted + ", alreadyLocked=" + alreadyLocked);
+            if (lockPersisted && !alreadyLocked) {
+                Log.d(Const.LOG_TAG, "MainActivity.onCreate - launching LockScreenActivity");
+                Intent lockIntent = new Intent(this, LockScreenActivity.class);
+                lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(lockIntent);
+                // Don't call finish() - MainActivity is the HOME launcher and must stay alive
+                // LockScreenActivity will be on top due to singleInstance launch mode
+            }
+        } catch (Exception e) {
+            Log.e(Const.LOG_TAG, "MainActivity.onCreate - lock check error: " + e.getMessage());
+        }
 
         Intent intent = getIntent();
         Log.d(Const.LOG_TAG, "MainActivity started" + (intent != null && intent.getAction() != null ?
@@ -464,6 +494,7 @@ public class MainActivity
         intentFilter.addAction(Const.ACTION_EXIT);
         intentFilter.addAction(Const.ACTION_POLICY_VIOLATION);
         intentFilter.addAction(Const.ACTION_EXIT_KIOSK);
+        intentFilter.addAction(Const.ACTION_ENTER_KIOSK);
         intentFilter.addAction(Const.ACTION_ADMIN_PANEL);
         LocalBroadcastManager.getInstance(this).registerReceiver(receiver, intentFilter);
     }

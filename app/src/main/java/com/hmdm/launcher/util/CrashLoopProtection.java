@@ -2,6 +2,7 @@ package com.hmdm.launcher.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.util.Log;
 
 import com.hmdm.launcher.Const;
@@ -15,9 +16,19 @@ public class CrashLoopProtection {
     private static final String LAST_FAULT_TIME_PREFERENCE = "last_fault_time";
     private static final String FAULT_COUNTER_PREFERENCE = "fault_counter";
 
+    /**
+     * Get device protected storage context for Direct Boot support.
+     */
+    private static Context getStorageContext(Context context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            return context.createDeviceProtectedStorageContext();
+        }
+        return context;
+    }
+
     // Register crash
     public static void registerFault(Context context) {
-        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(FAULT_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = getStorageContext(context).getSharedPreferences(FAULT_PREFERENCE_NAME, Context.MODE_PRIVATE);
         long faultTime = System.currentTimeMillis();
         long lastFaultTime = preferences.getLong(LAST_FAULT_TIME_PREFERENCE, 0);
         if (faultTime - lastFaultTime > LOOP_TIME_SPAN) {
@@ -38,7 +49,7 @@ public class CrashLoopProtection {
     // Protection against looping
     // Returns false if loop is detected
     public static boolean isCrashLoopDetected(Context context) {
-        SharedPreferences preferences = context.getApplicationContext().getSharedPreferences(FAULT_PREFERENCE_NAME, Context.MODE_PRIVATE);
+        SharedPreferences preferences = getStorageContext(context).getSharedPreferences(FAULT_PREFERENCE_NAME, Context.MODE_PRIVATE);
         long faultTime = System.currentTimeMillis();
         long lastFaultTime = preferences.getLong(LAST_FAULT_TIME_PREFERENCE, 0);
         if (lastFaultTime == 0) {

@@ -64,7 +64,6 @@
     <string name="dialog_administrator_mode_message">Please allow the app to work in the device administrator mode. A Settings sheet will now open. Select \"Device administrators\", find the \"%s\" item, activate the administrator, and tap \"Back\".</string>
     <string name="dialog_administrator_mode_continue">Continue</string>
     <string name="dialog_administrator_mode_skip">Skip</string>
-    <string name="accessibility_service_description">EduTab learning environment</string>
     <string name="dialog_accessibility_service_message">Please allow the app to use accessibility services. A Settings sheet will now open. Find the \"%s\" item, allow to use accessibility services, and tap \"Back\".</string>
     <string name="dialog_accessibility_service_continue">Continue</string>
     <string name="dialog_accessibility_service_skip">Skip</string>
@@ -141,4 +140,8 @@
         -->
         <item>isrg_root_x1.pem</item>
     </string-array>
+
+    <!-- EduTab quick actions -->
+    <string name="attention_look_at_teacher">Look at your teacher</string>
+    <string name="accessibility_service_description">Allows remote control features like locking the screen</string>
 </resources>

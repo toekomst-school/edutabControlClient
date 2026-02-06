@@ -20,6 +20,9 @@
 package com.hmdm.launcher.pro;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.admin.DevicePolicyManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -27,8 +30,14 @@ import android.view.View;
 
 import com.hmdm.launcher.Const;
 import com.hmdm.launcher.R;
+import com.hmdm.launcher.helper.SettingsHelper;
+import com.hmdm.launcher.json.Application;
 import com.hmdm.launcher.json.ServerConfig;
+import com.hmdm.launcher.util.LegacyUtils;
 import com.hmdm.launcher.util.RemoteLogger;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import java.util.Calendar;
 
@@ -43,6 +52,14 @@ public class ProUtils {
     }
 
     public static boolean kioskModeRequired(Context context) {
+        try {
+            ServerConfig config = SettingsHelper.getInstance(context).getConfig();
+            if (config != null) {
+                return config.isKioskMode();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
@@ -89,8 +106,12 @@ public class ProUtils {
     }
 
     public static boolean isKioskModeRunning(Context context) {
-        // Stub
-        return false;
+        try {
+            ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+            return am.getLockTaskModeState() != ActivityManager.LOCK_TASK_MODE_NONE;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public static Intent getKioskAppIntent(String kioskApp, Activity activity) {
@@ -98,24 +119,106 @@ public class ProUtils {
         return null;
     }
 
-    // Start COSU kiosk mode
+    // Start COSU kiosk mode (lock task mode)
     public static boolean startCosuKioskMode(String kioskApp, Activity activity, boolean enableSettings) {
-        // Stub
+        try {
+            DevicePolicyManager dpm = (DevicePolicyManager) activity.getSystemService(Context.DEVICE_POLICY_SERVICE);
+            ComponentName adminComponent = LegacyUtils.getAdminComponentName(activity);
+
+            // Whitelist all configured apps for lock task mode
+            if (dpm.isDeviceOwnerApp(activity.getPackageName())) {
+                List<String> packageList = new ArrayList<>();
+                packageList.add(activity.getPackageName()); // Always include launcher
+
+                // Add all apps from configuration
+                ServerConfig config = SettingsHelper.getInstance(activity).getConfig();
+                if (config != null && config.getApplications() != null) {
+                    for (Application app : config.getApplications()) {
+                        String pkg = app.getPkg();
+                        if (pkg != null && !pkg.isEmpty() && !packageList.contains(pkg)) {
+                            packageList.add(pkg);
+                        }
+                    }
+                }
+
+                // Add specific kiosk app if provided
+                if (kioskApp != null && !kioskApp.isEmpty() && !packageList.contains(kioskApp)) {
+                    packageList.add(kioskApp);
+                }
+
+                String[] packages = packageList.toArray(new String[0]);
+                dpm.setLockTaskPackages(adminComponent, packages);
+                RemoteLogger.log(activity, Const.LOG_DEBUG, "Lock task packages: " + packageList.size() + " apps whitelisted");
+            }
+
+            // Check if already in lock task mode
+            if (isKioskModeRunning(activity)) {
+                RemoteLogger.log(activity, Const.LOG_DEBUG, "Already in kiosk mode, whitelist updated");
+                return true;
+            }
+
+            // Start lock task mode (only if not already running)
+            if (dpm.isLockTaskPermitted(activity.getPackageName())) {
+                activity.startLockTask();
+                RemoteLogger.log(activity, Const.LOG_INFO, "Kiosk mode started");
+                return true;
+            }
+        } catch (Exception e) {
+            RemoteLogger.log(activity, Const.LOG_WARN, "Failed to start kiosk mode: " + e.getMessage());
+            e.printStackTrace();
+        }
         return false;
     }
 
-    // Set/update kiosk mode options (lock tack features)
+    // Set/update kiosk mode options (lock task features)
     public static void updateKioskOptions(Activity activity) {
-        // Stub
+        // Stub - could set lock task features here
     }
 
     // Update app list in the kiosk mode
     public static void updateKioskAllowedApps(String kioskApp, Activity activity, boolean enableSettings) {
-        // Stub
+        try {
+            DevicePolicyManager dpm = (DevicePolicyManager) activity.getSystemService(Context.DEVICE_POLICY_SERVICE);
+            ComponentName adminComponent = LegacyUtils.getAdminComponentName(activity);
+
+            if (dpm.isDeviceOwnerApp(activity.getPackageName())) {
+                List<String> packageList = new ArrayList<>();
+                packageList.add(activity.getPackageName());
+
+                // Add all apps from configuration
+                ServerConfig config = SettingsHelper.getInstance(activity).getConfig();
+                if (config != null && config.getApplications() != null) {
+                    for (Application app : config.getApplications()) {
+                        String pkg = app.getPkg();
+                        if (pkg != null && !pkg.isEmpty() && !packageList.contains(pkg)) {
+                            packageList.add(pkg);
+                        }
+                    }
+                }
+
+                if (kioskApp != null && !kioskApp.isEmpty() && !packageList.contains(kioskApp)) {
+                    packageList.add(kioskApp);
+                }
+
+                String[] packages = packageList.toArray(new String[0]);
+                dpm.setLockTaskPackages(adminComponent, packages);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static void unlockKiosk(Activity activity) {
-        // Stub
+        try {
+            ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+            if (am.getLockTaskModeState() != ActivityManager.LOCK_TASK_MODE_NONE) {
+                activity.stopLockTask();
+                RemoteLogger.log(activity, Const.LOG_INFO, "Kiosk mode stopped");
+            }
+        } catch (Exception e) {
+            RemoteLogger.log(activity, Const.LOG_WARN, "Failed to stop kiosk mode: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public static void processConfig(Context context, ServerConfig config) {

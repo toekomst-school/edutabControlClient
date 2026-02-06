@@ -61,7 +61,7 @@
     <string name="dialog_administrator_mode_message">Sta de app toe om in apparaatbeheerdersmodus te werken. Er wordt nu een instellingenscherm geopend. Selecteer \"Apparaatbeheerders\", zoek het item \"%s\", activeer de beheerder en tik op \"Terug\".</string>
     <string name="dialog_administrator_mode_continue">Doorgaan</string>
     <string name="dialog_administrator_mode_skip">Overslaan</string>
-    <string name="accessibility_service_description">EduTab leeromgeving</string>
+    <string name="accessibility_service_description">Maakt afstandsbediening mogelijk, zoals schermvergrendeling</string>
     <string name="dialog_accessibility_service_message">Sta de app toe om toegankelijkheidsservices te gebruiken. Er wordt nu een instellingenscherm geopend. Zoek het item \"%s\", sta gebruik van toegankelijkheidsservices toe en tik op \"Terug\".</string>
     <string name="dialog_accessibility_service_continue">Doorgaan</string>
     <string name="dialog_accessibility_service_skip">Overslaan</string>
@@ -128,4 +128,7 @@
     <string name="admin_not_supported">Uw apparaat heeft geen apparaatbeheerderoptie. Klik op Overslaan om door te gaan.</string>
     <string name="manage_storage_not_supported">Uw apparaat heeft geen optie om externe opslag te beheren.</string>
     <string name="certificate_install_failed">Installatie van certificaat %1$s mislukt: %2$s</string>
+
+    <!-- EduTab quick actions -->
+    <string name="attention_look_at_teacher">Kijk naar je leraar</string>
 </resources>

@@ -19,18 +19,59 @@
 
 package com.hmdm.launcher.pro.service;
 
-import android.app.Service;
-import android.content.Intent;
-import android.os.IBinder;
+import android.accessibilityservice.AccessibilityService;
+import android.os.Build;
+import android.view.accessibility.AccessibilityEvent;
 
 /**
- * In open-source version, the service checking foreground apps is just a stub;
- * this option is available in Pro-version only
+ * AccessibilityService for MDM functionality.
+ * Provides ability to lock screen on Android 9+ without requiring force-lock policy.
  */
-public class CheckForegroundAppAccessibilityService extends Service {
+public class CheckForegroundAppAccessibilityService extends AccessibilityService {
+
+    private static CheckForegroundAppAccessibilityService instance;
+
     @Override
-    public IBinder onBind(Intent intent) {
-        // Stub
-        return null;
+    public void onServiceConnected() {
+        super.onServiceConnected();
+        instance = this;
+    }
+
+    @Override
+    public void onAccessibilityEvent(AccessibilityEvent event) {
+        // Not used for now
+    }
+
+    @Override
+    public void onInterrupt() {
+        // Not used
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        instance = null;
+    }
+
+    /**
+     * Lock the screen using AccessibilityService.
+     * Works on Android 9 (API 28) and higher.
+     * @return true if lock was successful, false otherwise
+     */
+    public static boolean lockScreen() {
+        if (instance == null) {
+            return false;
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            return instance.performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN);
+        }
+        return false;
+    }
+
+    /**
+     * Check if the accessibility service is available and running.
+     */
+    public static boolean isAvailable() {
+        return instance != null;
     }
 }

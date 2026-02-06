@@ -40,6 +40,7 @@ public class PushMessage {
     public static final String TYPE_RUN_COMMAND = "runCommand";
     public static final String TYPE_REBOOT = "reboot";
     public static final String TYPE_EXIT_KIOSK = "exitKiosk";
+    public static final String TYPE_ENTER_KIOSK = "enterKiosk";
     public static final String TYPE_CLEAR_DOWNLOADS = "clearDownloadHistory";
     public static final String TYPE_INTENT = "intent";
     public static final String TYPE_GRANT_PERMISSIONS = "grantPermissions";
@@ -50,6 +51,13 @@ public class PushMessage {
     public static final String TYPE_SET_BRIGHTNESS = "setBrightness";
     public static final String TYPE_PING_LOCATION = "pingLocation";
     public static final String TYPE_EMERGENCY_MODE = "emergencyMode";
+
+    // EduTab quick actions
+    public static final String TYPE_LOCK = "lock";
+    public static final String TYPE_UNLOCK = "unlock";
+    public static final String TYPE_ATTENTION = "attention";
+    public static final String TYPE_MESSAGE = "message";
+    // Note: screenOff is handled by lock - they are the same action
 
     public String getMessageType() {
         return messageType;

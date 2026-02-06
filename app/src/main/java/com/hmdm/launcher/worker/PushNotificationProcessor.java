@@ -23,6 +23,7 @@ import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.os.PowerManager;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.sqlite.SQLiteDatabase;
@@ -110,6 +111,11 @@ public class PushNotificationProcessor {
             // Temporarily exit kiosk mode
             LocalBroadcastManager.getInstance(context).
                 sendBroadcast(new Intent(Const.ACTION_EXIT_KIOSK));
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_ENTER_KIOSK)) {
+            // Re-enter kiosk mode
+            LocalBroadcastManager.getInstance(context).
+                sendBroadcast(new Intent(Const.ACTION_ENTER_KIOSK));
             return;
         } else if (message.getMessageType().equals(PushMessage.TYPE_ADMIN_PANEL)) {
             LocalBroadcastManager.getInstance(context).
@@ -225,6 +231,25 @@ public class PushNotificationProcessor {
                     serviceIntent.setAction(EmergencyService.ACTION_STOP);
                     context.startService(serviceIntent);
                 }
+            }
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_LOCK)) {
+            // Lock device screen
+            AsyncTask.execute(() -> lockDevice(context));
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_UNLOCK)) {
+            // Unlock and wake device screen
+            AsyncTask.execute(() -> unlockDevice(context));
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_ATTENTION)) {
+            // Flash screen to get attention
+            showAttention(context);
+            return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_MESSAGE)) {
+            // Show message overlay
+            String messageText = message.getPayload();
+            if (messageText != null && !messageText.isEmpty()) {
+                showMessage(context, messageText);
             }
             return;
         }
@@ -494,6 +519,7 @@ public class PushNotificationProcessor {
             Log.d(Const.LOG_TAG, "Calling intent: " + action);
             JSONObject extras = payload.optJSONObject("extra");
             String data = payload.optString("data", null);
+            String category = payload.optString("category", null);
             Intent i = new Intent(action);
             if (data != null) {
                 try {
@@ -501,6 +527,9 @@ public class PushNotificationProcessor {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+            }
+            if (category != null) {
+                i.addCategory(category);
             }
             if (extras != null) {
                 Iterator<String> keys = extras.keys();
@@ -669,6 +698,98 @@ public class PushNotificationProcessor {
             RemoteLogger.log(context, Const.LOG_DEBUG, "Opened URL with default handler");
         } catch (Exception e) {
             RemoteLogger.log(context, Const.LOG_WARN, "Failed to open URL: " + url + " - " + e.getMessage());
+        }
+    }
+
+    /**
+     * Lock the device screen by showing a black lock screen activity in kiosk mode.
+     * The device will go to sleep naturally based on screen timeout.
+     */
+    private static void lockDevice(Context context) {
+        try {
+            Intent lockIntent = new Intent(context, com.hmdm.launcher.ui.LockScreenActivity.class);
+            lockIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(lockIntent);
+            RemoteLogger.log(context, Const.LOG_INFO, "Lock screen displayed");
+        } catch (Exception e) {
+            RemoteLogger.log(context, Const.LOG_WARN, "Lock device failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Unlock the device - wakes screen, dismisses lock screen, keyguard AND exits kiosk mode
+     */
+    private static void unlockDevice(Context context) {
+        try {
+            // Wake the screen
+            PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+            PowerManager.WakeLock wl = pm.newWakeLock(
+                    PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP,
+                    "hmdm:unlock"
+            );
+            wl.acquire(5000); // Hold for 5 seconds
+
+            // Dismiss system keyguard/lock screen if device owner
+            if (Utils.isDeviceOwner(context)) {
+                DevicePolicyManager dpm = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    ComponentName adminComponentName = LegacyUtils.getAdminComponentName(context);
+                    dpm.setKeyguardDisabled(adminComponentName, true);
+                    // Re-enable after a short delay
+                    new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
+                        try {
+                            dpm.setKeyguardDisabled(adminComponentName, false);
+                        } catch (Exception e) {
+                            // Ignore
+                        }
+                    }, 5000);
+                }
+            }
+
+            // Dismiss the EduTab lock screen
+            com.hmdm.launcher.ui.LockScreenActivity.unlock(context);
+
+            // Exit kiosk mode (send broadcast to MainActivity)
+            LocalBroadcastManager.getInstance(context).
+                sendBroadcast(new Intent(Const.ACTION_EXIT_KIOSK));
+
+            wl.release();
+            RemoteLogger.log(context, Const.LOG_INFO, "Device unlocked and kiosk mode exited");
+        } catch (Exception e) {
+            RemoteLogger.log(context, Const.LOG_WARN, "Unlock device failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Show attention flash screen
+     */
+    private static void showAttention(Context context) {
+        try {
+            Intent attentionIntent = new Intent(context, com.hmdm.launcher.ui.AttentionActivity.class);
+            attentionIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(attentionIntent);
+            RemoteLogger.log(context, Const.LOG_INFO, "Attention signal sent");
+        } catch (Exception e) {
+            RemoteLogger.log(context, Const.LOG_WARN, "Attention signal failed: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Show message overlay
+     */
+    private static void showMessage(Context context, String message) {
+        try {
+            Intent msgIntent = new Intent(context, com.hmdm.launcher.ui.MessageOverlayActivity.class);
+            msgIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            msgIntent.putExtra("message", message);
+            context.startActivity(msgIntent);
+            RemoteLogger.log(context, Const.LOG_INFO, "Message displayed: " + message);
+        } catch (Exception e) {
+            RemoteLogger.log(context, Const.LOG_WARN, "Show message failed: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
