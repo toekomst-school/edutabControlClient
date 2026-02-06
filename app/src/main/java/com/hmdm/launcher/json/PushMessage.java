@@ -57,6 +57,7 @@ public class PushMessage {
     public static final String TYPE_UNLOCK = "unlock";
     public static final String TYPE_ATTENTION = "attention";
     public static final String TYPE_MESSAGE = "message";
+    public static final String TYPE_TIMER = "timer";
     // Note: screenOff is handled by lock - they are the same action
 
     public String getMessageType() {

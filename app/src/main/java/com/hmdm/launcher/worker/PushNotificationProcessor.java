@@ -252,6 +252,31 @@ public class PushNotificationProcessor {
                 showMessage(context, messageText);
             }
             return;
+        } else if (message.getMessageType().equals(PushMessage.TYPE_TIMER)) {
+            int minutes = 30; // default
+            try {
+                minutes = Integer.parseInt(message.getPayload());
+            } catch (Exception e) {
+                // Use default
+            }
+
+            Intent serviceIntent = new Intent(context, com.hmdm.launcher.ui.TimerOverlayService.class);
+
+            if (minutes <= 0) {
+                // Stop timer
+                context.stopService(serviceIntent);
+                RemoteLogger.log(context, Const.LOG_INFO, "Timer stopped");
+            } else {
+                // Start timer
+                serviceIntent.putExtra("duration_minutes", minutes);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    context.startForegroundService(serviceIntent);
+                } else {
+                    context.startService(serviceIntent);
+                }
+                RemoteLogger.log(context, Const.LOG_INFO, "Timer started: " + minutes + " minutes");
+            }
+            return;
         }
 
         // Send broadcast to all plugins

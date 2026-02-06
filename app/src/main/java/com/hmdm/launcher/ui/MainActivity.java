@@ -682,11 +682,25 @@ public class MainActivity
         checkAppBlockingPermissions();
     }
 
+    // Track if permission reminder was already shown this session
+    private static boolean permissionReminderShown = false;
+    private Dialog permissionReminderDialog = null;
+
     /**
      * Check if app blocking permissions are granted when in non-permissive mode.
-     * Shows a reminder dialog if permissions are missing.
+     * Shows a reminder dialog if permissions are missing (only once per session).
      */
     private void checkAppBlockingPermissions() {
+        // Only show once per session
+        if (permissionReminderShown) {
+            return;
+        }
+
+        // Don't show if another dialog is visible (like the PIN dialog)
+        if (enterPasswordDialog != null && enterPasswordDialog.isShowing()) {
+            return;
+        }
+
         ServerConfig config = settingsHelper.getConfig();
         if (config == null) {
             return;
@@ -715,6 +729,8 @@ public class MainActivity
             return;
         }
 
+        permissionReminderShown = true;
+
         StringBuilder message = new StringBuilder();
         message.append(getString(R.string.permission_reminder_message));
         message.append("\n\n");
@@ -726,7 +742,7 @@ public class MainActivity
             message.append("• ").append(getString(R.string.permission_accessibility)).append("\n");
         }
 
-        new AlertDialog.Builder(this)
+        permissionReminderDialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.permission_reminder_title)
                 .setMessage(message.toString())
                 .setPositiveButton(R.string.permission_reminder_open_settings, (dialog, which) -> {
