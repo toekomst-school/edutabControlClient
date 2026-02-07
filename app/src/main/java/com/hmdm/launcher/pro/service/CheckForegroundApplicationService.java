@@ -32,6 +32,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ServiceInfo;
 import android.os.Build;
+import android.view.inputmethod.InputMethodInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -220,6 +222,19 @@ public class CheckForegroundApplicationService extends Service {
 
         // Always allow system UI
         allowed.add(Const.SYSTEM_UI_PACKAGE_NAME);
+
+        // Always allow all keyboard/input method apps
+        try {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                List<InputMethodInfo> inputMethods = imm.getInputMethodList();
+                for (InputMethodInfo imi : inputMethods) {
+                    allowed.add(imi.getPackageName());
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to get input methods", e);
+        }
 
         // Add all apps from config
         List<Application> apps = config.getApplications();

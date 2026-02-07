@@ -27,6 +27,9 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityWindowInfo;
+import android.view.inputmethod.InputMethodInfo;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
@@ -101,7 +104,57 @@ public class CheckForegroundAppAccessibilityService extends AccessibilityService
         }
 
         String packageName = packageNameCs.toString();
+
+        // Skip if this event is from an input method (keyboard)
+        if (isInputMethodPackage(packageName)) {
+            Log.d(TAG, "Skipping input method package: " + packageName);
+            return;
+        }
+
+        // Skip if any input method window is visible
+        if (isInputMethodWindowVisible()) {
+            Log.d(TAG, "Skipping check - input method window visible");
+            return;
+        }
+
         checkAndBlockIfNeeded(packageName);
+    }
+
+    /**
+     * Check if the given package is an input method (keyboard)
+     */
+    private boolean isInputMethodPackage(String packageName) {
+        try {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                List<InputMethodInfo> inputMethods = imm.getInputMethodList();
+                for (InputMethodInfo imi : inputMethods) {
+                    if (imi.getPackageName().equals(packageName)) {
+                        return true;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to check input method package", e);
+        }
+        return false;
+    }
+
+    /**
+     * Check if any input method (keyboard) window is currently visible
+     */
+    private boolean isInputMethodWindowVisible() {
+        try {
+            List<AccessibilityWindowInfo> windows = getWindows();
+            for (AccessibilityWindowInfo window : windows) {
+                if (window.getType() == AccessibilityWindowInfo.TYPE_INPUT_METHOD) {
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to check input method windows", e);
+        }
+        return false;
     }
 
     private void checkAndBlockIfNeeded(String packageName) {
@@ -159,6 +212,19 @@ public class CheckForegroundAppAccessibilityService extends AccessibilityService
 
         // Always allow system UI
         allowed.add(Const.SYSTEM_UI_PACKAGE_NAME);
+
+        // Always allow all keyboard/input method apps
+        try {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            if (imm != null) {
+                List<InputMethodInfo> inputMethods = imm.getInputMethodList();
+                for (InputMethodInfo imi : inputMethods) {
+                    allowed.add(imi.getPackageName());
+                }
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Failed to get input methods", e);
+        }
 
         // Add all apps from config
         List<Application> apps = config.getApplications();
